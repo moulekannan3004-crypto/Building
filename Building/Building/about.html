@@ -257,36 +257,84 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-start">
         
         <!-- Mission Card -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm space-y-4 hover:border-accent/40 transition-all duration-300">
-          <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center text-accent">
-            <i class="fa-solid fa-bullseye text-xl"></i>
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 flex flex-col justify-between">
+          <!-- Top Half Image -->
+          <div class="relative h-52 w-full overflow-hidden">
+            <img src="./assets/images/mission_card_bg.jpg" alt="Our Mission" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 start-4 w-11 h-11 rounded-xl bg-accent text-primary flex items-center justify-center shadow-lg font-bold">
+              <i class="fa-solid fa-bullseye text-lg"></i>
+            </div>
+            <span class="absolute bottom-3 start-4 text-xs font-bold uppercase tracking-widest text-accent bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full border border-accent/20">
+              Core Objective
+            </span>
           </div>
-          <h3 class="text-xl font-bold font-display text-primary dark:text-white">Our Mission</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            To eliminate logistics downtime and procurement markups in heavy construction supply chains by providing direct-import, laboratory-verified building materials digitally.
-          </p>
+          <!-- Remaining Half Content -->
+          <div class="p-6 flex flex-col justify-between flex-grow space-y-5">
+            <div class="space-y-2">
+              <h3 class="text-xl font-extrabold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Our Mission</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                To eliminate logistics downtime and procurement markups in heavy construction supply chains by providing direct-import, laboratory-verified building materials digitally.
+              </p>
+            </div>
+            <a href="login.html" class="w-full inline-flex items-center justify-center gap-2 px-4.5 py-2.5 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+              <i class="fa-solid fa-right-to-bracket text-xs"></i> Sign In for Account Access
+            </a>
+          </div>
         </div>
 
         <!-- Vision Card -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm space-y-4 hover:border-accent/40 transition-all duration-300">
-          <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
-            <i class="fa-solid fa-eye text-xl"></i>
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 flex flex-col justify-between">
+          <!-- Top Half Image -->
+          <div class="relative h-52 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Our Vision" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 start-4 w-11 h-11 rounded-xl bg-blue-500 text-white flex items-center justify-center shadow-lg font-bold">
+              <i class="fa-solid fa-eye text-lg"></i>
+            </div>
+            <span class="absolute bottom-3 start-4 text-xs font-bold uppercase tracking-widest text-blue-400 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full border border-blue-500/20">
+              Future Direction
+            </span>
           </div>
-          <h3 class="text-xl font-bold font-display text-primary dark:text-white">Our Vision</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            To be the default material pipeline for civil infrastructure globally, setting the industry benchmark for carbon-compliant green cement and smart logistics routing.
-          </p>
+          <!-- Remaining Half Content -->
+          <div class="p-6 flex flex-col justify-between flex-grow space-y-5">
+            <div class="space-y-2">
+              <h3 class="text-xl font-extrabold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Our Vision</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                To be the default material pipeline for civil infrastructure globally, setting the industry benchmark for carbon-compliant green cement and smart logistics routing.
+              </p>
+            </div>
+            <a href="login.html" class="w-full inline-flex items-center justify-center gap-2 px-4.5 py-2.5 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+              <i class="fa-solid fa-right-to-bracket text-xs"></i> Sign In for Account Access
+            </a>
+          </div>
         </div>
 
-        <!-- Core Values Card -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm space-y-4 hover:border-accent/40 transition-all duration-300">
-          <div class="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-            <i class="fa-solid fa-handshake text-xl"></i>
+        <!-- Structural Integrity Card -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 flex flex-col justify-between">
+          <!-- Top Half Image -->
+          <div class="relative h-52 w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Structural Integrity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-4 start-4 w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-lg font-bold">
+              <i class="fa-solid fa-shield-halved text-lg"></i>
+            </div>
+            <span class="absolute bottom-3 start-4 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full border border-emerald-500/20">
+              Quality Commitment
+            </span>
           </div>
-          <h3 class="text-xl font-bold font-display text-primary dark:text-white">Structural Integrity</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            We prioritize physical material safety. Compressive capacity, steel ductility, and glass thickness reports are absolute standards before shipping offloads.
-          </p>
+          <!-- Remaining Half Content -->
+          <div class="p-6 flex flex-col justify-between flex-grow space-y-5">
+            <div class="space-y-2">
+              <h3 class="text-xl font-extrabold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Structural Integrity</h3>
+              <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                We prioritize physical material safety. Compressive capacity, steel ductility, and glass thickness reports are absolute standards before shipping offloads.
+              </p>
+            </div>
+            <a href="login.html" class="w-full inline-flex items-center justify-center gap-2 px-4.5 py-2.5 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+              <i class="fa-solid fa-right-to-bracket text-xs"></i> Sign In for Account Access
+            </a>
+          </div>
         </div>
 
       </div>
@@ -405,7 +453,7 @@
           <div class="p-5 space-y-1">
             <span class="text-[10px] font-black uppercase text-accent">Head of QA Testing Lab</span>
             <h3 class="text-base font-bold text-primary dark:text-white">Dr. Angela K. Ross</h3>
-            <p class="text-xs text-gray-500">Ph.D. in Structural Engineering. Manages stress testing of cement batches and steel rebars.</p>
+            <p class="text-xs text-gray-500">Ph.D. in Structural Engineering. Manages stress testing of steel rebars.</p>
             <div class="pt-3 flex gap-3 text-gray-400">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-accent"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-accent"><i class="fa-solid fa-envelope text-sm"></i></a>
@@ -433,7 +481,7 @@
           <div class="p-5 space-y-1">
             <span class="text-[10px] font-black uppercase text-accent">Procurement Account Manager</span>
             <h3 class="text-base font-bold text-primary dark:text-white">Sonia K. Patel</h3>
-            <p class="text-xs text-gray-500">Pre-approves contractor credit lines and locks contract discount rates for multi-unit projects.</p>
+            <p class="text-xs text-gray-500">Pre-approves contractor  and locks  discount rates for multi-unit projects.</p>
             <div class="pt-3 flex gap-3 text-gray-400">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-accent"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-accent"><i class="fa-solid fa-envelope text-sm"></i></a>

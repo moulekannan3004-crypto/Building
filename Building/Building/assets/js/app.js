@@ -358,14 +358,14 @@ function initQuantityEstimator() {
       
       if (qtyContainer && costContainer) {
         qtyContainer.textContent = `${outputQty} ${unit}`;
-        costContainer.textContent = `$${outputCost.toLocaleString()}`;
+        costContainer.textContent = `₹${outputCost.toLocaleString()}`;
         
-        // 10% bulk discount for estimates over $1000
+        // 10% bulk discount for estimates over ₹1000
         const discount = outputCost > 1000 ? outputCost * 0.1 : 0;
         const finalCost = outputCost - discount;
         
-        if (discountContainer) discountContainer.textContent = `$${discount.toLocaleString()}`;
-        if (finalContainer) finalContainer.textContent = `$${finalCost.toLocaleString()}`;
+        if (discountContainer) discountContainer.textContent = `₹${discount.toLocaleString()}`;
+        if (finalContainer) finalContainer.textContent = `₹${finalCost.toLocaleString()}`;
       }
     });
   });
@@ -414,9 +414,9 @@ function initContractorCalculator() {
 
     if (qtyDisp) qtyDisp.textContent = volume;
     if (tierDisp) tierDisp.textContent = tier;
-    if (baseDisp) baseDisp.textContent = `$${baseCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-    if (discDisp) discDisp.textContent = `-$${discountVal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} (${discountPct * 100}%)`;
-    if (finalDisp) finalDisp.textContent = `$${finalCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    if (baseDisp) baseDisp.textContent = `₹${baseCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    if (discDisp) discDisp.textContent = `-₹${discountVal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} (${discountPct * 100}%)`;
+    if (finalDisp) finalDisp.textContent = `₹${finalCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
   };
 
   if (volumeSlider) {
@@ -455,7 +455,7 @@ function initProductCatalog() {
   if (priceRange) {
     priceRange.addEventListener('input', () => {
       const priceVal = document.getElementById('price-val');
-      if (priceVal) priceVal.textContent = `$${priceRange.value}`;
+      if (priceVal) priceVal.textContent = `₹${priceRange.value}`;
       maxPrice = parseFloat(priceRange.value);
       filterProducts();
     });

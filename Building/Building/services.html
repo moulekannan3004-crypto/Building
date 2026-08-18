@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -67,7 +67,7 @@
     </span>
   </div>
 
-      <!-- Sticky Header / Navbar -->
+  <!-- Sticky Header / Navbar -->
   <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
     <div class="w-full px-4 sm:px-8 lg:px-12">
       <div class="flex items-center justify-between h-20">
@@ -103,7 +103,7 @@
           <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
         </nav>
 
-                                <!-- Right Menu Actions -->
+        <!-- Right Menu Actions -->
         <div class="hidden md:flex items-center gap-4">
           <!-- Light/Dark Mode Switcher -->
           <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
@@ -127,8 +127,6 @@
             <i class="fa-solid fa-file-invoice text-xl"></i>
             <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-accent rounded-full hidden">0</span>
           </a>
-
-
         </div>
 
         <!-- Mobile Menu Toggle Button -->
@@ -201,82 +199,142 @@
     </div>
   </section>
 
-  <!-- Services Grid Layout -->
+  <!-- Services Grid Layout (Half Card Image, Half Card Content) -->
   <section class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Grid Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">Core Services Grid</span>
-        <h2 class="text-3xl font-extrabold font-display text-primary dark:text-white tracking-tight">Structured Contractor Solutions</h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Discover our four core operational pillars engineered to maximize site construction efficiency.</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-primary dark:text-white tracking-tight">Structured Contractor Solutions</h2>
+        <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400">Discover our four core operational pillars engineered to maximize site construction efficiency with visual service previews.</p>
       </div>
 
       <!-- Services 4-Column Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-start">
         
         <!-- Service 1: Bulk Material Supply -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm flex flex-col justify-between hover-lift">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center text-accent">
-              <i class="fa-solid fa-cubes text-xl"></i>
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl flex flex-col justify-between hover-lift transition-all duration-300">
+          <!-- Half Card Image (Top 50%) -->
+          <div class="relative h-56 overflow-hidden">
+            <img src="./assets/images/srv_bulk_material.jpg" alt="Bulk Material Supply" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 start-4 bg-primary/80 backdrop-blur-md border border-white/10 text-white px-3 py-1.5 rounded-full text-[11px] font-bold shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-cubes text-accent"></i> Wholesale Supply
             </div>
-            <h3 class="text-lg font-bold font-display text-primary dark:text-white">Bulk Material Supply</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Wholesale procurement pipelines for certified cement grades (OPC/PPC), reinforced steel TMT rebars, AAC blocks, structural timber, glass sheets, and fittings.
-            </p>
+            <div class="absolute bottom-3 start-4 text-white">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-accent">Pillar 01</span>
+            </div>
           </div>
-          <a href="service-details.html?id=bulk-supply" class="pt-6 border-t border-gray-100 dark:border-slate-800 mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
-            View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
-          </a>
+          <!-- Half Card Content (Bottom 50%) -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Bulk Material Supply</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Wholesale procurement pipelines for certified cement grades (OPC/PPC), reinforced steel TMT rebars, AAC blocks, structural timber, glass sheets, and fittings.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-bold text-gray-600 dark:text-gray-300">
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Direct Factory Rates</span>
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Batch Certified</span>
+              </div>
+            </div>
+            <a href="service-details.html?id=bulk-supply" class="pt-4 border-t border-gray-100 dark:border-slate-800/80 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+              View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Service 2: Logistics & Transportation -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm flex flex-col justify-between hover-lift">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
-              <i class="fa-solid fa-truck-fast text-xl"></i>
+        <!-- Service 2: Owned Logistics Fleet -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl flex flex-col justify-between hover-lift transition-all duration-300">
+          <!-- Half Card Image (Top 50%) -->
+          <div class="relative h-56 overflow-hidden">
+            <img src="./assets/images/srv_owned_logistics.jpg" alt="Owned Logistics Fleet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 start-4 bg-primary/80 backdrop-blur-md border border-white/10 text-white px-3 py-1.5 rounded-full text-[11px] font-bold shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-truck-fast text-blue-400"></i> Logistics Fleet
             </div>
-            <h3 class="text-lg font-bold font-display text-primary dark:text-white">Owned Logistics Fleet</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Multi-modal delivery using our regional fleet of flatbed trailers, transit mixers, and offloading crane trucks. Complete with real-time GPS tracking coordinates.
-            </p>
+            <div class="absolute bottom-3 start-4 text-white">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-blue-400">Pillar 02</span>
+            </div>
           </div>
-          <a href="service-details.html?id=logistics" class="pt-6 border-t border-gray-100 dark:border-slate-800 mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
-            View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
-          </a>
+          <!-- Half Card Content (Bottom 50%) -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Owned Logistics Fleet</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Multi-modal delivery using our regional fleet of flatbed trailers, transit mixers, and offloading crane trucks. Complete with real-time GPS tracking coordinates.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-bold text-gray-600 dark:text-gray-300">
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Active GPS Track</span>
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Next-Day Offload</span>
+              </div>
+            </div>
+            <a href="service-details.html?id=logistics" class="pt-4 border-t border-gray-100 dark:border-slate-800/80 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+              View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Service 3: Engineering QA Consultations -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm flex flex-col justify-between hover-lift">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-450 text-emerald-400">
-              <i class="fa-solid fa-flask-vial text-xl"></i>
+        <!-- Service 3: Laboratory QA Testing -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl flex flex-col justify-between hover-lift transition-all duration-300">
+          <!-- Half Card Image (Top 50%) -->
+          <div class="relative h-56 overflow-hidden">
+            <img src="./assets/images/srv_qa_testing.jpg" alt="Laboratory QA Testing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 start-4 bg-primary/80 backdrop-blur-md border border-white/10 text-white px-3 py-1.5 rounded-full text-[11px] font-bold shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-flask-vial text-emerald-400"></i> Civil Lab QA
             </div>
-            <h3 class="text-lg font-bold font-display text-primary dark:text-white">Laboratory QA Testing</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Automated chemical composition testing and physical compressive strength calculations for cement and concrete mixes. Manufacturer test certificates issued instantly.
-            </p>
+            <div class="absolute bottom-3 start-4 text-white">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-400">Pillar 03</span>
+            </div>
           </div>
-          <a href="service-details.html?id=qa-consultation" class="pt-6 border-t border-gray-100 dark:border-slate-800 mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
-            View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
-          </a>
+          <!-- Half Card Content (Bottom 50%) -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Laboratory QA Testing</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Automated chemical composition testing and physical compressive strength calculations for cement and concrete mixes. Manufacturer test certificates issued instantly.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-bold text-gray-600 dark:text-gray-300">
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Compressive Testing</span>
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Instant MTC Certs</span>
+              </div>
+            </div>
+            <a href="service-details.html?id=qa-consultation" class="pt-4 border-t border-gray-100 dark:border-slate-800/80 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+              View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Service 4: Digitized Procurement -->
-        <div class="bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-xl p-8 shadow-sm flex flex-col justify-between hover-lift">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
-              <i class="fa-solid fa-credit-card text-xl"></i>
+        <!-- Service 4: Contractor Credit & CRM -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-150 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl flex flex-col justify-between hover-lift transition-all duration-300">
+          <!-- Half Card Image (Top 50%) -->
+          <div class="relative h-56 overflow-hidden">
+            <img src="./assets/images/srv_contract_credit.jpg" alt="Contractor Credit & CRM" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute top-4 start-4 bg-primary/80 backdrop-blur-md border border-white/10 text-white px-3 py-1.5 rounded-full text-[11px] font-bold shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-credit-card text-purple-400"></i> B2B Credit Line
             </div>
-            <h3 class="text-lg font-bold font-display text-primary dark:text-white">Contractor Credit & CRM</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Flexible 30 to 90-day B2B credit terms pre-approved for verified builders. CRM dashboard integration for invoice storage and volume contract adjustments.
-            </p>
+            <div class="absolute bottom-3 start-4 text-white">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-purple-400">Pillar 04</span>
+            </div>
           </div>
-          <a href="service-details.html?id=procurement" class="pt-6 border-t border-gray-100 dark:border-slate-800 mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
-            View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
-          </a>
+          <!-- Half Card Content (Bottom 50%) -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Contractor Credit & CRM</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Flexible 30 to 90-day B2B credit terms pre-approved for verified builders. CRM dashboard integration for invoice storage and volume contract adjustments.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-bold text-gray-600 dark:text-gray-300">
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> 30-90 Day Credit</span>
+                <span class="bg-gray-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-gray-200/50 dark:border-slate-700/50"><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> CRM Portal</span>
+              </div>
+            </div>
+            <a href="service-details.html?id=procurement" class="pt-4 border-t border-gray-100 dark:border-slate-800/80 inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline">
+              View Service Benefits <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -300,94 +358,132 @@
         
         <!-- List Item 1: Bulk Material Supply -->
         <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4 rounded-xl overflow-hidden h-48 border border-gray-150 dark:border-slate-800 shadow-inner">
+            <img src="./assets/images/srv_bulk_material.jpg" alt="Bulk Sourcing" class="w-full h-full object-cover">
+          </div>
           <!-- Text -->
-          <div class="lg:col-span-8 space-y-4">
+          <div class="lg:col-span-5 space-y-4">
             <div class="flex items-center gap-3">
               <span class="bg-accent text-primary text-[10px] font-black uppercase px-2 py-0.5 rounded">Bulk Sourcing</span>
               <span class="text-xs text-gray-450 font-bold"><i class="fa-solid fa-clock me-1"></i> SLA: 24 to 48 Hour Factory Dispatch</span>
             </div>
             <h3 class="text-2xl font-bold font-display text-primary dark:text-white">Factory-to-Site Wholesale Materials</h3>
             <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-              We contract directly with manufacturing plants to procure structural items in large quantities. Our direct relationships enable builders to avoid standard distributor commissions, resulting in a 12% to 22% reduction in overall material procurement expenses.
+              We contract directly with manufacturing plants to procure structural items in large quantities. Direct relationships enable builders to avoid distributor commissions, saving 12% to 22%.
             </p>
-            <!-- Bullet Highlights -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-2 text-xs text-gray-650 dark:text-gray-300">
+            <div class="grid grid-cols-2 gap-3 pt-2 text-xs text-gray-650 dark:text-gray-300">
               <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Direct Sourcing Contracts</span>
               <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Custom Batch Castings</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Bulk Storage Facilities</span>
             </div>
           </div>
           <!-- Action Card -->
-          <div class="lg:col-span-4 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-150 dark:border-slate-850 space-y-4 text-center lg:text-start">
-            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Estimated Sourcing Rates</span>
+          <div class="lg:col-span-3 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-150 dark:border-slate-850 space-y-4 text-center lg:text-start">
+            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Sourcing Rates</span>
             <div class="space-y-1">
-              <span class="block text-3xl font-black text-primary dark:text-white">$6.20 <span class="text-xs font-normal text-gray-500">/ Bag (Cement)</span></span>
-              <span class="block text-sm text-emerald-500 font-bold">Includes Local Offloading</span>
+              <span class="block text-2xl font-black text-primary dark:text-white">₹380 <span class="text-xs font-normal text-gray-500">/ Bag</span></span>
+              <span class="block text-xs text-emerald-500 font-bold">Includes Offloading</span>
             </div>
-            <a href="service-details.html?id=bulk-supply" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-3 rounded-lg text-xs shadow-md transition-colors">
-              Read Sourcing Specs
+            <a href="service-details.html?id=bulk-supply" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-2.5 rounded-lg text-xs shadow-md transition-colors">
+              Read Specs
             </a>
           </div>
         </div>
 
         <!-- List Item 2: Logistics -->
         <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4 rounded-xl overflow-hidden h-48 border border-gray-150 dark:border-slate-800 shadow-inner">
+            <img src="./assets/images/srv_owned_logistics.jpg" alt="Owned Logistics Fleet" class="w-full h-full object-cover">
+          </div>
           <!-- Text -->
-          <div class="lg:col-span-8 space-y-4">
+          <div class="lg:col-span-5 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="bg-blue-500 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">Transport fleet</span>
+              <span class="bg-blue-500 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">Transport Fleet</span>
               <span class="text-xs text-gray-455 font-bold"><i class="fa-solid fa-clock me-1"></i> SLA: Next-Day Site Offload</span>
             </div>
             <h3 class="text-2xl font-bold font-display text-primary dark:text-white">Geo-Tracked Heavy Flatbed Logistics</h3>
             <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-              Our transport fleet consists of over 250 heavy vehicles including multi-axle flatbeds, bulk flyash carriers, and concrete transit mixers. Every truck is equipped with active GPS devices transmitting location metrics directly to your CRM platform.
+              Our transport fleet consists of over 250 heavy vehicles including multi-axle flatbeds, bulk flyash carriers, and concrete transit mixers with live GPS telemetry.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-2 text-xs text-gray-650 dark:text-gray-300">
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Flatbeds & Transit Mixers</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Forklift Offload Options</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Active GPS SMS Alerts</span>
+            <div class="grid grid-cols-2 gap-3 pt-2 text-xs text-gray-650 dark:text-gray-300">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Flatbeds & Mixers</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Active GPS Alerts</span>
             </div>
           </div>
           <!-- Action Card -->
-          <div class="lg:col-span-4 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-155 dark:border-slate-850 space-y-4 text-center lg:text-start">
-            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Estimated Transit Turnaround</span>
+          <div class="lg:col-span-3 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-155 dark:border-slate-850 space-y-4 text-center lg:text-start">
+            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Transit SLA</span>
             <div class="space-y-1">
-              <span class="block text-3xl font-black text-primary dark:text-white">Next-Day <span class="text-xs font-normal text-gray-500">Local Sourcing</span></span>
-              <span class="block text-sm text-blue-505 dark:text-blue-400 font-bold">Live Tracking Link Emailed</span>
+              <span class="block text-2xl font-black text-primary dark:text-white">Next-Day</span>
+              <span class="block text-xs text-blue-500 font-bold">Live Tracking Link</span>
             </div>
-            <a href="service-details.html?id=logistics" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-3 rounded-lg text-xs shadow-md transition-colors">
-              Read Logistics Specs
+            <a href="service-details.html?id=logistics" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-2.5 rounded-lg text-xs shadow-md transition-colors">
+              Read Specs
             </a>
           </div>
         </div>
 
         <!-- List Item 3: Lab QA -->
         <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4 rounded-xl overflow-hidden h-48 border border-gray-150 dark:border-slate-800 shadow-inner">
+            <img src="./assets/images/srv_qa_testing.jpg" alt="Laboratory QA Testing" class="w-full h-full object-cover">
+          </div>
           <!-- Text -->
-          <div class="lg:col-span-8 space-y-4">
+          <div class="lg:col-span-5 space-y-4">
             <div class="flex items-center gap-3">
-              <span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">LAB QUALITY</span>
+              <span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">Lab Quality</span>
               <span class="text-xs text-gray-450 font-bold"><i class="fa-solid fa-clock me-1"></i> SLA: Instant Digital MTC Certificates</span>
             </div>
             <h3 class="text-2xl font-bold font-display text-primary dark:text-white">Standard Certified Concrete & Steel Testing</h3>
             <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-              We operate independent testing laboratories staffed by licensed civil engineers. Samples of every cement batch and steel rolling undergo compressive, tensile and bending tests. MTC document files are published directly into contractor portal accounts.
+              Independent testing laboratories staffed by licensed civil engineers. Samples undergo compressive, tensile and chemical tests with instant portal certificates.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-2 text-xs text-gray-650 dark:text-gray-300">
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Compressive Test Press</span>
+            <div class="grid grid-cols-2 gap-3 pt-2 text-xs text-gray-650 dark:text-gray-300">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Compressive Press</span>
               <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Tensile Yield Testing</span>
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Chemical Grade Verification</span>
             </div>
           </div>
           <!-- Action Card -->
-          <div class="lg:col-span-4 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-150 dark:border-slate-850 space-y-4 text-center lg:text-start">
-            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Testing Certification Standards</span>
+          <div class="lg:col-span-3 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-150 dark:border-slate-850 space-y-4 text-center lg:text-start">
+            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Quality Guarantee</span>
             <div class="space-y-1">
-              <span class="block text-3xl font-black text-primary dark:text-white">100% <span class="text-xs font-normal text-gray-500">Batch Tested</span></span>
-              <span class="block text-sm text-emerald-500 font-bold">MTC Reports Dispatched</span>
+              <span class="block text-2xl font-black text-primary dark:text-white">100% Tested</span>
+              <span class="block text-xs text-emerald-500 font-bold">MTC Reports Instant</span>
             </div>
-            <a href="service-details.html?id=qa-consultation" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-3 rounded-lg text-xs shadow-md transition-colors">
-              Read Testing Specs
+            <a href="service-details.html?id=qa-consultation" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-2.5 rounded-lg text-xs shadow-md transition-colors">
+              Read Specs
+            </a>
+          </div>
+        </div>
+
+        <!-- List Item 4: Contractor Credit & CRM -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4 rounded-xl overflow-hidden h-48 border border-gray-150 dark:border-slate-800 shadow-inner">
+            <img src="./assets/images/srv_contract_credit.jpg" alt="Contractor Credit & CRM" class="w-full h-full object-cover">
+          </div>
+          <!-- Text -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="bg-purple-500 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">Credit & CRM</span>
+              <span class="text-xs text-gray-450 font-bold"><i class="fa-solid fa-clock me-1"></i> SLA: 24-Hour Credit Approval</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-primary dark:text-white">Pre-Approved B2B Contractor Credit Lines</h3>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Flexible 30 to 90-day B2B credit terms pre-approved for verified builders. Unified CRM dashboard for invoice storage and volume contract adjustments.
+            </p>
+            <div class="grid grid-cols-2 gap-3 pt-2 text-xs text-gray-650 dark:text-gray-300">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> 30-90 Day Net Terms</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Integrated CRM Portal</span>
+            </div>
+          </div>
+          <!-- Action Card -->
+          <div class="lg:col-span-3 bg-gray-50 dark:bg-slate-900 rounded-xl p-6 border border-gray-150 dark:border-slate-850 space-y-4 text-center lg:text-start">
+            <span class="block text-xs font-bold text-gray-450 uppercase tracking-wider">Credit Cap</span>
+            <div class="space-y-1">
+              <span class="block text-2xl font-black text-primary dark:text-white">Up to ₹1 Crore</span>
+              <span class="block text-xs text-purple-400 font-bold">Interest-Free Window</span>
+            </div>
+            <a href="service-details.html?id=procurement" class="block w-full text-center bg-primary hover:bg-primary-hover dark:bg-white dark:text-primary dark:hover:bg-slate-100 text-white font-bold py-2.5 rounded-lg text-xs shadow-md transition-colors">
+              Read Specs
             </a>
           </div>
         </div>
@@ -424,7 +520,7 @@
 
         <div class="lg:col-span-5 bg-slate-900/60 rounded-xl border border-white/10 p-8 text-start space-y-6">
           <h3 class="text-lg font-bold font-display text-white">Service Capabilities</h3>
-          <ul class="space-y-3 text-xs text-gray-350 text-gray-300">
+          <ul class="space-y-3 text-xs text-gray-300">
             <li class="flex items-center gap-3">
               <i class="fa-solid fa-circle-check text-accent"></i>
               <span>Turnkey cement concrete casting coordination.</span>
@@ -448,7 +544,7 @@
     </div>
   </section>
 
-    <!-- Multi-Column Footer -->
+  <!-- Multi-Column Footer -->
   <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
     <div class="w-full px-4 sm:px-8 lg:px-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">

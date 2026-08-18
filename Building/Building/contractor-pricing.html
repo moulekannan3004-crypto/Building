@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="">
 <head>
   <meta charset="UTF-8">
@@ -115,7 +115,6 @@
             <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-accent rounded-full hidden">0</span>
           </a>
 
-
         </div>
 
         <!-- Mobile Menu Toggle Button -->
@@ -138,45 +137,40 @@
       </div>
     </div>
 
-    </div></div></header>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-80 bg-white dark:bg-[#0B1220] shadow-2xl border-l border-gray-200 dark:border-[#1E293B] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-    <div class="flex items-center justify-between p-5 border-b border-gray-200 dark:border-[#1E293B]">
-      <div class="flex items-center gap-2">
-        <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
-        <span class="font-display font-extrabold text-lg text-primary dark:text-white">Build <span class="text-accent">Pro</span></span>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-150 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-150 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
       </div>
-      <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent rounded-lg border border-gray-200 dark:border-[#1E293B]" aria-label="Close Menu">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-    </div>
-    <div class="p-5 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
-      <nav class="flex flex-col gap-3">
-        <a href="index.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Home</a>
-        <a href="about.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">About</a>
-        <a href="services.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Services</a>
-        <a href="products.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Products</a>
-        <a href="pricing.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Pricing</a>
-        <a href="contractor-pricing.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-accent">Contractor Pricing</a>
-        <a href="quantity-estimator.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Estimator</a>
-        <a href="brands.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Brands & Partners</a>
-        <a href="blog.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Blog</a>
-        <a href="contact.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Contact</a>
-      </nav>
-      <div class="pt-6 border-t border-gray-200 dark:border-[#1E293B]">
-        <a href="contact.html#quote-request" class="w-full text-center block bg-accent hover:bg-accent-hover text-primary dark:text-primary font-bold py-3 rounded-lg transition-all">
-          Get Custom Quote
-        </a>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-150 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-150 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="bg-primary dark:bg-bg-dark text-white py-16 md:py-24 transition-colors duration-300 relative overflow-hidden">
-    <!-- Subtle architectural blueprint background lines -->
-    <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:16px_16px]"></div>
-    
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <span class="text-accent font-extrabold text-xs uppercase tracking-widest bg-accent/15 px-3.5 py-1.5 rounded-full">Wholesale B2B Programs</span>
       <h1 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl mt-4 tracking-tight">
@@ -279,195 +273,6 @@
         </div>
         <div class="mt-8">
           <a href="contact.html" class="w-full text-center block border border-slate-300 dark:border-slate-800 text-primary dark:text-white hover:border-accent dark:hover:border-accent text-xs font-bold py-2.5 rounded-xl transition-all">
-            Unlock Silver
-          </a>
-        </div>
-      </div>
-
-      <!-- Tier 3: Gold -->
-      <div class="bg-white dark:bg-[#0B1220] border-2 border-accent rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300 shadow-lg">
-        <span class="absolute top-0 right-0 bg-accent text-primary font-extrabold text-[9px] uppercase px-3 py-1 rounded-bl-xl tracking-wider">Most Popular</span>
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-bold text-accent uppercase tracking-widest">Tier 03</span>
-            <i class="fa-solid fa-medal text-2xl text-accent"></i>
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-primary dark:text-white">Gold Partner</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Established commercial builders</p>
-          
-          <div class="my-5 py-3 border-y border-gray-100 dark:border-[#1E293B]">
-            <div class="flex justify-between items-center text-xs">
-              <span class="text-gray-400">Min. Vol (Monthly)</span>
-              <span class="font-bold text-primary dark:text-white">200 Units</span>
-            </div>
-            <div class="flex justify-between items-center text-xs mt-2">
-              <span class="text-gray-400">Standard Discount</span>
-              <span class="font-bold text-green-500">15% Off Base</span>
-            </div>
-            <div class="flex justify-between items-center text-xs mt-2">
-              <span class="text-gray-400">Delivery Speed</span>
-              <span class="font-bold text-accent">Next-Day Delivery</span>
-            </div>
-          </div>
-          
-          <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-400">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Free next-day delivery</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Guaranteed stock reservation</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Credit limits up to $50,000</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Dedicated account rep</li>
-          </ul>
-        </div>
-        <div class="mt-8">
-          <a href="contact.html" class="w-full text-center block bg-accent hover:bg-accent-hover text-primary font-extrabold text-xs py-2.5 rounded-xl transition-all shadow-md">
-            Become Gold Partner
-          </a>
-        </div>
-      </div>
-
-      <!-- Tier 4: Enterprise -->
-      <div class="bg-primary dark:bg-[#060A12] border border-gray-800 dark:border-[#1E293B] rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300 text-white">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Tier 04</span>
-            <i class="fa-solid fa-crown text-2xl text-accent"></i>
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-white">Enterprise / Platinum</h3>
-          <p class="text-xs text-gray-400 mt-1">Multi-site developers & infra</p>
-          
-          <div class="my-5 py-3 border-y border-gray-800">
-            <div class="flex justify-between items-center text-xs">
-              <span class="text-gray-400">Min. Vol (Monthly)</span>
-              <span class="font-bold text-white">500+ Units</span>
-            </div>
-            <div class="flex justify-between items-center text-xs mt-2">
-              <span class="text-gray-400">Standard Discount</span>
-              <span class="font-bold text-green-400">20% Off Base</span>
-            </div>
-            <div class="flex justify-between items-center text-xs mt-2">
-              <span class="text-gray-400">Delivery Speed</span>
-              <span class="font-bold text-accent">Scheduled Fleet (Same-day)</span>
-            </div>
-          </div>
-          
-          <ul class="space-y-2 text-xs text-gray-300">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> Custom factory-direct transit</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> Interest-free credit (60-day)</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> On-site logistics integration</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> Tailored API integrations</li>
-          </ul>
-        </div>
-        <div class="mt-8">
-          <a href="contact.html" class="w-full text-center block bg-white hover:bg-accent text-primary hover:text-primary font-bold text-xs py-2.5 rounded-xl transition-all">
-            Contact Enterprise Sales
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Interactive Volume Discount Calculator Section -->
-    <section id="calculator" class="mt-16 md:mt-24 bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-3xl p-6 md:p-10 transition-colors duration-300 shadow-md">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left: Form Controls -->
-        <div class="lg:col-span-7">
-          <span class="text-xs font-bold text-accent uppercase tracking-wider block mb-1">Interactive Price Tool</span>
-          <h2 class="font-display font-extrabold text-2xl md:text-3xl text-primary dark:text-white leading-tight">
-            Volume Discount Calculator
-          </h2>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-lg">
-            Select a material type and drag the volume range slider to simulate how your volume tier increases and reduces unit prices.
-          </p>
-
-          <form class="mt-8 space-y-6">
-            <!-- Material Select Dropdown (split value parsing matches app.js) -->
-            <div>
-              <label for="calc-material" class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">1. Select Material & Price Unit</label>
-              <select id="calc-material" class="w-full max-w-md px-4 py-3 bg-gray-50 dark:bg-[#141E33] border border-gray-200 dark:border-[#1E293B] rounded-xl text-primary dark:text-white focus:outline-none focus:border-accent text-sm font-semibold transition-colors">
-                <option value="9.50">OPC Cement Bag (50kg) - $9.50</option>
-                <option value="8.20">PPC Eco Cement Bag (50kg) - $8.20</option>
-                <option value="65.00">TMT Steel Bars (12mm bundle) - $65.00</option>
-                <option value="120.00">Structural Steel I-Beam (meter) - $120.00</option>
-                <option value="0.45">Red Clay Bricks (Class I piece) - $0.45</option>
-                <option value="0.60">Fly Ash Bricks (Premium piece) - $0.60</option>
-                <option value="14.50">Vitrified Floor Tiles (box) - $14.50</option>
-                <option value="11.20">Ceramic Wall Tiles (box) - $11.20</option>
-                <option value="45.00">Marine Grade Plywood (18mm sheet) - $45.00</option>
-              </select>
-            </div>
-
-            <!-- Volume Slider -->
-            <div>
-              <div class="flex justify-between items-center max-w-md mb-2">
-                <label for="calc-volume" class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">2. Volume Required</label>
-                <span class="text-sm font-bold text-accent"><span id="volume-val" class="font-extrabold text-lg">10</span> Units</span>
-              </div>
-              <input type="range" id="calc-volume" min="1" max="1000" value="10" class="w-full max-w-md accent-accent bg-gray-200 dark:bg-gray-700 h-2 rounded-lg appearance-none cursor-pointer" />
-              <div class="flex justify-between max-w-md text-[10px] text-gray-400 mt-2 font-bold uppercase tracking-wider">
-                <span>1 Unit (Bronze)</span>
-                <span>50 Units (Silver)</span>
-                <span>200 Units (Gold)</span>
-                <span>500+ Units (Enterprise)</span>
-              </div>
-            </div>
-
-            <!-- Calculate trigger button (binds listener in app.js) -->
-            <button id="btn-calc-price" class="bg-primary hover:bg-primary-hover dark:bg-accent dark:hover:bg-accent-hover text-white dark:text-primary font-bold px-6 py-3.5 rounded-xl text-xs tracking-wider uppercase transition-all shadow-md hover-lift">
-              <i class="fa-solid fa-calculator me-1.5"></i> Run Estimate Calculation
-            </button>
-          </form>
-        </div>
-
-        <!-- Right: Results Panel -->
-        <div class="lg:col-span-5 bg-gray-50 dark:bg-[#141E33]/65 border border-gray-200 dark:border-[#1E293B] rounded-3xl p-6 md:p-8 transition-colors duration-300">
-          <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wider border-b border-gray-200 dark:border-[#1E293B] pb-3">
-            Estimated Quotation Breakdown
-          </h3>
-
-          <div class="mt-6 space-y-4">
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-gray-500 dark:text-gray-400">Total Quantity Selected</span>
-              <span class="font-bold text-primary dark:text-white"><span id="calc-qty-display">10</span> Units</span>
-            </div>
-            
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-gray-500 dark:text-gray-400">Qualified Pricing Tier</span>
-              <span id="calc-tier" class="font-bold text-accent bg-accent/10 px-2 py-0.5 rounded text-xs">Bronze Starter</span>
-            </div>
-
-            <div class="flex justify-between items-center text-sm pt-4 border-t border-gray-200 dark:border-[#1E293B]">
-              <span class="text-gray-500 dark:text-gray-400">Base Cost (Standard Rates)</span>
-              <span id="calc-base" class="font-bold text-primary dark:text-white">$95.00</span>
-            </div>
-
-            <div class="flex justify-between items-center text-sm text-green-500">
-              <span>Volume Discount Deduction</span>
-              <span id="calc-discount" class="font-bold">-$0.00 (0%)</span>
-            </div>
-
-            <div class="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-[#1E293B]">
-              <span class="text-base font-bold text-primary dark:text-white">Estimated Custom Total</span>
-              <span id="calc-final" class="font-display font-extrabold text-2xl text-green-500">$95.00</span>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-gray-200 dark:border-[#1E293B] text-center">
-            <button onclick="addEstimateToQuote()" class="w-full bg-accent hover:bg-accent-hover text-primary font-bold py-3.5 rounded-xl text-xs tracking-wider uppercase transition-all shadow-md hover-lift">
-              Add Calculated items to Quote
-            </button>
-            <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-2.5">
-              Subject to location logistics fee and local sales taxes.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Sticky Premium Footer -->
-  <footer class="bg-primary dark:bg-bg-dark text-gray-300 border-t border-gray-800 dark:border-border-dark transition-colors duration-300 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
         <!-- Company summary -->

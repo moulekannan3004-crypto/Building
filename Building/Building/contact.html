@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -466,6 +466,201 @@
             </button>
             <div class="accordion-content">
               <div class="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-border-dark pt-3">
+              Email Branch <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Map Mockup and Bulk Order Form Split Section -->
+    <section class="py-12 bg-white dark:bg-[#0B1220] border-t border-gray-200 dark:border-border-dark transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Bulk Order / Query Form (lg:col-span-6) -->
+          <div class="lg:col-span-6 bg-gray-50 dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 sm:p-8 shadow-sm">
+            <h3 class="font-display font-extrabold text-2xl text-primary dark:text-white mb-2">Request Bulk Estimates</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-6">Complete the project specs below and our commercial sales desk will response with a full pro-forma quote within 3 hours.</p>
+            
+            <form action="#" method="POST" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Full Name</label>
+                  <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Company Name</label>
+                  <input type="text" required placeholder="BuildPro Contractors" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Business Email</label>
+                  <input type="email" required placeholder="j.doe@company.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Corporate Phone</label>
+                  <input type="tel" required placeholder="+1 (555) 012-3456" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Project Zip Code</label>
+                  <input type="text" required placeholder="77002" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Material Category</label>
+                  <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white">
+                    <option>Cement / Ready Mix</option>
+                    <option>Structural Steel</option>
+                    <option>Masonry Bricks &amp; AAC</option>
+                    <option>Finishing Floor Tiles</option>
+                    <option>Bulk Plywood &amp; Lumber</option>
+                    <option>Other / Multi-Material</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Quantity Details &amp; Specifications</label>
+                <textarea rows="4" required placeholder="e.g. 50 Tons of OPC Cement, Grade 53. Requesting scheduling split across two deliveries on Sep 12 &amp; 19." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-white dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white"></textarea>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <input type="checkbox" id="nda" class="rounded border-gray-300 dark:border-border-dark text-accent focus:ring-accent" />
+                <label for="nda" class="text-xs text-gray-500 dark:text-gray-400">Request formal Non-Disclosure Agreement (NDA)</label>
+              </div>
+
+              <button type="submit" class="w-full py-3 bg-accent hover:bg-accent-hover text-primary font-bold text-sm rounded-lg transition-colors shadow-sm">
+                Submit Request <i class="fa-solid fa-paper-plane ms-1.5"></i>
+              </button>
+            </form>
+
+          </div>
+
+          <!-- Live Interactive Map Section (lg:col-span-6) -->
+          <div class="lg:col-span-6 flex flex-col justify-between h-full space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-start">
+              <div>
+                <h3 class="font-display font-extrabold text-2xl text-primary dark:text-white">Interactive Distribution Map</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Select a distribution hub below to view live map location &amp; directions.</p>
+              </div>
+              
+              <!-- Branch Switcher Buttons -->
+              <div class="flex items-center gap-1.5 bg-gray-100 dark:bg-slate-800/80 p-1 rounded-xl border border-gray-200 dark:border-slate-700 self-start sm:self-auto">
+                <button type="button" onclick="switchMapBranch('houston', this)" class="branch-map-btn px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-accent text-primary shadow-sm">
+                  Houston HQ
+                </button>
+                <button type="button" onclick="switchMapBranch('chicago', this)" class="branch-map-btn px-3 py-1.5 text-xs font-bold text-gray-600 dark:text-gray-300 hover:text-accent rounded-lg transition-all">
+                  Chicago
+                </button>
+                <button type="button" onclick="switchMapBranch('phoenix', this)" class="branch-map-btn px-3 py-1.5 text-xs font-bold text-gray-600 dark:text-gray-300 hover:text-accent rounded-lg transition-all">
+                  Phoenix
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Google Map Iframe -->
+            <div class="relative bg-gray-100 dark:bg-[#090D16] border border-gray-200 dark:border-slate-800 rounded-2xl h-[450px] overflow-hidden shadow-lg group">
+              <iframe id="contact-google-map"
+                src="https://maps.google.com/maps?q=1000+Industrial+Pkwy,+Houston,+TX+77002&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="BuildPro Headquarters & Distribution Map"
+                class="w-full h-full rounded-2xl">
+              </iframe>
+
+              <!-- Map Overlay Badge -->
+              <div class="absolute bottom-4 start-4 z-10 bg-primary/95 text-white backdrop-blur-md px-4 py-3 rounded-xl border border-white/10 shadow-xl flex items-center gap-3 text-xs text-start pointer-events-none">
+                <div class="w-8 h-8 rounded-lg bg-accent/20 text-accent flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span id="map-branch-title" class="font-bold block text-white">Houston Corporate HQ</span>
+                  <span id="map-branch-addr" class="text-[11px] text-gray-300 block">1000 Industrial Pkwy, Houston, TX 77002</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchMapBranch(branch, btn) {
+              const mapIframe = document.getElementById('contact-google-map');
+              const titleEl = document.getElementById('map-branch-title');
+              const addrEl = document.getElementById('map-branch-addr');
+              
+              document.querySelectorAll('.branch-map-btn').forEach(b => {
+                b.classList.remove('bg-accent', 'text-primary', 'shadow-sm');
+                b.classList.add('text-gray-600', 'dark:text-gray-300');
+              });
+
+              btn.classList.add('bg-accent', 'text-primary', 'shadow-sm');
+              btn.classList.remove('text-gray-600', 'dark:text-gray-300');
+
+              if (branch === 'houston') {
+                mapIframe.src = "https://maps.google.com/maps?q=1000+Industrial+Pkwy,+Houston,+TX+77002&t=&z=13&ie=UTF8&iwloc=&output=embed";
+                if (titleEl) titleEl.textContent = "Houston Corporate HQ";
+                if (addrEl) addrEl.textContent = "1000 Industrial Pkwy, Houston, TX 77002";
+              } else if (branch === 'chicago') {
+                mapIframe.src = "https://maps.google.com/maps?q=2400+Logistics+Way,+Chicago,+IL+60608&t=&z=13&ie=UTF8&iwloc=&output=embed";
+                if (titleEl) titleEl.textContent = "Chicago Distribution Hub";
+                if (addrEl) addrEl.textContent = "2400 Logistics Way, Chicago, IL 60608";
+              } else if (branch === 'phoenix') {
+                mapIframe.src = "https://maps.google.com/maps?q=480+Sun+Valley+Blvd,+Tempe,+AZ+85281&t=&z=13&ie=UTF8&iwloc=&output=embed";
+                if (titleEl) titleEl.textContent = "Phoenix Regional Office";
+                if (addrEl) addrEl.textContent = "480 Sun Valley Blvd, Tempe, AZ 85281";
+              }
+            }
+          </script>
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Accordion section -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-[#090D16] border-t border-gray-200 dark:border-border-dark transition-colors duration-300" id="faqs">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-display font-extrabold text-primary dark:text-white">Frequently Asked Questions</h2>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Answers to common B2B wholesale order and delivery inquiries.</p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden shadow-sm">
+            <button class="accordion-header w-full px-6 py-4 flex justify-between items-center text-start text-base font-semibold text-primary dark:text-white hover:text-accent focus:outline-none">
+              <span>What is the Minimum Order Quantity (MOQ) for bulk shipments?</span>
+              <span class="accordion-icon transition-transform duration-300 text-gray-400"><i class="fa-solid fa-chevron-down text-sm"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-border-dark pt-3">
+                MOQs vary by material category. Bulk Portland Cement has a standard MOQ of 10 Tons. Structural steel rebars and beams have an MOQ of 5 Tons. Ceramic finishing tiles have an MOQ of 50 boxes. For orders below these sizes, standard commercial distribution rates apply.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden shadow-sm">
+            <button class="accordion-header w-full px-6 py-4 flex justify-between items-center text-start text-base font-semibold text-primary dark:text-white hover:text-accent focus:outline-none">
+              <span>How do you handle freight scheduling and on-site unloading?</span>
+              <span class="accordion-icon transition-transform duration-300 text-gray-400"><i class="fa-solid fa-chevron-down text-sm"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-border-dark pt-3">
                 All bulk deliveries are coordinated via our centralized logistics portal. Freight rates include standard curbside drop-off. If your job site requires flatbed crane unloading, off-site boom pumps, or split delivery schedules, select these features during checkout or indicate them in your bulk estimate request.
               </div>
             </div>
@@ -479,7 +674,7 @@
             </button>
             <div class="accordion-content">
               <div class="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-border-dark pt-3">
-                Yes, qualified corporate buyers and licensed general contractors can apply for credit options. Applications are submitted via the member dashboard. Approvals typically take 2-4 business days, granting limits of up to $250,000 with Net-15, Net-30, or Net-60 settlement structures.
+                Yes, qualified corporate buyers and licensed general contractors can apply for credit options. Applications are submitted via the member dashboard. Approvals typically take 2-4 business days, granting limits of up to ₹2,50,00,000 with Net-15, Net-30, or Net-60 settlement structures.
               </div>
             </div>
           </div>

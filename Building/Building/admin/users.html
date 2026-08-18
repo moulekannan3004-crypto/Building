@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Contractors & Users | Construction & Building Materials</title>
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Manage contractors, client accounts, B2B verification status, and credentials.">
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Custom JS -->
+  <script src="../assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+</head>
+<body class="bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F9FAFB]">
+  <div class="min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 start-0 z-30 w-64 bg-primary text-white border-e border-slate-800 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full lg:translate-x-0 lg:rtl:translate-x-0 transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Logo -->
+        <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+          <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg text-white">
+            <i class="fa-solid fa-hard-hat text-accent"></i>
+            <span>BuildPro <span class="text-accent text-sm font-semibold">Admin</span></span>
+          </a>
+          <button id="sidebar-close" class="lg:hidden text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        
+        <!-- Sidebar Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+          <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-line text-lg w-5 text-center"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="users.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-accent text-primary font-semibold transition-colors">
+            <i class="fa-solid fa-users text-lg w-5 text-center"></i>
+            <span>Contractors / Users</span>
+          </a>
+          <a href="orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-truck-ramp-box text-lg w-5 text-center"></i>
+            <span>Orders Tracker</span>
+          </a>
+          <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-envelope text-lg w-5 text-center"></i>
+            <span>Messages Inbox</span>
+          </a>
+          <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-pie text-lg w-5 text-center"></i>
+            <span>Detailed Analytics</span>
+          </a>
+          <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-sliders text-lg w-5 text-center"></i>
+            <span>System Settings</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 px-2 py-1.5 rounded-lg bg-slate-900/50">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-slate-700">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white truncate">Alexander Pierce</p>
+            <p class="text-xs text-slate-400 truncate">Super Admin</p>
+          </div>
+          <a href="settings.html" class="text-slate-400 hover:text-white">
+            <i class="fa-solid fa-cog"></i>
+          </a>
+        </div>
+        
+        <!-- Toggle buttons -->
+        <div class="flex items-center justify-between gap-2">
+          <button class="theme-toggle-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
+            <span class="moon-icon flex items-center gap-2"><i class="fa-solid fa-moon"></i> Dark</span>
+            <span class="sun-icon hidden flex items-center gap-2"><i class="fa-solid fa-sun"></i> Light</span>
+          </button>
+          <button class="rtl-toggle-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+            RTL
+          </button>
+        </div>
+        
+        <a href="../products.html" class="flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-accent transition-colors py-1.5 w-full text-center">
+          <i class="fa-solid fa-arrow-left-long rtl-flip"></i>
+          <span>Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="lg:ps-64 flex flex-col flex-1 min-w-0 transition-all duration-300">
+      
+      <!-- Topbar -->
+      <header class="h-16 bg-white dark:bg-[#0B1220] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+          <button id="sidebar-open" class="lg:hidden text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+          <h1 class="text-xl font-display font-bold text-slate-800 dark:text-white">Manage Contractors</h1>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="relative hidden md:block w-64">
+            <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" placeholder="Quick search..." class="w-full ps-9 pe-4 py-1.5 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+          </div>
+          
+          <div class="relative">
+            <button class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <i class="fa-solid fa-bell"></i>
+              <span class="absolute top-1.5 end-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <span class="hidden sm:inline text-sm font-semibold text-slate-700 dark:text-slate-300">Alex P.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 space-y-6">
+        
+        <!-- Controls & Filters -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-[#0B1220] p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <!-- Search field -->
+            <div class="relative w-full sm:w-60">
+              <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+              </span>
+              <input type="text" placeholder="Search contractor name..." class="w-full ps-8 pe-4 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+            </div>
+            
+            <!-- Tier Filter -->
+            <select class="py-1.5 px-3 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+              <option value="">All Tiers</option>
+              <option value="gold">Gold Partner</option>
+              <option value="silver">Silver Contractor</option>
+              <option value="bronze">Bronze Starter</option>
+            </select>
+
+            <!-- Status Filter -->
+            <select class="py-1.5 px-3 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+              <option value="">All Statuses</option>
+              <option value="active">Active</option>
+              <option value="pending">Pending</option>
+              <option value="suspended">Suspended</option>
+            </select>
+          </div>
+
+          <!-- Add User button -->
+          <button class="open-modal w-full sm:w-auto bg-accent hover:bg-accent-hover text-primary font-bold px-4 py-2 rounded-lg text-xs flex items-center justify-center gap-2 shadow-sm transition-colors" data-modal="add-user-modal">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Add Contractor</span>
+          </button>
+        </div>
+
+        <!-- Accounts Grid/Table -->
+        <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+          <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Contractor Base</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Verifying and tracking wholesale contractor credentials.</p>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-start text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-900/50">
+                  <th class="text-start py-3 px-6 font-semibold">Contractor Info</th>
+                  <th class="text-start py-3 px-6 font-semibold">Company</th>
+                  <th class="text-start py-3 px-6 font-semibold">Partnership Tier</th>
+                  <th class="text-start py-3 px-6 font-semibold">Verification Status</th>
+                  <th class="text-start py-3 px-6 font-semibold">Total Orders</th>
+                  <th class="text-end py-3 px-6 font-semibold">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-150 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <!-- Row 1 -->
+                <tr>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center font-bold text-sm">
+                        JD
+                      </div>
+                      <div>
+                        <p class="font-semibold text-slate-900 dark:text-white">John Doe</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">john.doe@apexbuilders.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 font-semibold text-slate-800 dark:text-slate-200">Apex Builders Ltd.</td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-400">
+                      <i class="fa-solid fa-medal"></i>Gold Partner
+                    </span>
+                  </td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400">
+                      <span class="w-1 h-1 rounded-full bg-emerald-500"></span>Active
+                    </span>
+                  </td>
+                  <td class="py-4 px-6 font-semibold">48 Orders</td>
+                  <td class="py-4 px-6 text-end space-x-2">
+                    <button class="text-xs text-slate-500 hover:text-accent font-semibold"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="text-xs text-slate-500 hover:text-red-500 font-semibold"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center font-bold text-sm">
+                        JS
+                      </div>
+                      <div>
+                        <p class="font-semibold text-slate-900 dark:text-white">Jane Smith</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">info@metrofoundations.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 font-semibold text-slate-800 dark:text-slate-200">Metro Foundations</td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
+                      <i class="fa-solid fa-medal text-slate-400"></i>Silver Contractor
+                    </span>
+                  </td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400">
+                      <span class="w-1 h-1 rounded-full bg-emerald-500"></span>Active
+                    </span>
+                  </td>
+                  <td class="py-4 px-6 font-semibold">12 Orders</td>
+                  <td class="py-4 px-6 text-end space-x-2">
+                    <button class="text-xs text-slate-500 hover:text-accent font-semibold"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="text-xs text-slate-500 hover:text-red-500 font-semibold"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center font-bold text-sm">
+                        RJ
+                      </div>
+                      <div>
+                        <p class="font-semibold text-slate-900 dark:text-white">Robert Johnson</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">contact@primebricks.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 font-semibold text-slate-800 dark:text-slate-200">Prime Bricklayers Co.</td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-905 dark:bg-orange-950/40 dark:text-orange-400">
+                      <i class="fa-solid fa-medal"></i>Bronze Starter
+                    </span>
+                  </td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/30 dark:text-amber-400">
+                      <span class="w-1 h-1 rounded-full bg-amber-500"></span>Pending Verification
+                    </span>
+                  </td>
+                  <td class="py-4 px-6 font-semibold">2 Orders</td>
+                  <td class="py-4 px-6 text-end space-x-2">
+                    <button class="text-xs text-slate-500 hover:text-accent font-semibold"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="text-xs text-slate-500 hover:text-red-500 font-semibold"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+
+                <!-- Row 4 -->
+                <tr>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center font-bold text-sm">
+                        ED
+                      </div>
+                      <div>
+                        <p class="font-semibold text-slate-900 dark:text-white">Emily Davis</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">emily@vertexarch.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 font-semibold text-slate-800 dark:text-slate-200">Vertex Architecture</td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-400">
+                      <i class="fa-solid fa-medal"></i>Gold Partner
+                    </span>
+                  </td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400">
+                      <span class="w-1 h-1 rounded-full bg-emerald-500"></span>Active
+                    </span>
+                  </td>
+                  <td class="py-4 px-6 font-semibold">18 Orders</td>
+                  <td class="py-4 px-6 text-end space-x-2">
+                    <button class="text-xs text-slate-500 hover:text-accent font-semibold"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="text-xs text-slate-500 hover:text-red-500 font-semibold"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+
+                <!-- Row 5 -->
+                <tr>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center font-bold text-sm">
+                        MB
+                      </div>
+                      <div>
+                        <p class="font-semibold text-slate-900 dark:text-white">Michael Brown</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">mb@eliteconcrete.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 font-semibold text-slate-800 dark:text-slate-200">Elite Concrete Inc.</td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
+                      <i class="fa-solid fa-medal text-slate-400"></i>Silver Contractor
+                    </span>
+                  </td>
+                  <td class="py-4 px-6">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-950/30 dark:text-rose-400">
+                      <span class="w-1 h-1 rounded-full bg-rose-500"></span>Suspended
+                    </span>
+                  </td>
+                  <td class="py-4 px-6 font-semibold">0 Orders</td>
+                  <td class="py-4 px-6 text-end space-x-2">
+                    <button class="text-xs text-slate-500 hover:text-accent font-semibold"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="text-xs text-slate-500 hover:text-red-500 font-semibold"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-550 dark:text-slate-400">
+            <p>Showing 1 to 5 of 24 Contractors</p>
+            <div class="flex items-center gap-1">
+              <button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900 disabled:opacity-50" disabled><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="px-3 py-1.5 border border-accent bg-accent/10 text-accent rounded-lg font-bold">1</button>
+              <button class="px-3 py-1.5 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">2</button>
+              <button class="px-3 py-1.5 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">3</button>
+              <button class="p-2 border border-slate-200 dark:border-slate-800 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-[#0B1220] border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>&copy; 2026 BuildPro Admin Panel. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="settings.html" class="hover:text-accent">Privacy Policy</a>
+            <a href="settings.html" class="hover:text-accent">Terms of Service</a>
+            <a href="../products.html" class="hover:text-accent">Support Desk</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Add User Modal Overlay -->
+  <div id="add-user-modal" class="modal-overlay hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm justify-center items-center p-4">
+    <div class="bg-white dark:bg-[#0B1220] rounded-2xl w-full max-w-lg shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[90vh]">
+      <!-- Header -->
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Add B2B Contractor</h3>
+        <button class="close-modal text-slate-400 hover:text-slate-600 dark:hover:text-white">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      
+      <!-- Content Form -->
+      <form class="p-6 overflow-y-auto space-y-4 flex-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">Representative Name</label>
+            <input type="text" placeholder="Johnathan Doe" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+          </div>
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">Company Name</label>
+            <input type="text" placeholder="Apex Builders Ltd." class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">Email Address</label>
+          <input type="email" placeholder="john.doe@company.com" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">Contractor Tier</label>
+            <select class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+              <option value="bronze">Bronze Starter</option>
+              <option value="silver">Silver Contractor</option>
+              <option value="gold">Gold Partner</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">Verification Status</label>
+            <select class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+              <option value="pending">Pending Verification</option>
+              <option value="active">Active / Approved</option>
+              <option value="suspended">Suspended</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-xs font-semibold text-slate-600 dark:text-slate-400">License/Registration Document Link</label>
+          <input type="url" placeholder="https://..." class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+        </div>
+      </form>
+
+      <!-- Footer Buttons -->
+      <div class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-end gap-3 bg-slate-50 dark:bg-slate-900/40 rounded-b-2xl">
+        <button class="close-modal px-4 py-2 text-slate-650 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-850 rounded-lg text-xs font-semibold transition-colors">Cancel</button>
+        <button type="button" class="close-modal bg-accent hover:bg-accent-hover text-primary font-bold px-4 py-2 rounded-lg text-xs transition-colors">Save Contractor</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sidebar Overlay Click Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      
+      if (sidebarOpen && sidebar) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+          sidebar.classList.add('translate-x-0');
+        });
+      }
+      
+      if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+          sidebar.classList.remove('translate-x-0');
+          sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* BuildPro Global Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #0B1220;
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --bg-light: #F9FAFB;
+  --surface-light: #FFFFFF;
+  --text-light: #1F2937;
+  --muted-light: #6B7280;
+  --border-light: #E5E7EB;
+
+  --bg-dark: #090D16;
+  --surface-dark: #0B1220;
+  --text-dark: #F9FAFB;
+  --muted-dark: #9CA3AF;
+  --border-dark: #1E293B;
+
+  --transition-speed: 0.3s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Base resets & fonts */
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.8); }
+}
+.animate-glow {
+  animation: pulseGlow 3s infinite;
+}
+
+/* Scale-on-hover utility */
+.hover-lift {
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+.dark .hover-lift:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium Modern Unique Navbar Link Styling */
+.nav-link, .dropdown-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 0.625rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  letter-spacing: 0.015em;
+  color: #374151;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+
+.dark .nav-link, .dark .dropdown-trigger {
+  color: #E2E8F0;
+}
+
+.nav-link:hover, .dropdown-trigger:hover,
+.nav-link.active, .dropdown-trigger.active {
+  color: #D97706;
+  background-color: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.2);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .nav-link:hover, .dark .dropdown-trigger:hover,
+.dark .nav-link.active, .dark .dropdown-trigger.active {
+  color: #F59E0B;
+  background-color: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
+}
+
+/* Floating Gradient Glowing Underline Accent */
+.nav-link::after, .dropdown-trigger::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+}
+
+.nav-link:hover::after, .dropdown-trigger:hover::after,
+.nav-link.active::after, .dropdown-trigger.active::after {
+  width: 60%;
+}
+
+[dir="rtl"] .nav-link::after, [dir="rtl"] .dropdown-trigger::after {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+
+/* Utility to override RTL rotation icon */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Accordion transition utility */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion-content.open {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Glassmorphism background */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.dark .glass {
+  background: rgba(11, 18, 32, 0.7);
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Detailed Analytics | Construction & Building Materials</title>
+  <!-- SEO & Metadata -->
+  <meta name="description" content="View comprehensive sales charts, material demand stats, client engagement, and revenue reports.">
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Custom JS -->
+  <script src="../assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+</head>
+<body class="bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F9FAFB]">
+  <div class="min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 start-0 z-30 w-64 bg-primary text-white border-e border-slate-800 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full lg:translate-x-0 lg:rtl:translate-x-0 transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Logo -->
+        <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+          <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg text-white">
+            <i class="fa-solid fa-hard-hat text-accent"></i>
+            <span>BuildPro <span class="text-accent text-sm font-semibold">Admin</span></span>
+          </a>
+          <button id="sidebar-close" class="lg:hidden text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        
+        <!-- Sidebar Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+          <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-line text-lg w-5 text-center"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="users.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-users text-lg w-5 text-center"></i>
+            <span>Contractors / Users</span>
+          </a>
+          <a href="orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-truck-ramp-box text-lg w-5 text-center"></i>
+            <span>Orders Tracker</span>
+          </a>
+          <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-envelope text-lg w-5 text-center"></i>
+            <span>Messages Inbox</span>
+          </a>
+          <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-accent text-primary font-semibold transition-colors">
+            <i class="fa-solid fa-chart-pie text-lg w-5 text-center"></i>
+            <span>Detailed Analytics</span>
+          </a>
+          <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-sliders text-lg w-5 text-center"></i>
+            <span>System Settings</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 px-2 py-1.5 rounded-lg bg-slate-900/50">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-slate-700">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white truncate">Alexander Pierce</p>
+            <p class="text-xs text-slate-400 truncate">Super Admin</p>
+          </div>
+          <a href="settings.html" class="text-slate-400 hover:text-white">
+            <i class="fa-solid fa-cog"></i>
+          </a>
+        </div>
+        
+        <!-- Toggle buttons -->
+        <div class="flex items-center justify-between gap-2">
+          <button class="theme-toggle-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
+            <span class="moon-icon flex items-center gap-2"><i class="fa-solid fa-moon"></i> Dark</span>
+            <span class="sun-icon hidden flex items-center gap-2"><i class="fa-solid fa-sun"></i> Light</span>
+          </button>
+          <button class="rtl-toggle-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+            RTL
+          </button>
+        </div>
+        
+        <a href="../products.html" class="flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-accent transition-colors py-1.5 w-full text-center">
+          <i class="fa-solid fa-arrow-left-long rtl-flip"></i>
+          <span>Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="lg:ps-64 flex flex-col flex-1 min-w-0 transition-all duration-300">
+      
+      <!-- Topbar -->
+      <header class="h-16 bg-white dark:bg-[#0B1220] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+          <button id="sidebar-open" class="lg:hidden text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+          <h1 class="text-xl font-display font-bold text-slate-800 dark:text-white">Analytics Intelligence</h1>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="relative hidden md:block w-64">
+            <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" placeholder="Search analytics..." class="w-full ps-9 pe-4 py-1.5 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+          </div>
+          
+          <div class="relative">
+            <button class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <i class="fa-solid fa-bell"></i>
+              <span class="absolute top-1.5 end-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <span class="hidden sm:inline text-sm font-semibold text-slate-700 dark:text-slate-300">Alex P.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 space-y-6">
+        
+        <!-- Performance Summaries -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Stat 1 -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Average Order Value (AOV)</p>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-display font-bold text-slate-900 dark:text-white">$3,420</span>
+              <span class="text-xs text-emerald-500 font-semibold flex items-center gap-0.5"><i class="fa-solid fa-caret-up"></i>+4.2%</span>
+            </div>
+            <p class="text-[10px] text-slate-450">Average spending per B2B cargo order.</p>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Lead Quote Conversion</p>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-display font-bold text-slate-900 dark:text-white">3.8%</span>
+              <span class="text-xs text-emerald-500 font-semibold flex items-center gap-0.5"><i class="fa-solid fa-caret-up"></i>+1.1%</span>
+            </div>
+            <p class="text-[10px] text-slate-450">Percentage of estimators who buy wholesale.</p>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Contractor Acquisition (CAC)</p>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-display font-bold text-slate-900 dark:text-white">$120</span>
+              <span class="text-xs text-emerald-500 font-semibold flex items-center gap-0.5"><i class="fa-solid fa-caret-down"></i>-8.0%</span>
+            </div>
+            <p class="text-[10px] text-slate-450">Average budget spent to onboard a B2B partner.</p>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Monthly Active Clients</p>
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-display font-bold text-slate-900 dark:text-white">840</span>
+              <span class="text-xs text-emerald-500 font-semibold flex items-center gap-0.5"><i class="fa-solid fa-caret-up"></i>+14.0%</span>
+            </div>
+            <p class="text-[10px] text-slate-450">Contractors placing orders in the last 30 days.</p>
+          </div>
+        </div>
+
+        <!-- Charts Grid 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Detailed Revenue Trend (2 Cols) -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 lg:col-span-2">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Growth & Forecasts</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Quarterly progression values with predictive estimates</p>
+              </div>
+              <select class="py-1 px-2.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
+                <option>Last 12 Months</option>
+                <option>Previous Year</option>
+              </select>
+            </div>
+            <div class="h-80 w-full relative">
+              <canvas id="revenueTrendChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Category Distribution (1 Col) -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div>
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Category Sales Share</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Revenue split across material classes</p>
+            </div>
+            <div class="h-64 w-full relative flex items-center justify-center">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Charts Grid 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Contractor Tier breakdown -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div>
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Partnership Tier Volume</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Contractor accounts grouped by tier classification</p>
+            </div>
+            <div class="h-64 w-full relative flex items-center justify-center">
+              <canvas id="tierChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Regional Demand radar -->
+          <div class="bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div>
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Territory Material Demand</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Regional sales volumes grouped by geographic zones</p>
+            </div>
+            <div class="h-64 w-full relative flex items-center justify-center">
+              <canvas id="demandChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Top Selling Materials Table -->
+        <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+          <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Best Performing Materials</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Breakdown of inventory item sales rates.</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-start text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-900/50">
+                  <th class="text-start py-3 px-6 font-semibold">Rank</th>
+                  <th class="text-start py-3 px-6 font-semibold">Material Product</th>
+                  <th class="text-start py-3 px-6 font-semibold">Units Dispatched</th>
+                  <th class="text-start py-3 px-6 font-semibold">Total Revenue Generated</th>
+                  <th class="text-end py-3 px-6 font-semibold">Growth Progression</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-150 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                <tr>
+                  <td class="py-3.5 px-6 font-bold">1</td>
+                  <td class="py-3.5 px-6 font-semibold text-slate-950 dark:text-white">Reinforced Steel TMT bars</td>
+                  <td class="py-3.5 px-6">180 Tons</td>
+                  <td class="py-3.5 px-6 font-semibold">$129,600.00</td>
+                  <td class="py-3.5 px-6 text-end text-emerald-500 font-semibold"><i class="fa-solid fa-arrow-trend-up me-1"></i>+15.2%</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-6 font-bold">2</td>
+                  <td class="py-3.5 px-6 font-semibold text-slate-950 dark:text-white">Portland Cement bags</td>
+                  <td class="py-3.5 px-6">4,200 Bags</td>
+                  <td class="py-3.5 px-6 font-semibold">$18,900.00</td>
+                  <td class="py-3.5 px-6 text-end text-emerald-500 font-semibold"><i class="fa-solid fa-arrow-trend-up me-1"></i>+8.0%</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-6 font-bold">3</td>
+                  <td class="py-3.5 px-6 font-semibold text-slate-950 dark:text-white">Standard Red Clay Bricks</td>
+                  <td class="py-3.5 px-6">120,000 Pieces</td>
+                  <td class="py-3.5 px-6 font-semibold">$9,600.00</td>
+                  <td class="py-3.5 px-6 text-end text-emerald-500 font-semibold"><i class="fa-solid fa-arrow-trend-up me-1"></i>+22.4%</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-6 font-bold">4</td>
+                  <td class="py-3.5 px-6 font-semibold text-slate-950 dark:text-white">Vitrified Floor Tiles (Sqm)</td>
+                  <td class="py-3.5 px-6">1,800 Sqm</td>
+                  <td class="py-3.5 px-6 font-semibold">$21,600.00</td>
+                  <td class="py-3.5 px-6 text-end text-rose-500 font-semibold"><i class="fa-solid fa-arrow-trend-down me-1"></i>-3.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-[#0B1220] border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>&copy; 2026 BuildPro Admin Panel. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="settings.html" class="hover:text-accent">Privacy Policy</a>
+            <a href="settings.html" class="hover:text-accent">Terms of Service</a>
+            <a href="../products.html" class="hover:text-accent">Support Desk</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Charts Rendering Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Revenue trend line chart
+      const ctxTrend = document.getElementById('revenueTrendChart').getContext('2d');
+      new Chart(ctxTrend, {
+        type: 'line',
+        data: {
+          labels: ['Q1 25', 'Q2 25', 'Q3 25', 'Q4 25', 'Q1 26', 'Q2 26', 'Q3 26', 'Q4 26 (Est)'],
+          datasets: [
+            {
+              label: 'Actual Revenue ($)',
+              data: [120000, 145000, 138000, 162000, 185000, 210000, 198000, null],
+              borderColor: '#F59E0B',
+              backgroundColor: 'rgba(245, 158, 11, 0.05)',
+              tension: 0.4,
+              borderWidth: 3,
+              fill: true
+            },
+            {
+              label: 'Forecast Revenue ($)',
+              data: [null, null, null, null, 185000, 205000, 200000, 235000],
+              borderColor: '#9CA3AF',
+              borderDash: [5, 5],
+              backgroundColor: 'transparent',
+              tension: 0.4,
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#6B7280' }
+            }
+          },
+          scales: {
+            y: {
+              grid: { color: 'rgba(156, 163, 175, 0.1)' },
+              ticks: { color: '#6B7280' }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#6B7280' }
+            }
+          }
+        }
+      });
+
+      // 2. Category sales share doughnut
+      const ctxCat = document.getElementById('categoryChart').getContext('2d');
+      new Chart(ctxCat, {
+        type: 'doughnut',
+        data: {
+          labels: ['Cement', 'Steel', 'Bricks', 'Tiles', 'Plywood', 'Other'],
+          datasets: [{
+            data: [25, 35, 15, 12, 8, 5],
+            backgroundColor: [
+              '#0B1220',
+              '#F59E0B',
+              '#10B981',
+              '#3B82F6',
+              '#8B5CF6',
+              '#EF4444'
+            ],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#6B7280', boxWidth: 10 }
+            }
+          }
+        }
+      });
+
+      // 3. Contractor Tier volumes polar area
+      const ctxTier = document.getElementById('tierChart').getContext('2d');
+      new Chart(ctxTier, {
+        type: 'polarArea',
+        data: {
+          labels: ['Gold Partners', 'Silver Contractors', 'Bronze Starters'],
+          datasets: [{
+            data: [320, 540, 420],
+            backgroundColor: [
+              'rgba(245, 158, 11, 0.7)',
+              'rgba(148, 163, 184, 0.7)',
+              'rgba(11, 18, 32, 0.7)'
+            ],
+            borderWidth: 1,
+            borderColor: '#E5E7EB'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#6B7280', boxWidth: 10 }
+            }
+          },
+          scales: {
+            r: {
+              ticks: { display: false },
+              grid: { color: 'rgba(156, 163, 175, 0.1)' }
+            }
+          }
+        }
+      });
+
+      // 4. Territory demand radar
+      const ctxDemand = document.getElementById('demandChart').getContext('2d');
+      new Chart(ctxDemand, {
+        type: 'radar',
+        data: {
+          labels: ['North Zone', 'East Zone', 'West Zone', 'South Zone', 'Central Depot'],
+          datasets: [
+            {
+              label: 'Steel (Tons)',
+              data: [85, 45, 70, 95, 60],
+              borderColor: '#0B1220',
+              backgroundColor: 'rgba(11, 18, 32, 0.05)',
+              borderWidth: 2
+            },
+            {
+              label: 'Cement (x10 Bags)',
+              data: [60, 80, 50, 75, 90],
+              borderColor: '#F59E0B',
+              backgroundColor: 'rgba(245, 158, 11, 0.05)',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#6B7280', boxWidth: 10 }
+            }
+          },
+          scales: {
+            r: {
+              grid: { color: 'rgba(156, 163, 175, 0.1)' },
+              angleLines: { color: 'rgba(156, 163, 175, 0.1)' },
+              pointLabels: { color: '#6B7280' }
+            }
+          }
+        }
+      });
+
+    });
+  </script>
+
+  <!-- Mobile Sidebar Overlay Click Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      
+      if (sidebarOpen && sidebar) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+          sidebar.classList.add('translate-x-0');
+        });
+      }
+      
+      if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+          sidebar.classList.remove('translate-x-0');
+          sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Messages Inbox | Construction & Building Materials</title>
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Admin communication inbox. View contractor requests, supplier partnership proposals, and support questions.">
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Custom JS -->
+  <script src="../assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+</head>
+<body class="bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F9FAFB]">
+  <div class="min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 start-0 z-30 w-64 bg-primary text-white border-e border-slate-800 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full lg:translate-x-0 lg:rtl:translate-x-0 transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Logo -->
+        <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+          <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg text-white">
+            <i class="fa-solid fa-hard-hat text-accent"></i>
+            <span>BuildPro <span class="text-accent text-sm font-semibold">Admin</span></span>
+          </a>
+          <button id="sidebar-close" class="lg:hidden text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        
+        <!-- Sidebar Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+          <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-line text-lg w-5 text-center"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="users.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-users text-lg w-5 text-center"></i>
+            <span>Contractors / Users</span>
+          </a>
+          <a href="orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-truck-ramp-box text-lg w-5 text-center"></i>
+            <span>Orders Tracker</span>
+          </a>
+          <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-accent text-primary font-semibold transition-colors">
+            <i class="fa-solid fa-envelope text-lg w-5 text-center"></i>
+            <span>Messages Inbox</span>
+          </a>
+          <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-pie text-lg w-5 text-center"></i>
+            <span>Detailed Analytics</span>
+          </a>
+          <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-sliders text-lg w-5 text-center"></i>
+            <span>System Settings</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 px-2 py-1.5 rounded-lg bg-slate-900/50">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-slate-700">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white truncate">Alexander Pierce</p>
+            <p class="text-xs text-slate-400 truncate">Super Admin</p>
+          </div>
+          <a href="settings.html" class="text-slate-400 hover:text-white">
+            <i class="fa-solid fa-cog"></i>
+          </a>
+        </div>
+        
+        <!-- Toggle buttons -->
+        <div class="flex items-center justify-between gap-2">
+          <button class="theme-toggle-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
+            <span class="moon-icon flex items-center gap-2"><i class="fa-solid fa-moon"></i> Dark</span>
+            <span class="sun-icon hidden flex items-center gap-2"><i class="fa-solid fa-sun"></i> Light</span>
+          </button>
+          <button class="rtl-toggle-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+            RTL
+          </button>
+        </div>
+        
+        <a href="../products.html" class="flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-accent transition-colors py-1.5 w-full text-center">
+          <i class="fa-solid fa-arrow-left-long rtl-flip"></i>
+          <span>Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="lg:ps-64 flex flex-col flex-1 min-w-0 transition-all duration-300">
+      
+      <!-- Topbar -->
+      <header class="h-16 bg-white dark:bg-[#0B1220] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+          <button id="sidebar-open" class="lg:hidden text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+          <h1 class="text-xl font-display font-bold text-slate-800 dark:text-white">Messages Inbox</h1>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="relative hidden md:block w-64">
+            <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" placeholder="Search contacts..." class="w-full ps-9 pe-4 py-1.5 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+          </div>
+          
+          <div class="relative">
+            <button class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <i class="fa-solid fa-bell"></i>
+              <span class="absolute top-1.5 end-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <span class="hidden sm:inline text-sm font-semibold text-slate-700 dark:text-slate-300">Alex P.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Split Pane -->
+      <main class="flex-1 p-6 flex flex-col gap-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-[550px]">
+          
+          <!-- Left Pane: Message List (1 col) -->
+          <div class="lg:col-span-1 bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col overflow-hidden">
+            <!-- Header search -->
+            <div class="p-4 border-b border-slate-200 dark:border-slate-800 space-y-3">
+              <h3 class="font-display font-bold text-slate-900 dark:text-white text-base">Inbound Requests</h3>
+              <div class="relative w-full">
+                <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
+                <input type="text" placeholder="Filter by sender or subject..." class="w-full ps-8 pe-4 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+              </div>
+            </div>
+            
+            <!-- List Items -->
+            <div class="flex-1 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800">
+              
+              <!-- Item 1 (Selected initially) -->
+              <button onclick="selectMessage(1)" id="msg-tab-1" class="msg-tab w-full p-4 text-start hover:bg-slate-50 dark:hover:bg-slate-900/60 bg-slate-50 dark:bg-slate-900/40 transition-colors flex gap-3 relative border-s-4 border-accent">
+                <div class="w-8 h-8 rounded-full bg-amber-500/15 text-amber-500 dark:text-accent border border-amber-500/30 flex items-center justify-center font-semibold text-xs flex-shrink-0">
+                  AB
+                </div>
+                <div class="flex-1 min-w-0 space-y-1">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-semibold text-slate-900 dark:text-white truncate">Apex Builders</span>
+                    <span class="text-slate-400 text-[10px]">10:15 AM</span>
+                  </div>
+                  <p class="text-xs font-semibold text-slate-850 dark:text-slate-200 truncate">Bulk Portland Cement Discount Rate</p>
+                  <p class="text-[11px] text-slate-450 truncate">Hello, we are planning a major commercial project next month and will need approx 150 tons...</p>
+                </div>
+                <!-- Unread Indicator -->
+                <span class="absolute top-4 end-4 w-2 h-2 bg-blue-500 rounded-full"></span>
+              </button>
+
+              <!-- Item 2 -->
+              <button onclick="selectMessage(2)" id="msg-tab-2" class="msg-tab w-full p-4 text-start hover:bg-slate-50 dark:hover:bg-slate-900/60 transition-colors flex gap-3 relative border-s-4 border-transparent">
+                <div class="w-8 h-8 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center font-semibold text-xs flex-shrink-0">
+                  GG
+                </div>
+                <div class="flex-1 min-w-0 space-y-1">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-semibold text-slate-900 dark:text-white truncate">Global Glassware Co.</span>
+                    <span class="text-slate-400 text-[10px]">Yesterday</span>
+                  </div>
+                  <p class="text-xs text-slate-650 dark:text-slate-300 truncate">Supplier Partnership Proposal</p>
+                  <p class="text-[11px] text-slate-450 truncate">We are glass manufacturers looking to supply tempered safety glass sheets at competitive pricing...</p>
+                </div>
+                <!-- Unread Indicator -->
+                <span class="absolute top-4 end-4 w-2 h-2 bg-blue-500 rounded-full"></span>
+              </button>
+
+              <!-- Item 3 -->
+              <button onclick="selectMessage(3)" id="msg-tab-3" class="msg-tab w-full p-4 text-start hover:bg-slate-50 dark:hover:bg-slate-900/60 transition-colors flex gap-3 relative border-s-4 border-transparent">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-semibold text-xs flex-shrink-0">
+                  MB
+                </div>
+                <div class="flex-1 min-w-0 space-y-1">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-semibold text-slate-900 dark:text-white truncate">Metro Foundations</span>
+                    <span class="text-slate-400 text-[10px]">15 Aug</span>
+                  </div>
+                  <p class="text-xs text-slate-650 dark:text-slate-300 truncate">Custom Reinforcement Steel Specifications</p>
+                  <p class="text-[11px] text-slate-450 truncate">Hello, do you stock Fe 550D TMT rebars in 32mm width? We didn't find it listed in your public portal...</p>
+                </div>
+              </button>
+
+              <!-- Item 4 -->
+              <button onclick="selectMessage(4)" id="msg-tab-4" class="msg-tab w-full p-4 text-start hover:bg-slate-50 dark:hover:bg-slate-900/60 transition-colors flex gap-3 relative border-s-4 border-transparent">
+                <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-550 flex items-center justify-center font-semibold text-xs flex-shrink-0">
+                  PB
+                </div>
+                <div class="flex-1 min-w-0 space-y-1">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-semibold text-slate-900 dark:text-white truncate">Prime Bricklayers Co.</span>
+                    <span class="text-slate-400 text-[10px]">12 Aug</span>
+                  </div>
+                  <p class="text-xs text-slate-650 dark:text-slate-300 truncate">Urgent: Brick delivery delay #ORD-9821</p>
+                  <p class="text-[11px] text-slate-450 truncate">Regarding the clay bricks ordered last week, our construction supervisor reports only half load received...</p>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- Right Pane: Message Reader (2 cols) -->
+          <div class="lg:col-span-2 bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col overflow-hidden">
+            
+            <!-- Message Detail Panel 1 (Apex Builders) -->
+            <div id="msg-detail-1" class="msg-detail-panel h-full flex flex-col justify-between">
+              <!-- Top bar sender details -->
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-wrap gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-amber-500/15 text-amber-500 dark:text-accent border border-amber-500/30 rounded-full flex items-center justify-center font-bold text-lg">
+                    AB
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-slate-950 dark:text-white text-base">Johnathan Doe</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Company: <span class="font-semibold">Apex Builders Ltd.</span> | Email: <span class="font-semibold">john.doe@apexbuilders.com</span></p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Phone: <span class="font-semibold">+1 (555) 019-2831</span></p>
+                  </div>
+                </div>
+                <div class="text-end text-xs text-slate-450">
+                  <p class="font-semibold">Aug 17, 2026</p>
+                  <p>Time: 10:15 AM</p>
+                </div>
+              </div>
+
+              <!-- Message body -->
+              <div class="p-6 flex-1 space-y-4 overflow-y-auto">
+                <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white">Subject: Bulk Portland Cement Discount Rate Inquiry</h3>
+                <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed">
+                  <p>Dear BuildPro Admin Team,</p>
+                  <p>We are preparing a quotation for a multi-story apartment block in the metropolitan area. We expect the concrete laying to begin on the 10th of next month.</p>
+                  <p>Our quantity estimators calculate that we will require roughly <strong class="text-accent">150 Tons (approx. 3,000 Bags) of Ordinary Portland Cement (OPC 53 Grade)</strong>. We are interested in checking if you offer tiered B2B pricing discounts for order levels of this size.</p>
+                  <p>Please let us know your best rate, lead time for custom logistics delivery to our central yard, and payment installment facilities. We hold an active gold-tier B2B contract with BuildPro under registration ID #B2B-8832.</p>
+                  <p>Best regards,<br><strong>Johnathan Doe</strong><br>Chief Procurement Officer<br>Apex Builders Ltd.</p>
+                </div>
+              </div>
+
+              <!-- Action Footer -->
+              <div class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/40 rounded-b-2xl">
+                <div class="flex gap-2">
+                  <button class="bg-primary hover:bg-primary-hover text-white dark:bg-slate-800 dark:hover:bg-slate-750 font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-reply"></i>Reply via Email
+                  </button>
+                  <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i>WhatsApp Contact
+                  </button>
+                </div>
+                <div class="flex gap-2">
+                  <button class="bg-slate-200 hover:bg-slate-350 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Archive Message"><i class="fa-solid fa-box-archive"></i></button>
+                  <button class="bg-slate-205 hover:bg-red-500 hover:text-white dark:bg-slate-800 dark:hover:bg-rose-950 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Delete Message"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Detail Panel 2 (Global Glassware) -->
+            <div id="msg-detail-2" class="msg-detail-panel h-full flex flex-col justify-between hidden">
+              <!-- Top bar sender details -->
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-wrap gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center font-bold text-lg">
+                    GG
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-slate-950 dark:text-white text-base">Sarah Jenkins</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Company: <span class="font-semibold">Global Glassware Co.</span> | Email: <span class="font-semibold">s.jenkins@globalglass.com</span></p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Phone: <span class="font-semibold">+1 (555) 438-9210</span></p>
+                  </div>
+                </div>
+                <div class="text-end text-xs text-slate-450">
+                  <p class="font-semibold">Aug 16, 2026</p>
+                  <p>Time: 04:30 PM</p>
+                </div>
+              </div>
+
+              <!-- Message body -->
+              <div class="p-6 flex-1 space-y-4 overflow-y-auto">
+                <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white">Subject: Supplier Partnership Proposal</h3>
+                <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed">
+                  <p>Dear Purchasing Manager,</p>
+                  <p>We are a certified ISO-9001 manufacturer of high-strength architectural glass panels, including tempered glass (8mm to 15mm), insulated glass units, and double-glazed windows.</p>
+                  <p>We notice that BuildPro's public catalog has a high demand for structural glass panels. We would love to offer ourselves as a wholesale direct supplier to your supply chain networks. Our factory can offer wholesale rates that are 15-20% below current retail market distributors.</p>
+                  <p>I have attached our catalog and certificate details in the reference database. Let me know if we can schedule a quick Call next Tuesday.</p>
+                  <p>Kind regards,<br><strong>Sarah Jenkins</strong><br>Business Development Manager<br>Global Glassware Co.</p>
+                </div>
+              </div>
+
+              <!-- Action Footer -->
+              <div class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/40 rounded-b-2xl">
+                <div class="flex gap-2">
+                  <button class="bg-primary hover:bg-primary-hover text-white dark:bg-slate-800 dark:hover:bg-slate-750 font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-reply"></i>Reply via Email
+                  </button>
+                </div>
+                <div class="flex gap-2">
+                  <button class="bg-slate-200 hover:bg-slate-350 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Archive Message"><i class="fa-solid fa-box-archive"></i></button>
+                  <button class="bg-slate-205 hover:bg-red-500 hover:text-white dark:bg-slate-800 dark:hover:bg-rose-950 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Delete Message"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Detail Panel 3 (Metro Foundations) -->
+            <div id="msg-detail-3" class="msg-detail-panel h-full flex flex-col justify-between hidden">
+              <!-- Top bar sender details -->
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-wrap gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center font-bold text-lg">
+                    MF
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-slate-950 dark:text-white text-base">Marcus Vance</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Company: <span class="font-semibold">Metro Foundations Ltd.</span> | Email: <span class="font-semibold">m.vance@metrofoundations.com</span></p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Phone: <span class="font-semibold">+1 (555) 883-1022</span></p>
+                  </div>
+                </div>
+                <div class="text-end text-xs text-slate-450">
+                  <p class="font-semibold">Aug 15, 2026</p>
+                  <p>Time: 02:10 PM</p>
+                </div>
+              </div>
+
+              <!-- Message body -->
+              <div class="p-6 flex-1 space-y-4 overflow-y-auto">
+                <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white">Subject: Custom Reinforcement Steel Specifications</h3>
+                <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed">
+                  <p>Hi Admin Support,</p>
+                  <p>We are searching for 32mm high-yield reinforcement bars (TMT Fe 550D) for a bridge foundation project. Our procurement portal shows options up to 25mm on your standard catalog page.</p>
+                  <p>Can you place custom requests or special procurement orders for 32mm rebars? We would need approx. 40 Tons dispatched in 2 batches.</p>
+                  <p>Thanks,<br><strong>Marcus Vance</strong><br>Lead Civil Engineer<br>Metro Foundations</p>
+                </div>
+              </div>
+
+              <!-- Action Footer -->
+              <div class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/40 rounded-b-2xl">
+                <div class="flex gap-2">
+                  <button class="bg-primary hover:bg-primary-hover text-white dark:bg-slate-800 dark:hover:bg-slate-750 font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-reply"></i>Reply via Email
+                  </button>
+                  <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i>WhatsApp Contact
+                  </button>
+                </div>
+                <div class="flex gap-2">
+                  <button class="bg-slate-200 hover:bg-slate-350 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Archive Message"><i class="fa-solid fa-box-archive"></i></button>
+                  <button class="bg-slate-205 hover:bg-red-500 hover:text-white dark:bg-slate-800 dark:hover:bg-rose-950 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Delete Message"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Detail Panel 4 (Prime Bricklayers) -->
+            <div id="msg-detail-4" class="msg-detail-panel h-full flex flex-col justify-between hidden">
+              <!-- Top bar sender details -->
+              <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between flex-wrap gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-purple-500/10 text-purple-550 rounded-full flex items-center justify-center font-bold text-lg">
+                    PB
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-slate-950 dark:text-white text-base">Robert Johnson</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Company: <span class="font-semibold">Prime Bricklayers Co.</span> | Email: <span class="font-semibold">r.johnson@primebricks.com</span></p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Phone: <span class="font-semibold">+1 (555) 723-9081</span></p>
+                  </div>
+                </div>
+                <div class="text-end text-xs text-slate-450">
+                  <p class="font-semibold">Aug 12, 2026</p>
+                  <p>Time: 09:00 AM</p>
+                </div>
+              </div>
+
+              <!-- Message body -->
+              <div class="p-6 flex-1 space-y-4 overflow-y-auto">
+                <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white">Subject: Urgent: Brick delivery delay #ORD-9821</h3>
+                <div class="text-sm text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed">
+                  <p>Hi Admin support,</p>
+                  <p>We are writing to report an issue with our shipment under order ID #ORD-9821 which was scheduled for unloading today at 08:00 AM.</p>
+                  <p>The lorry arrived, but the quantity of red clay bricks delivered is only 10,000 Pcs instead of the 20,000 Pcs invoice quantity. The driver has signed the gate receipt but has no information regarding the remaining brick crates.</p>
+                  <p>Please trace if there is a secondary container truck on its way. Our bricklayers are currently idle at the site.</p>
+                  <p>Urgent response needed,<br><strong>Robert Johnson</strong><br>Prime Bricklayers Co.</p>
+                </div>
+              </div>
+
+              <!-- Action Footer -->
+              <div class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/40 rounded-b-2xl">
+                <div class="flex gap-2">
+                  <button class="bg-primary hover:bg-primary-hover text-white dark:bg-slate-800 dark:hover:bg-slate-750 font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+                    <i class="fa-solid fa-reply"></i>Reply via Email
+                  </button>
+                </div>
+                <div class="flex gap-2">
+                  <button class="bg-slate-200 hover:bg-slate-350 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Archive Message"><i class="fa-solid fa-box-archive"></i></button>
+                  <button class="bg-slate-205 hover:bg-red-500 hover:text-white dark:bg-slate-800 dark:hover:bg-rose-950 text-slate-700 dark:text-slate-300 p-2 rounded-lg text-xs transition-colors" title="Delete Message"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-[#0B1220] border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>&copy; 2026 BuildPro Admin Panel. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="settings.html" class="hover:text-accent">Privacy Policy</a>
+            <a href="settings.html" class="hover:text-accent">Terms of Service</a>
+            <a href="../products.html" class="hover:text-accent">Support Desk</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Selection Script for inbox tabs -->
+  <script>
+    function selectMessage(id) {
+      // 1. Hide all detail panels
+      const panels = document.querySelectorAll('.msg-detail-panel');
+      panels.forEach(p => p.classList.add('hidden'));
+      
+      // 2. Show target detail panel
+      const targetPanel = document.getElementById(`msg-detail-${id}`);
+      if (targetPanel) targetPanel.classList.remove('hidden');
+
+      // 3. Reset all list tabs styles
+      const tabs = document.querySelectorAll('.msg-tab');
+      tabs.forEach(t => {
+        t.classList.remove('bg-slate-50', 'dark:bg-slate-900/40', 'border-accent');
+        t.classList.add('border-transparent');
+      });
+
+      // 4. Set styling for selected tab
+      const selectedTab = document.getElementById(`msg-tab-${id}`);
+      if (selectedTab) {
+        selectedTab.classList.add('bg-slate-50', 'dark:bg-slate-900/40', 'border-accent');
+        selectedTab.classList.remove('border-transparent');
+      }
+    }
+  </script>
+
+  <!-- Mobile Sidebar Overlay Click Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      
+      if (sidebarOpen && sidebar) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+          sidebar.classList.add('translate-x-0');
+        });
+      }
+      
+      if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+          sidebar.classList.remove('translate-x-0');
+          sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,812 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Logistics Fleet & Next-Day Offloading Details | Service Details</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Detailed overview of BuildPro's material logistics, flatbed offloading capacities, active GPS geo-tracking, and on-site crane coordinates.">
+  <meta name="keywords" content="logistics details, heavy hauling fleet, offloading cranes, concrete transit, site delivery timeline">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BuildPro - Logistics Fleet & Next-Day Offloading Details">
+  <meta property="og:description" content="Discover our fleet logistics turnaround. Real-time geo-tracking, flatbeds with cranes, and transit mixers.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- CDNs & Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  
+  <!-- Custom Javascript -->
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+</head>
+<body class="bg-[#F9FAFB] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F9FAFB] transition-colors duration-300">
+
+  <!-- Promo Top Bar -->
+  <div class="bg-primary text-white text-xs py-2 px-4 text-center font-medium border-b border-slate-800 dark:bg-black/40">
+    <span class="inline-flex items-center gap-1.5">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+      </span>
+      Need specialized fleet routing or offloading coordinates?
+      <a href="contact.html" class="underline hover:text-accent transition-colors ms-1">Contact Dispatch Desk &rarr;</a>
+    </span>
+  </div>
+
+      <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative">
+            <button class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </button>
+            <div class="absolute top-full start-0 mt-3 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white/95 dark:bg-[#0B1220]/95 backdrop-blur-md shadow-2xl hidden transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
+          <a href="services.html" class="nav-link active"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
+          
+          <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
+
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
+          <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
+          <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
+        </nav>
+
+                                <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
+            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
+            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="nav-link border border-accent/30 bg-accent/5 hover:bg-accent hover:text-primary transition-all ms-1"><i class="fa-solid fa-user-lock text-xs text-accent"></i> Login</a>
+
+          <!-- Signup -->
+          <a href="register.html" class="nav-link border border-accent/30 bg-accent/5 hover:bg-accent hover:text-primary transition-all ms-1"><i class="fa-solid fa-user-plus text-xs text-accent"></i> Signup</a>
+
+          <!-- Quote List / Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+            <i class="fa-solid fa-file-invoice text-xl"></i>
+            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-accent rounded-full hidden">0</span>
+          </a>
+
+
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-sun sun-icon hidden"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-file-invoice text-lg"></i>
+            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold text-white bg-accent rounded-full hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-150 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-150 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-150 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-150 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs and Service Details Hero -->
+  <section class="bg-primary text-white py-20 lg:py-28 relative overflow-hidden text-start">
+    <div class="absolute inset-0 opacity-15 mix-blend-multiply">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" alt="Logistics Port" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Text details -->
+      <div class="lg:col-span-8 space-y-4">
+        <nav class="text-xs text-gray-400 font-semibold flex items-center gap-2">
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+          <i class="fa-solid fa-chevron-right text-[9px] rtl-flip text-gray-500"></i>
+          <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+          <i class="fa-solid fa-chevron-right text-[9px] rtl-flip text-gray-500"></i>
+          <span id="service-breadcrumb" class="text-white">Logistics Fleet</span>
+        </nav>
+        <span id="service-badge" class="inline-block bg-accent/20 border border-accent/30 text-accent text-xs font-black uppercase px-3 py-1 rounded">Logistics Service Details</span>
+        <h1 id="service-title" class="text-3xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight leading-tight">
+          Heavy Sourcing Logistics & Next-Day Fleet Offloads
+        </h1>
+        <p id="service-desc" class="text-sm sm:text-base text-gray-400 max-w-2xl">
+          Complete direct factory heavy transport. Flatbeds with hydraulic offload cranes, transit mixers, and bulk tankers delivered directly to structural layout sites.
+        </p>
+      </div>
+
+      <!-- Quick stat sidebar -->
+      <div id="service-stats-container" class="lg:col-span-4 bg-slate-900/60 rounded-xl border border-white/10 p-6 space-y-4">
+        <h3 class="text-sm font-bold font-display uppercase tracking-wider text-accent">Service Capabilities</h3>
+        <div class="space-y-3.5 text-xs text-gray-300">
+          <div class="flex justify-between border-b border-white/5 pb-2">
+            <span>Owned Vehicles:</span>
+            <span class="font-bold text-white">250+ Heavy Trucks</span>
+          </div>
+          <div class="flex justify-between border-b border-white/5 pb-2">
+            <span>Average SLA:</span>
+            <span class="font-bold text-white">Next-Day (Under 150 miles)</span>
+          </div>
+          <div class="flex justify-between border-b border-white/5 pb-2">
+            <span>Offloading Crane:</span>
+            <span class="font-bold text-white">Hydraulic Crane Standard</span>
+          </div>
+          <div class="flex justify-between">
+            <span>GPS Tracking:</span>
+            <span class="font-bold text-emerald-500"><i class="fa-solid fa-signal text-[10px] me-1"></i> Active Live Link</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits List Section -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left: Details and Benefits list -->
+        <div class="lg:col-span-7 space-y-6 text-start">
+          <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">Operational Advantages</span>
+          <h2 id="service-benefits-title" class="text-3xl font-extrabold font-display text-primary dark:text-white tracking-tight">Structured Sourcing Fleet Benefits</h2>
+          <p id="service-benefits-desc" class="text-sm text-gray-600 dark:text-gray-455 leading-relaxed">
+            Standard freight forwarders rarely understand heavy construction layouts. They offload structural steel or palletized bricks at outer fences, causing secondary haulage costs. BuildPro's dedicated trucks are operated by experienced layout drivers.
+          </p>
+
+          <!-- Bullet Points -->
+          <ul id="service-bullets" class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+              <div>
+                <strong class="text-primary dark:text-white block font-display">On-Site Placement & Offloading:</strong>
+                <span class="text-xs text-gray-500">Every flatbed truck carrying blocks or steel is equipped with on-board hydraulic cranes (Hiab loaders) to offload cargo directly inside laydown zones.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+              <div>
+                <strong class="text-primary dark:text-white block font-display">Transit Mixing Concrete Delivery:</strong>
+                <span class="text-xs text-gray-500">Dispatch transit concrete mixers with integrated retarder additives to prevent premature drying. Coordinates perfectly with site pumps.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+              <div>
+                <strong class="text-primary dark:text-white block font-display">Active GPS Telematics:</strong>
+                <span class="text-xs text-gray-500">Receive automated SMS notifications with a tracking link when your shipment is within 15 miles of the site gate, ensuring layout preparation.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Image of Logistics Truck -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-slate-800">
+            <img id="service-image" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Logistics Fleet Dispatch" class="w-full h-[450px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+            <!-- Caption -->
+            <div class="absolute bottom-6 start-6 text-start">
+              <span class="text-accent text-xs font-bold uppercase tracking-wider">Cleveland Sourcing Hub</span>
+              <h4 id="service-caption-title" class="text-lg font-bold text-white font-display">Daily Flatbed Dispatch Grid</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Process Flow -->
+  <section class="py-20 bg-gray-100 dark:bg-slate-900/40 border-t border-b border-gray-250 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">Procurement Journey</span>
+        <h2 class="text-3xl font-extrabold font-display text-primary dark:text-white tracking-tight">Step-by-Step Logistics Flow</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Map showing how material orders translate to site dispatch coordinates.</p>
+      </div>
+
+      <!-- Horizontal Process Step Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-start">
+        
+        <!-- Step 1 -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-6 shadow-sm space-y-4 relative">
+          <span class="absolute top-6 right-6 text-2xl font-black text-gray-250 dark:text-slate-800">01</span>
+          <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent">
+            <i class="fa-solid fa-file-signature text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold font-display text-primary dark:text-white">Order Booking</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Submit structural bill of materials. Lock volumes, contract rates, and offload time preferences.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-6 shadow-sm space-y-4 relative">
+          <span class="absolute top-6 right-6 text-2xl font-black text-gray-250 dark:text-slate-800">02</span>
+          <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+            <i class="fa-solid fa-flask-vial text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold font-display text-primary dark:text-white">QA Testing</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Sourced batch samples undergo chemical and compressive testing. MTC reports published.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-6 shadow-sm space-y-4 relative">
+          <span class="absolute top-6 right-6 text-2xl font-black text-gray-250 dark:text-slate-800">03</span>
+          <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
+            <i class="fa-solid fa-truck-ramp-box text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold font-display text-primary dark:text-white">Secure Offload Load</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Mechanical cranes load flatbeds. Cargo strapped and structural bindings certified safe for transit.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-6 shadow-sm space-y-4 relative">
+          <span class="absolute top-6 right-6 text-2xl font-black text-gray-250 dark:text-slate-800">04</span>
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-450 text-emerald-400">
+            <i class="fa-solid fa-clipboard-check text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold font-display text-primary dark:text-white">On-Site Handover</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Drivers place material in designated layout yards, obtain digital signature stamps, and record logs.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accordion FAQs Section -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">FAQ Desk</span>
+        <h2 class="text-3xl font-extrabold font-display text-primary dark:text-white tracking-tight">Logistics & Sourcing FAQs</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Frequently asked questions concerning credit applications, delivery schedules and test documentation.</p>
+      </div>
+
+      <!-- Accordion Stack -->
+      <div class="space-y-4 border border-gray-200 dark:border-slate-800 rounded-xl p-6 bg-white dark:bg-[#0B1220]">
+        
+        <!-- Accordion Item 1 -->
+        <div class="border-b border-gray-150 dark:border-slate-850 pb-4 text-start">
+          <button class="accordion-header flex items-center justify-between w-full font-bold font-display text-primary dark:text-white py-2 focus:outline-none">
+            <span>What is the minimum lead time for bulk cement casting dispatches?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="text-xs text-gray-500 dark:text-gray-400 pt-2 leading-relaxed">
+              Standard dry concrete and bag cement OPC dispatches can be scheduled within 24 hours. Custom high-performance concrete (M25+) requiring specialized chemical retarders requires a 48-hour prior booking window.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="border-b border-gray-150 dark:border-slate-855 pb-4 pt-2 text-start">
+          <button class="accordion-header flex items-center justify-between w-full font-bold font-display text-primary dark:text-white py-2 focus:outline-none">
+            <span>Do flatbeds charge secondary offloading fees?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="text-xs text-gray-500 dark:text-gray-400 pt-2 leading-relaxed">
+              No. Our bulk rate pricing structure standardizes on-board crane (Hiab loader) offloads. Materials are placed within 30 feet of flatbed alignment access lines without extra fees.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="border-b border-gray-150 dark:border-slate-850 pb-4 pt-2 text-start">
+          <button class="accordion-header flex items-center justify-between w-full font-bold font-display text-primary dark:text-white py-2 focus:outline-none">
+            <span>How do I retrieve laboratory MTC records?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="text-xs text-gray-500 dark:text-gray-400 pt-2 leading-relaxed">
+              Upon batch chemical validation at our regional lab hubs, the certified test report PDF document is uploaded to your contractor portal. A hardcopy is also attached to the delivery slip.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div class="pb-2 pt-2 text-start">
+          <button class="accordion-header flex items-center justify-between w-full font-bold font-display text-primary dark:text-white py-2 focus:outline-none">
+            <span>What happens in case of bad site transit conditions?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="text-xs text-gray-500 dark:text-gray-400 pt-2 leading-relaxed">
+              If mud or excavation constraints prevent truck alignment access, our drivers will notify your site manager. Flatbed crane offloads can redirect placement up to 25 feet.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-primary text-white border-t border-slate-900 relative overflow-hidden transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
+      <h2 class="text-2xl sm:text-3xl font-extrabold font-display">Schedule Your Site Delivery Plan Now</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto">Lock contract rates for upcoming structural framing casting phases with pre-approved delivery slots.</p>
+      <div class="flex justify-center gap-4">
+        <a href="contact.html" class="bg-accent hover:bg-accent-hover text-primary font-bold px-6 py-3.5 rounded-lg text-xs shadow-md transition-colors">
+          Contact Sourcing Desk
+        </a>
+        <a href="pricing.html" class="bg-transparent border border-white/20 hover:border-white/50 text-white font-semibold px-6 py-3.5 rounded-lg text-xs transition-colors">
+          Estimate Tier Savings
+        </a>
+      </div>
+    </div>
+  </section>
+
+    <!-- Multi-Column Footer -->
+  <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <div class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Regional Hubs Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Regional Hubs</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Cleveland Sourcing</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Detroit Supply Depot</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Columbus Logistics Hub</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Pittsburgh Terminal</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Toledo Materials Yard</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Laboratory MTC Docs</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="border-t border-slate-900 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+        <div class="flex items-center gap-6">
+          <a href="contact.html" class="hover:text-accent transition-colors">Terms of Service</a>
+          <a href="contact.html" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="index.html" class="hover:text-accent transition-colors">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Dynamic Service Details Rendering Script -->
+  <script>
+    const servicesDB = {
+      "bulk-supply": {
+        title: "Bulk Material Sourcing Pipeline & Direct-from-Manufacturer Dispatch",
+        breadcrumb: "Bulk Material Sourcing",
+        badge: "Bulk Material Sourcing",
+        desc: "Wholesale procurement pipelines for certified cement grades (OPC/PPC), reinforced steel TMT rebars, AAC blocks, structural timber, glass sheets, and fittings.",
+        img: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80",
+        caption: "B2B Manufacturer Supply Depot",
+        benefitsTitle: "Factory Sourcing & Certification Advantages",
+        benefitsDesc: "BuildPro bridges the gap between major structural material manufacturers and on-site contractor laydown zones. Avoid middleman markups and verify testing certificates instantly.",
+        stats: `
+          <h3 class="text-sm font-bold font-display uppercase tracking-wider text-accent">Service Capabilities</h3>
+          <div class="space-y-3.5 text-xs text-gray-300">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Manufacturer Partners:</span>
+              <span class="font-bold text-white">45+ Direct Mills</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Material Certificates:</span>
+              <span class="font-bold text-white">100% Lab Tested MTC</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Bulk Price Tier:</span>
+              <span class="font-bold text-white">Guaranteed Lowest Rates</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Daily Logistics:</span>
+              <span class="font-bold text-emerald-500"><i class="fa-solid fa-signal text-[10px] me-1"></i> Active Dispatch</span>
+            </div>
+          </div>
+        `,
+        bullets: `
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Direct Mill Procurement:</strong>
+              <span class="text-xs text-gray-500">Procure from partner steel mills and cement kilns directly to ensure batch reliability.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Contract Pricing Locking:</strong>
+              <span class="text-xs text-gray-500">Lock commodity prices for up to 90 days to protect your projects from inflation spikes.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Custom Dimension Specs:</strong>
+              <span class="text-xs text-gray-500">Order pre-cut rebar patterns and specialized block densities directly from manufacturer partners.</span>
+            </div>
+          </li>
+        `
+      },
+      "logistics": {
+        title: "Heavy Sourcing Logistics & Next-Day Fleet Offloads",
+        breadcrumb: "Logistics Fleet",
+        badge: "Logistics Service Details",
+        desc: "Complete direct factory heavy transport. Flatbeds with hydraulic offload cranes, transit mixers, and bulk tankers delivered directly to structural layout sites.",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+        caption: "Cleveland Sourcing Hub",
+        benefitsTitle: "Structured Sourcing Fleet Benefits",
+        benefitsDesc: "Standard freight forwarders rarely understand heavy construction layouts. They offload structural steel or palletized bricks at outer fences. BuildPro's dedicated trucks are operated by experienced layout drivers.",
+        stats: `
+          <h3 class="text-sm font-bold font-display uppercase tracking-wider text-accent">Service Capabilities</h3>
+          <div class="space-y-3.5 text-xs text-gray-300">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Owned Vehicles:</span>
+              <span class="font-bold text-white">250+ Heavy Trucks</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Average SLA:</span>
+              <span class="font-bold text-white">Next-Day (Under 150 miles)</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Offloading Crane:</span>
+              <span class="font-bold text-white">Hydraulic Crane Standard</span>
+            </div>
+            <div class="flex justify-between">
+              <span>GPS Tracking:</span>
+              <span class="font-bold text-emerald-500"><i class="fa-solid fa-signal text-[10px] me-1"></i> Active Live Link</span>
+            </div>
+          </div>
+        `,
+        bullets: `
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">On-Site Placement & Offloading:</strong>
+              <span class="text-xs text-gray-500">Every flatbed truck carrying blocks or steel is equipped with on-board hydraulic cranes (Hiab loaders) to offload cargo directly inside laydown zones.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Transit Mixing Concrete Delivery:</strong>
+              <span class="text-xs text-gray-500">Dispatch transit concrete mixers with integrated retarder additives to prevent premature drying. Coordinates perfectly with site pumps.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Active GPS Telematics:</strong>
+              <span class="text-xs text-gray-500">Receive automated SMS notifications with a tracking link when your shipment is within 15 miles of the site gate, ensuring layout preparation.</span>
+            </div>
+          </li>
+        `
+      },
+      "qa-consultation": {
+        title: "Laboratory QA Testing & Material Compliance Certifications",
+        breadcrumb: "Laboratory QA Testing",
+        badge: "Laboratory QA Testing",
+        desc: "Automated chemical composition testing and physical compressive strength calculations for cement and concrete mixes. Manufacturer test certificates issued instantly.",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        caption: "QA Material Testing Lab",
+        benefitsTitle: "Compliance & Structural Security Benefits",
+        benefitsDesc: "BuildPro guarantees structural strength compliance via laboratory QA test analysis before any batch loads leave the manufacturing yard.",
+        stats: `
+          <h3 class="text-sm font-bold font-display uppercase tracking-wider text-accent">Service Capabilities</h3>
+          <div class="space-y-3.5 text-xs text-gray-300">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Lab Turnaround:</span>
+              <span class="font-bold text-white">Within 4 Hours</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Test Standards:</span>
+              <span class="font-bold text-white">ASTM & IS Standards</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Equipment Class:</span>
+              <span class="font-bold text-white">NABL Accredited Class A</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Digital Delivery:</span>
+              <span class="font-bold text-emerald-500"><i class="fa-solid fa-signal text-[10px] me-1"></i> Instant MTC Downloads</span>
+            </div>
+          </div>
+        `,
+        bullets: `
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Compression Crush Crushing:</strong>
+              <span class="text-xs text-gray-500">Crush-test concrete cylinder samples to document compressive strength performance at 7, 14, and 28 days.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Spectroscopy Chemical Scans:</strong>
+              <span class="text-xs text-gray-500">Scan steel chemical compositions to ensure corrosion resistance alloy percentages are strictly respected.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Direct-to-Developer Reports:</strong>
+              <span class="text-xs text-gray-500">Test reports are automatically pushed to developer portals, keeping structural inspectors informed instantly.</span>
+            </div>
+          </li>
+        `
+      },
+      "procurement": {
+        title: "Contractor Credit Terms & Digitized Bulk Sourcing Portals",
+        breadcrumb: "Contractor Credit & CRM",
+        badge: "Contractor Credit & CRM",
+        desc: "Flexible 30 to 90-day B2B credit terms pre-approved for verified builders. CRM dashboard integration for invoice storage and volume contract adjustments.",
+        img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
+        caption: "B2B Financial Portal Dashboard",
+        benefitsTitle: "Contractor Cash Flow Advantages",
+        benefitsDesc: "Material sourcing timing should not depend on immediate cash on hand. Sourcing lines with BuildPro provide structural builders with pre-approved credit lines to maintain momentum.",
+        stats: `
+          <h3 class="text-sm font-bold font-display uppercase tracking-wider text-accent">Service Capabilities</h3>
+          <div class="space-y-3.5 text-xs text-gray-300">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Credit Limits:</span>
+              <span class="font-bold text-white">Up to $1.2M Pre-Approved</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Payment Terms:</span>
+              <span class="font-bold text-white">30, 60, or 90 Days Net</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span>Portal Access:</span>
+              <span class="font-bold text-white">24/7 Digital Billing</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Volume Savings:</span>
+              <span class="font-bold text-emerald-500"><i class="fa-solid fa-signal text-[10px] me-1"></i> Contract Tier Syncing</span>
+            </div>
+          </div>
+        `,
+        bullets: `
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Net 30/60/90 Terms:</strong>
+              <span class="text-xs text-gray-500">Pay invoice receipts at intervals that coordinate with your client drawing releases.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Automated Invoicing Integrations:</strong>
+              <span class="text-xs text-gray-500">Synchronize all materials receipts directly with contractor ERP systems like Procore or SAP.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+            <div>
+              <strong class="text-primary dark:text-white block font-display">Consolidated Billing Accounts:</strong>
+              <span class="text-xs text-gray-500">Bring all structural steel, bricks, and concrete procurement under a single billing account.</span>
+            </div>
+          </li>
+        `
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceId = urlParams.get('id') || "logistics";
+      
+      const srv = servicesDB[serviceId];
+      if (srv) {
+        // Set breadcrumb
+        const breadcrumbEl = document.getElementById('service-breadcrumb');
+        if (breadcrumbEl) breadcrumbEl.textContent = srv.breadcrumb;
+        
+        // Set badge
+        const badgeEl = document.getElementById('service-badge');
+        if (badgeEl) badgeEl.textContent = srv.badge;
+        
+        // Set title
+        const titleEl = document.getElementById('service-title');
+        if (titleEl) titleEl.textContent = srv.title;
+        
+        // Set description
+        const descEl = document.getElementById('service-desc');
+        if (descEl) descEl.textContent = srv.desc;
+        
+        // Set stats container
+        const statsEl = document.getElementById('service-stats-container');
+        if (statsEl) statsEl.innerHTML = srv.stats;
+        
+        // Set benefits title
+        const benefitsTitleEl = document.getElementById('service-benefits-title');
+        if (benefitsTitleEl) benefitsTitleEl.textContent = srv.benefitsTitle;
+        
+        // Set benefits description
+        const benefitsDescEl = document.getElementById('service-benefits-desc');
+        if (benefitsDescEl) benefitsDescEl.textContent = srv.benefitsDesc;
+        
+        // Set bullets list
+        const bulletsEl = document.getElementById('service-bullets');
+        if (bulletsEl) bulletsEl.innerHTML = srv.bullets;
+        
+        // Set image
+        const imgEl = document.getElementById('service-image');
+        if (imgEl) {
+          imgEl.src = srv.img;
+          imgEl.alt = srv.title;
+        }
+        
+        // Set caption title
+        const captionEl = document.getElementById('service-caption-title');
+        if (captionEl) captionEl.textContent = srv.caption;
+        
+        // Update browser document title
+        document.title = `BuildPro - ${srv.breadcrumb} Services`;
+      }
+    });
+  </script>
+</body>
+</html>
+

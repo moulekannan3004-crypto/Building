@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initBlogSearchFilter();
   initCountdownTimer();
   initAdminDashboard();
+  initFormAlerts();
+  initSmoothScroll();
 });
 
 // ==========================================
@@ -709,11 +711,52 @@ function initAdminDashboard() {
 function initFormAlerts() {
   const forms = document.querySelectorAll('form');
   forms.forEach(form => {
-    if (form.id === 'quote-submission-form') return; // Handled separately in products.html
+    if (form.id === 'quote-submission-form') return; // Handled separately
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast("Your response has been submitted!");
+      showToast("Your request has been submitted successfully!");
       form.reset();
+    });
+  });
+}
+
+// ==========================================
+// 14. Smooth Anchor Link Scrolling Navigation
+// ==========================================
+function initSmoothScroll() {
+  const anchorLinks = document.querySelectorAll('a[href*="#"]');
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      
+      const targetId = href.substring(hashIndex);
+      if (!targetId || targetId === '#') return;
+      
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const targetPage = href.substring(0, hashIndex).split('/').pop();
+
+      if (!targetPage || targetPage === currentPage || targetPage === '') {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+          }
+          
+          targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
     });
   });
 }

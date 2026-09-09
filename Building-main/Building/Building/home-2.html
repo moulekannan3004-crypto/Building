@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Modern Industrial & Supply Chain Solutions | Home 2</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="BuildPro Industrial Supply Chain. Enterprise procurement for heavy building materials, structural steel, cement bulk, and custom manufactured panels. Real-time geo-tracking.">
+  <meta name="keywords" content="materials supply chain, industrial steel, bulk concrete, logistics tracking, contractor hub, B2B procurement">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BuildPro - Modern Industrial & Supply Chain Solutions">
+  <meta property="og:description" content="Seamless industrial building material supply chain. Guaranteed laboratory MTC certification, bulk pricing, and tracked logistics.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513828742140-ccaa34f3a588?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- CDNs & Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- Custom Javascript -->
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-[#F9FAFB] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F9FAFB] transition-colors duration-300">
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="home-2.html" class="dropdown-trigger active flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 1</a>
+              <a href="home-2.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+                                <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
+            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
+            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="contact.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0"><i class="fa-solid fa-calendar-check text-xs"></i> Book Now</a>
+
+          <!-- Signup -->
+          <a href="register.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Quote List / Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+            <i class="fa-solid fa-boxes-stacked text-xl"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[20px] h-5 px-1 text-[10px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-sun sun-icon hidden"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-boxes-stacked text-lg"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Large Split Hero Section -->
+  <section class="relative bg-slate-900 dark:bg-black text-white py-24 lg:py-32 border-b border-slate-800 transition-colors duration-300">
+    <div class="absolute inset-0 opacity-10 mix-blend-overlay">
+      <img src="https://images.unsplash.com/photo-1513828742140-ccaa34f3a588?auto=format&fit=crop&w=1920&q=80" alt="Supply Chain Port" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left: Industrial Headline & Digital Focus -->
+        <div class="space-y-8 text-start">
+          <span class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/35 text-accent px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-arrows-spin animate-spin"></i> Direct Manufacturer-To-Site Pipeline
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display leading-tight tracking-tight">
+            The Digital Supply Chain for <span class="text-accent underline decoration-wavy">Heavy Materials</span>
+          </h1>
+          <p class="text-sm sm:text-base text-gray-400 leading-relaxed max-w-xl">
+            BuildPro bridges the gap between massive material manufacturing plants and active building sites. We digitize procurement, optimize route logistics, and deliver lab-verified materials without intermediaries.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="services.html" class="bg-accent hover:bg-accent-hover text-primary font-bold px-8 py-4 rounded-lg text-center transition-all duration-300 hover-lift shadow-lg">
+              Explore Our Logistics Hubs
+            </a>
+            <a href="contact.html" class="bg-transparent border border-gray-700 hover:border-gray-500 text-gray-300 font-semibold px-8 py-4 rounded-lg text-center transition-all duration-300">
+              Consult Procurement Specialist
+            </a>
+          </div>
+          <!-- Tiny certification highlights -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-xs text-gray-400">
+            <div>
+              <span class="block text-white font-black text-sm">ISO 9001</span>
+              <span>Quality Assurance</span>
+            </div>
+            <div>
+              <span class="block text-white font-black text-sm">AASHTO</span>
+              <span>Testing Standards</span>
+            </div>
+            <div>
+              <span class="block text-white font-black text-sm">ASTM</span>
+              <span>Material Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Materials Supply Chain Diagram/Illustration -->
+        <div class="bg-[#0B1220] rounded-2xl border border-slate-850 p-8 shadow-2xl relative text-start overflow-hidden">
+          <div class="absolute -right-16 -top-16 w-36 h-36 bg-accent/5 rounded-full blur-3xl"></div>
+          <h3 class="text-lg font-bold font-display text-white mb-6 flex items-center justify-between">
+            <span>Visual Material Routing Flow</span>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider"><i class="fa-solid fa-signal me-1"></i> Live Tracking Enabled</span>
+          </h3>
+
+          <!-- Interactive Process diagram -->
+          <div class="space-y-6 relative">
+            
+            <!-- Link Line behind icons -->
+            <div class="absolute start-6 top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent via-blue-500 to-emerald-500 -z-0"></div>
+
+            <!-- Step 1 -->
+            <div class="flex items-start gap-4 relative z-10">
+              <div class="w-12 h-12 rounded-lg bg-accent/20 border border-accent flex items-center justify-center text-accent flex-shrink-0">
+                <i class="fa-solid fa-industry text-lg"></i>
+              </div>
+              <div class="pt-0.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-accent uppercase tracking-wider">Step 1</span>
+                  <span class="text-[10px] text-gray-500 font-bold uppercase">Manufacturing</span>
+                </div>
+                <h4 class="text-sm font-bold text-white mt-0.5">Direct Factory Dispatch</h4>
+                <p class="text-xs text-gray-400">Cement/Steel ordered directly from partner factory kilns and rolling plants to bypass wholesale markups.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex items-start gap-4 relative z-10">
+              <div class="w-12 h-12 rounded-lg bg-blue-500/20 border border-blue-500 flex items-center justify-center text-blue-400 flex-shrink-0">
+                <i class="fa-solid fa-flask-vial text-lg"></i>
+              </div>
+              <div class="pt-0.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Step 2</span>
+                  <span class="text-[10px] text-gray-500 font-bold uppercase">Laboratory</span>
+                </div>
+                <h4 class="text-sm font-bold text-white mt-0.5">Automated Testing & Certifications</h4>
+                <p class="text-xs text-gray-400">Batch samples undergo automated chemical and compression testing. MTC certificates generated instantly.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex items-start gap-4 relative z-10">
+              <div class="w-12 h-12 rounded-lg bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                <i class="fa-solid fa-truck-fast text-lg"></i>
+              </div>
+              <div class="pt-0.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Step 3</span>
+                  <span class="text-[10px] text-gray-500 font-bold uppercase">Logistics</span>
+                </div>
+                <h4 class="text-sm font-bold text-white mt-0.5">Geo-Tracked Offloading Fleet</h4>
+                <p class="text-xs text-gray-400">Owned flatbeds, transit mixers, and bulk trailers deliver straight to site with live GPS SMS tracking.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Industrial Stats Grid -->
+  <section class="py-16 bg-[#0B1220] text-white border-b border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="space-y-2">
+          <span class="block text-4xl sm:text-5xl font-black text-accent">320+</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Global Manufactories</span>
+        </div>
+        <div class="space-y-2">
+          <span class="block text-4xl sm:text-5xl font-black text-accent">14</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Regional Supply Hubs</span>
+        </div>
+        <div class="space-y-2">
+          <span class="block text-4xl sm:text-5xl font-black text-accent">250+</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Offloading Trucks</span>
+        </div>
+        <div class="space-y-2">
+          <span class="block text-4xl sm:text-5xl font-black text-accent">1.2M+</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Tons Dispatched</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Process Grid Section -->
+  <section class="py-20 lg:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-4 py-1.5 rounded-full border border-accent/20 inline-block shadow-sm">
+          <i class="fa-solid fa-truck-fast me-1.5"></i> Streamlined Fulfillment
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-primary dark:text-white tracking-tight">
+          How Our Logistics Delivery Works
+        </h2>
+        <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          Our procurement logistics standardizes site delivery down to an exact science.
+        </p>
+      </div>
+
+      <!-- Connecting Line Graphic (Desktop) -->
+      <div class="relative">
+        <div class="hidden lg:block absolute top-1/2 start-8 end-8 h-1 bg-gradient-to-r from-accent/20 via-accent to-accent/20 -translate-y-12 -z-0 opacity-40"></div>
+
+        <!-- Steps Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-start relative z-10">
+          
+          <!-- Step 1 -->
+          <div class="group bg-gradient-to-b from-white to-gray-50/60 dark:from-[#0B1220] dark:to-[#0F172A]/90 border border-gray-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-lg hover-lift transition-all duration-300 relative overflow-hidden hover:border-accent/60">
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-lg font-bold shadow-sm border border-accent/30 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">Step 01</span>
+            </div>
+
+            <div class="h-1.5 w-10 bg-accent rounded-full mb-4 group-hover:w-full transition-all duration-500"></div>
+
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Instant Quote Requests</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Add products to your queue and receive custom volume contract price points within 2 hours.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="group bg-gradient-to-b from-white to-gray-50/60 dark:from-[#0B1220] dark:to-[#0F172A]/90 border border-gray-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-lg hover-lift transition-all duration-300 relative overflow-hidden hover:border-blue-500/60">
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/15 text-blue-500 dark:text-blue-400 flex items-center justify-center text-lg font-bold shadow-sm border border-blue-500/30 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-vial-circle-check"></i>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-500 dark:text-blue-400 border border-blue-500/20">Step 02</span>
+            </div>
+
+            <div class="h-1.5 w-10 bg-blue-500 rounded-full mb-4 group-hover:w-full transition-all duration-500"></div>
+
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-blue-400 transition-colors">Laboratory Quality Check</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Samples of the designated batch undergo stress tests at pre-delivery lab stages.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="group bg-gradient-to-b from-white to-gray-50/60 dark:from-[#0B1220] dark:to-[#0F172A]/90 border border-gray-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-lg hover-lift transition-all duration-300 relative overflow-hidden hover:border-amber-500/60">
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-500 dark:text-amber-400 flex items-center justify-center text-lg font-bold shadow-sm border border-amber-500/30 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 dark:text-amber-400 border border-amber-500/20">Step 03</span>
+            </div>
+
+            <div class="h-1.5 w-10 bg-amber-500 rounded-full mb-4 group-hover:w-full transition-all duration-500"></div>
+
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-amber-400 transition-colors">Automated Loading</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Materials are loaded onto corresponding heavy flatbeds using mechanical gantry cranes.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="group bg-gradient-to-b from-white to-gray-50/60 dark:from-[#0B1220] dark:to-[#0F172A]/90 border border-gray-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-lg hover-lift transition-all duration-300 relative overflow-hidden hover:border-emerald-500/60">
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-500 dark:text-emerald-400 flex items-center justify-center text-lg font-bold shadow-sm border border-emerald-500/30 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-route"></i>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border border-emerald-500/20">Step 04</span>
+            </div>
+
+            <div class="h-1.5 w-10 bg-emerald-500 rounded-full mb-4 group-hover:w-full transition-all duration-500"></div>
+
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-emerald-400 transition-colors">Geo-Tracked Transit</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Real-time truck coordinates are fed to your portal dashboard for perfect site offload prep.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="group bg-gradient-to-b from-white to-gray-50/60 dark:from-[#0B1220] dark:to-[#0F172A]/90 border border-gray-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-lg hover-lift transition-all duration-300 relative overflow-hidden hover:border-purple-500/60">
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-500 dark:text-purple-400 flex items-center justify-center text-lg font-bold shadow-sm border border-purple-500/30 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-500 dark:text-purple-400 border border-purple-500/20">Step 05</span>
+            </div>
+
+            <div class="h-1.5 w-10 bg-purple-500 rounded-full mb-4 group-hover:w-full transition-all duration-500"></div>
+
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-purple-400 transition-colors">On-Site Placement</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Our truck operators unload directly to laydown areas, retaining certified delivery stamps.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Project Galleries Section -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900/40 border-t border-b border-gray-200 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-start">
+        <div class="space-y-3">
+          <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">Sourcing Case Studies</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-primary dark:text-white tracking-tight">Supplied Infrastructure Projects</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-xl">
+            Explore large-scale infrastructure complexes successfully completed using BuildPro materials pipelines.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="w-10 h-10 rounded-lg bg-white border border-gray-200 dark:bg-[#0B1220] dark:border-slate-800 flex items-center justify-center hover:text-accent"><i class="fa-solid fa-arrow-left rtl-flip"></i></button>
+          <button class="w-10 h-10 rounded-lg bg-white border border-gray-200 dark:bg-[#0B1220] dark:border-slate-800 flex items-center justify-center hover:text-accent"><i class="fa-solid fa-arrow-right rtl-flip"></i></button>
+        </div>
+      </div>
+
+      <!-- Galleries Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between text-start hover-lift">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <img src="./assets/images/proj_elevated_corridor.jpg" alt="Line 4 Elevated Corridor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 start-4 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">Metro Rail Extension</span>
+          </div>
+          <div class="p-6 space-y-2 flex-grow">
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Line 4 Elevated Corridor</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">BuildPro supplied 22,000 tons of high-tensile Fe 500D TMT reinforcement rebars and OPC 53 Grade concrete mixers for piers casting.</p>
+            <div class="pt-4 border-t border-gray-100 dark:border-slate-800 mt-4 flex items-center justify-between text-[11px] text-gray-500 font-bold uppercase">
+              <span>Client: City Metro Corp</span>
+              <span class="text-accent">Completed 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between text-start hover-lift">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <img src="./assets/images/proj_distribution_hub.jpg" alt="Midwest Mega Distribution Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 start-4 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">Industrial Park</span>
+          </div>
+          <div class="p-6 space-y-2 flex-grow">
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Midwest Mega Distribution Hub</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Total supply of lightweight Autoclaved Aerated Blocks (AAC blocks) and structural I-beams for a 450,000 sq ft logistics complex.</p>
+            <div class="pt-4 border-t border-gray-100 dark:border-slate-800 mt-4 flex items-center justify-between text-[11px] text-gray-500 font-bold uppercase">
+              <span>Client: Vertex Logi-Parks</span>
+              <span class="text-accent">Completed 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between text-start hover-lift">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <img src="./assets/images/proj_skyline_tower.jpg" alt="Century Financial Skyline Tower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 start-4 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">Highrise Commercial</span>
+          </div>
+          <div class="p-6 space-y-2 flex-grow">
+            <h3 class="text-base font-bold font-display text-primary dark:text-white group-hover:text-accent transition-colors">Century Financial Skyline Tower</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Procurement of custom-fabricated toughened float glass panels, vitrified flooring tiles, and heavy structural cables for elevator columns.</p>
+            <div class="pt-4 border-t border-gray-100 dark:border-slate-800 mt-4 flex items-center justify-between text-[11px] text-gray-500 font-bold uppercase">
+              <span>Client: Century Realty Trust</span>
+              <span class="text-accent">Completed 2026</span>
+            </div>
+          </div>
+        </div>
+
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="bg-accent hover:bg-accent-hover text-primary font-bold px-8 py-4 rounded-lg text-sm shadow-md hover:shadow-lg transition-colors">
+          Schedule Consultation &rarr;
+        </a>
+        <a href="pricing.html" class="bg-transparent border border-white/20 hover:border-white/50 text-white font-semibold px-8 py-4 rounded-lg text-sm transition-colors">
+          Compare Contractor Rates
+        </a>
+      </div>
+    </div>
+  </section>
+
+    <!-- Multi-Column Footer -->
+  
+  <!-- Heavy Logistics Dispatch Fleet Showcase -->
+  <section class="py-20 bg-primary text-white border-t border-b border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 px-4 py-1.5 rounded-full border border-accent/20 inline-block shadow-sm">
+          <i class="fa-solid fa-truck-monster me-1.5"></i> Dedicated Heavy Fleet
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight text-white">
+          Multi-Modal Dispatch & Site Offloading Fleet
+        </h2>
+        <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+          Equipped with specialized heavy-duty transport units to deliver uncompromised volume logistics directly to active job site boundaries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Fleet Item 1 -->
+        <div class="bg-[#0B1220] border border-slate-800 rounded-2xl p-6 hover-lift transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl font-bold border border-amber-500/20">
+            <i class="fa-solid fa-truck-front"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Bulk Pneumatic Cement Tankers</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Dry cement pressurization tankers capable of pneumatic discharge straight into batching plant silos.</p>
+          <div class="pt-3 border-t border-slate-850 flex items-center justify-between text-xs text-gray-300 font-semibold">
+            <span>Payload: <strong class="text-amber-400">40 Tons</strong></span>
+            <span>Radius: <strong class="text-amber-400">500 KM</strong></span>
+          </div>
+        </div>
+
+        <!-- Fleet Item 2 -->
+        <div class="bg-[#0B1220] border border-slate-800 rounded-2xl p-6 hover-lift transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl font-bold border border-blue-500/20">
+            <i class="fa-solid fa-truck-moving"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Flatbed Steel Rebar Haulers</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Extended 40ft triple-axle flatbeds engineered for 12m TMT steel bundles and structural I-beams.</p>
+          <div class="pt-3 border-t border-slate-850 flex items-center justify-between text-xs text-gray-300 font-semibold">
+            <span>Payload: <strong class="text-blue-400">55 Tons</strong></span>
+            <span>Radius: <strong class="text-blue-400">750 KM</strong></span>
+          </div>
+        </div>
+
+        <!-- Fleet Item 3 -->
+        <div class="bg-[#0B1220] border border-slate-800 rounded-2xl p-6 hover-lift transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl font-bold border border-emerald-500/20">
+            <i class="fa-solid fa-compact-disc"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Transit Concrete Mixers</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Temperature-controlled drum mixers equipped with automated retarder pumps for extended haul transit.</p>
+          <div class="pt-3 border-t border-slate-850 flex items-center justify-between text-xs text-gray-300 font-semibold">
+            <span>Volume: <strong class="text-emerald-400">10 m³</strong></span>
+            <span>Slump Lock: <strong class="text-emerald-400">90 Mins</strong></span>
+          </div>
+        </div>
+
+        <!-- Fleet Item 4 -->
+        <div class="bg-[#0B1220] border border-slate-800 rounded-2xl p-6 hover-lift transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl font-bold border border-purple-500/20">
+            <i class="fa-solid fa-[#000]"></i>
+            <i class="fa-solid fa-truck-field"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Telehandler Cranes</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">All-terrain heavy telescopic handlers deployed for direct palletized brick and tile placement.</p>
+          <div class="pt-3 border-t border-slate-850 flex items-center justify-between text-xs text-gray-300 font-semibold">
+            <span>Lift Capacity: <strong class="text-purple-400">5 Tons</strong></span>
+            <span>Boom Height: <strong class="text-purple-400">17 M</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Civil QA Testing & Compliance Assurance -->
+  <section class="py-20 bg-white dark:bg-[#090D16] text-[#1F2937] dark:text-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6 text-start">
+          <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 px-3.5 py-1 rounded-full border border-accent/20 inline-block">
+            <i class="fa-solid fa-microscope me-1.5"></i> Certified Testing Standard
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display text-primary dark:text-white tracking-tight">
+            Comprehensive Batch Lab QA &amp; Mechanical Certifications
+          </h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            Every cubic meter of concrete and bundle of TMT steel dispatched through BuildPro undergoes rigorous chemical analysis, yield stress verification, and compressive break testing before entering your project site.
+          </p>
+          
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-gray-50 dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-primary dark:text-white">AASHTO T-22 Compressive Strength Verification</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">7-day and 28-day break tests recorded automatically with digitally signed PDF certificates.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-gray-50 dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-primary dark:text-white">Spectrometer Chemical Composition Logs</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Carbon equivalent and alloy purity metrics embedded in instant QR codes on all steel bundles.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-gradient-to-br from-[#0B1220] to-[#1E293B] p-8 rounded-3xl border border-slate-700 shadow-2xl text-white space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-700 pb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-accent"><i class="fa-solid fa-file-shield me-1"></i> Sample MTC Report</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2.5 py-0.5 rounded font-bold">PASSED AUDIT</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                <span class="text-gray-400 block text-[10px] uppercase font-bold">Material Grade</span>
+                <span class="text-sm font-bold text-white mt-1 block">Fe 550D TMT Rebar</span>
+              </div>
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                <span class="text-gray-400 block text-[10px] uppercase font-bold">Tensile Yield</span>
+                <span class="text-sm font-bold text-white mt-1 block">585 N/mm²</span>
+              </div>
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                <span class="text-gray-400 block text-[10px] uppercase font-bold">Elongation</span>
+                <span class="text-sm font-bold text-white mt-1 block">16.5% Compliant</span>
+              </div>
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                <span class="text-gray-400 block text-[10px] uppercase font-bold">Batch Cert ID</span>
+                <span class="text-sm font-bold text-accent mt-1 block">#BP-QA-99482</span>
+              </div>
+            </div>
+
+            <a href="services.html" class="block text-center py-3 rounded-xl bg-accent text-primary font-bold text-xs hover:bg-accent-hover transition-colors shadow-lg">
+              Download Full QA Testing Methodology
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contractor Procurement FAQ Accordion -->
+  <section class="py-20 bg-gray-50 dark:bg-[#0B1220]/60 border-t border-gray-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 px-3.5 py-1 rounded-full border border-accent/20 inline-block">
+          <i class="fa-solid fa-circle-question me-1.5"></i> Procurement Guidance
+        </span>
+        <h2 class="text-3xl font-black font-display text-primary dark:text-white tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Everything you need to know about placing bulk material orders and scheduling site offloading.</p>
+      </div>
+
+      <div class="space-y-4 text-start">
+        
+        <div class="border border-gray-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#0B1220] overflow-hidden shadow-sm">
+          <button class="accordion-header w-full px-6 py-4 flex items-center justify-between font-bold text-sm text-primary dark:text-white hover:text-accent transition-colors">
+            <span>What are the minimum order quantities for direct factory rates?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-accent transition-transform duration-200"></i>
+          </button>
+          <div class="accordion-content px-6 pb-4 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+            Direct factory wholesale pricing applies to minimum orders of 10 Metric Tons for TMT Steel, 200 bags for Cement (OPC/PPC), or full flatbed truckloads for AAC blocks and bricks. Smaller site orders can be fulfilled via regional hub inventory.
+          </div>
+        </div>
+
+        <div class="border border-gray-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#0B1220] overflow-hidden shadow-sm">
+          <button class="accordion-header w-full px-6 py-4 flex items-center justify-between font-bold text-sm text-primary dark:text-white hover:text-accent transition-colors">
+            <span>How does the 30 to 90-day contractor credit program work?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-accent transition-transform duration-200"></i>
+          </button>
+          <div class="accordion-content px-6 pb-4 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+            Verified contractors with active corporate GST registration can apply for pre-approved credit lines ranging from ₹5 Lakhs to ₹2.5 Crores. Orders placed against credit lines receive automatic Net-30 or Net-60 invoice terms upon site offload.
+          </div>
+        </div>
+
+        <div class="border border-gray-200 dark:border-slate-800 rounded-xl bg-white dark:bg-[#0B1220] overflow-hidden shadow-sm">
+          <button class="accordion-header w-full px-6 py-4 flex items-center justify-between font-bold text-sm text-primary dark:text-white hover:text-accent transition-colors">
+            <span>Can we request pre-delivery lab sample testing?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-accent transition-transform duration-200"></i>
+          </button>
+          <div class="accordion-content px-6 pb-4 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+            Yes. Prior to major pour schedules or structural casting, our logistics team will dispatch third-party certified lab sample cubes and tensile samples directly to your structural engineering team for independent verification.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+<footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white hover:opacity-90 transition-opacity">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar (Centered, Links Removed) -->
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPro - Industry Blog | Construction & Building Materials</title>
+  <meta name="description" content="Read the latest insights, construction guides, structural engineering tips, and material price trends from BuildPro's industry experts." />
+  <meta name="keywords" content="construction blog, cement tips, structural steel, building trends, B2B materials insights" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildPro - Industry Blog" />
+  <meta property="og:description" content="Read the latest insights, construction guides, and material price trends from industry experts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/blog-og.jpg" />
+  
+  <!-- CDNs & Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#090D16] dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+        <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 1</a>
+              <a href="home-2.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          
+          <a href="products.html" class="nav-link">Products</a>
+
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+                                <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
+            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
+            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="contact.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0"><i class="fa-solid fa-calendar-check text-xs"></i> Book Now</a>
+
+          <!-- Signup -->
+          <a href="register.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Quote List / Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+            <i class="fa-solid fa-boxes-stacked text-xl"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[20px] h-5 px-1 text-[10px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-sun sun-icon hidden"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-boxes-stacked text-lg"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Hero Header Section -->
+    <section class="relative bg-primary dark:bg-[#0B1220] text-white py-16 sm:py-24 border-b border-gray-800 dark:border-border-dark overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent mb-4">
+          <i class="fa-solid fa-book-open"></i> BuildPro Newsroom
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight">
+          Industry Insights &amp; <span class="text-accent">Knowledge</span>
+        </h1>
+        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+          Stay informed on commercial construction trends, technical material analysis, sustainability policies, and pricing developments.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Toolbar: Search and Categories Filters -->
+    <section class="bg-white dark:bg-primary border-b border-gray-200 dark:border-border-dark py-6 sticky top-20 z-40 shadow-sm transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          
+          <!-- Categories Filter tags -->
+          <div class="flex flex-wrap items-center gap-2" id="blog-categories">
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-accent text-white dark:text-primary" data-category="all">
+              All Articles
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="cement">
+              Cement
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="steel">
+              Steel
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="bricks">
+              Bricks
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="tiles">
+              Tiles
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="sustainability">
+              Sustainability
+            </button>
+            <button class="blog-cat-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 bg-gray-100 text-gray-700 dark:bg-primary-light dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-primary-hover" data-category="technology">
+              Technology
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <form id="blog-search-form" onsubmit="return false;" class="relative w-full md:max-w-xs flex items-center">
+            <input type="text" id="blog-search" placeholder="Search articles..." class="w-full ps-3.5 pe-10 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent" />
+            <button type="submit" id="btn-blog-search" class="absolute end-1 px-2.5 py-1.5 bg-accent hover:bg-accent-hover text-primary font-bold rounded-md transition-colors text-xs shadow-sm flex items-center justify-center gap-1" title="Search articles">
+              <i class="fa-solid fa-magnifying-glass text-[11px]"></i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid of Blog Articles -->
+    <section class="py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Article 1: Cement -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="green cement: the future of eco-friendly infrastructure" data-category="cement">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/green_cement_study_user.jpg" alt="Cement production" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Cement</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Aug 14, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>6 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=green-cement">Green Cement: The Future of Eco-Friendly Infrastructure</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  Discover how low-carbon cement options and fly-ash alternatives are helping construction firms achieve strict environmental certifications while preserving structural integrity.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_david_holtzman.jpg" alt="Dr. Roger Vance" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Dr. Roger Vance</span>
+              </div>
+              <a href="blog-details.html?id=green-cement" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2: Steel -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="corrosion resistance in modern structural steel" data-category="steel">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/prod_tmt_steel_v2.jpg" alt="Structural Steel" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Steel</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Aug 10, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>8 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=corrosion-steel">Corrosion Resistance in Modern Structural Steel</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  A deep dive into galvanized coatings, alloys, and maintenance methodologies that prolong structural lifespan in marine and high-humidity zones.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_marcus_vance.jpg" alt="Marcus Kross" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Marcus Kross</span>
+              </div>
+              <a href="blog-details.html?id=corrosion-steel" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3: Bricks -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="innovations in clay bricks and prefab masonry blocks" data-category="bricks">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/cat_bricks.jpg" alt="Clay bricks and masonry blocks" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Bricks</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Aug 03, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>5 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=clay-bricks">Innovations in Clay Bricks &amp; Prefab Masonry Blocks</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  Analyzing insulation performance and structural efficiency comparisons between traditional terracotta clay bricks, concrete blocks, and AAC blocks.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_sonia_patel.jpg" alt="Sonia Lim" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Sonia Lim</span>
+              </div>
+              <a href="blog-details.html?id=clay-bricks" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 4: Tiles -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="selecting the right industrial floor tiles for high-traffic warehouses" data-category="tiles">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/prod_vitrified_tiles_v2.jpg" alt="Industrial Floor Tiles" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Tiles</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Jul 28, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>7 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=industrial-tiles">Selecting Industrial Floor Tiles for High-Traffic Warehouses</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  An evaluation of slip-resistance ratings, compressive strength thresholds, and chemical resistances required for commercial warehouse flooring.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_david_holtzman.jpg" alt="Dr. Roger Vance" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Dr. Roger Vance</span>
+              </div>
+              <a href="blog-details.html?id=industrial-tiles" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 5: Technology -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="how smart supply chains are eliminating material wastage" data-category="technology">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/proj_distribution_hub.jpg" alt="Smart Supply Chain Logistics" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Technology</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Jul 15, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>9 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=smart-supply">How Smart Supply Chains Are Eliminating Material Wastage</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  Using real-time tracking, JIT scheduling, and automated calculations to cut down on-site surplus and lower overall project material costs by 15%.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_marcus_vance.jpg" alt="Marcus Kross" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Marcus Kross</span>
+              </div>
+              <a href="blog-details.html?id=smart-supply" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 6: Sustainability -->
+          <article class="blog-article bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-xl overflow-hidden hover-lift flex flex-col justify-between" data-title="embarking on net-zero building projects: a guide for contractors" data-category="sustainability">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="./assets/images/green_cement_clean.jpg" alt="Net-Zero Building Projects" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span class="absolute top-4 start-4 bg-accent text-primary text-xs font-bold px-2.5 py-1 rounded-md">Sustainability</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                  <span><i class="fa-solid fa-calendar-days me-1.5"></i>Jul 02, 2026</span>
+                  <span><i class="fa-solid fa-clock me-1.5"></i>11 min read</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-accent transition-colors">
+                  <a href="blog-details.html?id=net-zero">Net-Zero Building Projects: A Guide for Contractors</a>
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                  A comprehensive overview of thermal performance standards, energy capture materials, and green certification points like LEED v4.1.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-border-dark mt-4">
+              <div class="flex items-center gap-2">
+                <img src="./assets/images/avatar_sonia_patel.jpg" alt="Sonia Lim" class="w-8 h-8 rounded-full object-cover border border-accent/40 shadow-sm">
+                <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">Sonia Lim</span>
+              </div>
+              <a href="blog-details.html?id=net-zero" class="text-xs font-bold text-accent hover:text-accent-hover flex items-center gap-1">
+                Read Article <i class="fa-solid fa-arrow-right rtl-flip text-[10px]"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- Multi-Column Footer -->
+  <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white hover:opacity-90 transition-opacity">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar (Centered, Links Removed) -->
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+

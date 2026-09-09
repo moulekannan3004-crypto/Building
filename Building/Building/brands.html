@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet BuildPro's premium manufacturer partners and global logistics network. We deliver factory-direct building materials through DHL, FedEx, and Maersk.">
+  <title>BuildPro - Partners & Logistics | Construction & Building Materials</title>
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-[#F9FAFB] dark:bg-[#090D16] text-[#1F2937] dark:text-[#F9FAFB] min-h-screen flex flex-col transition-colors duration-300">
+
+  <!-- Announcement Bar -->
+  <div class="bg-primary text-gray-300 text-xs py-2 border-b border-gray-800 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-phone text-accent me-1.5"></i> +1 (800) 555-0199</span>
+        <span><i class="fa-solid fa-envelope text-accent me-1.5"></i> support@buildpro.com</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-handshake text-accent me-1.5"></i> Certified Factory-Direct Brands Only</span>
+        <a href="contractor-pricing.html" class="hover:text-accent font-semibold transition-colors">Apply for Line of Credit</a>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+                                <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
+            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
+            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="px-4 py-2 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-slate-700 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap shrink-0">
+            <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
+          </a>
+
+          <!-- Signup -->
+          <a href="register.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Quote List / Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+            <i class="fa-solid fa-file-invoice text-xl"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[20px] h-5 px-1 text-[10px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-sun sun-icon hidden"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-file-invoice text-lg"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-80 bg-white dark:bg-[#0B1220] shadow-2xl border-l border-gray-200 dark:border-[#1E293B] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex items-center justify-between p-5 border-b border-gray-200 dark:border-[#1E293B]">
+      <div class="flex items-center gap-2">
+        <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+        <span class="font-display font-extrabold text-lg text-primary dark:text-white">Build <span class="text-accent">Pro</span></span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent rounded-lg border border-gray-200 dark:border-[#1E293B]" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+    <div class="p-5 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+      <nav class="flex flex-col gap-3">
+        <a href="index.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Home</a>
+        <a href="about.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">About</a>
+        <a href="services.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Services</a>
+        <a href="products.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Products</a>
+        <a href="pricing.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Pricing</a>
+        <a href="contractor-pricing.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Contractor Pricing</a>
+        <a href="quantity-estimator.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Quantity Estimator</a>
+        <a href="brands.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-accent">Brands & Partners</a>
+        <a href="blog.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Blog</a>
+        <a href="contact.html" class="px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-[#141E33] font-semibold text-gray-700 dark:text-gray-200 transition-colors">Contact</a>
+      </nav>
+      <div class="pt-6 border-t border-gray-200 dark:border-[#1E293B]">
+        <a href="contact.html#quote-request" class="w-full text-center block bg-accent hover:bg-accent-hover text-primary dark:text-primary font-bold py-3 rounded-lg transition-all">
+          Get Custom Quote
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumbs & Hero -->
+  <section class="bg-primary dark:bg-bg-dark text-white py-16 md:py-20 relative overflow-hidden transition-colors duration-300">
+    <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-accent font-bold text-xs uppercase tracking-widest bg-accent/15 px-3 py-1 rounded-full">Sourcing Network</span>
+      <h1 class="font-display font-extrabold text-3xl md:text-5xl mt-3 tracking-tight">
+        Brands & <span class="text-accent">Logistics Partners</span>
+      </h1>
+      <p class="text-gray-400 mt-3 max-w-xl mx-auto text-xs md:text-sm">
+        We partner directly with leading construction material manufacturers and Tier-1 shipping carriers to assure supply safety, lower margins, and speed up contractor delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sourced Brands Showcase -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+    
+    <!-- Section 1: Manufacturer Partners -->
+    <section class="mb-20">
+      <div class="text-start mb-10 border-b border-gray-200 dark:border-[#1E293B] pb-4">
+        <h2 class="font-display font-extrabold text-2xl md:text-3xl text-primary dark:text-white">
+          Certified Manufacturers
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1.5">
+          Rest assured you are buying authentic materials. These global brands ship directly from their manufacturing hubs to your loading dock.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Brand 1: UltraTech -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 hover-lift flex flex-col justify-between transition-colors duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-mountain text-amber-500 text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white">UltraTech Cement</h3>
+            <span class="text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded mt-1 inline-block uppercase">Official Partner</span>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
+              India's largest cement exporter. Delivers extreme strength OPC 53 Grade and durable Pozzolana (PPC) mixes for tall structures.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            Primary: Cement, Mortar
+          </div>
+        </div>
+
+        <!-- Brand 2: Tata Tiscon -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 hover-lift flex flex-col justify-between transition-colors duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-bars-staggered text-blue-500 text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white">Tata Tiscon</h3>
+            <span class="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-2 py-0.5 rounded mt-1 inline-block uppercase">Strategic Alliance</span>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
+              Pioneers in high-yield reinforcement steel. Manufactures TMT steel rebars FE 550D with optimal seismic protection profiles.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            Primary: Rebar, Structural Steel
+          </div>
+        </div>
+
+        <!-- Brand 3: Somany Ceramics -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 hover-lift flex flex-col justify-between transition-colors duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-border-all text-indigo-500 text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white">Somany Ceramics</h3>
+            <span class="text-[10px] font-bold text-indigo-500 bg-indigo-500/10 px-2 py-0.5 rounded mt-1 inline-block uppercase">Vendor Approved</span>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
+              Global designer of high-gloss polished vitrified floor tiling and luxury glazed interior wall ceramics.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            Primary: Vitrified & Ceramic Tiles
+          </div>
+        </div>
+
+        <!-- Brand 4: Century Ply -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 hover-lift flex flex-col justify-between transition-colors duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-border-top-left text-emerald-500 text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white">Century Plywood</h3>
+            <span class="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded mt-1 inline-block uppercase">Official Partner</span>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
+              Industry leader in boiling water resistant (BWR) marine plywood. Termite-proof hardwood core formulations.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            Primary: Shuttering Plywood
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Logistics & Freight Showcase -->
+    <section class="mb-20">
+      <div class="text-start mb-10 border-b border-gray-200 dark:border-[#1E293B] pb-4">
+        <h2 class="font-display font-extrabold text-2xl md:text-3xl text-primary dark:text-white">
+          Logistics & Freight Carriers
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1.5">
+          Heavy construction materials require specialised transit. We integrate with leading logistics providers to support bulk rail, cargo sea containers, and local flatbed trucking.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Carrier 1: Maersk Logistics -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-sky-500/15 flex items-center justify-center text-sky-500 text-2xl">
+                <i class="fa-solid fa-ship"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-primary dark:text-white">Maersk Line</h3>
+                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Global Sea Freight</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Handles raw material cargo sea containers from overseas factories. Guarantees raw steel and bulk timber dispatch safety directly to regional ports.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] flex justify-between items-center text-xs">
+            <span class="text-gray-400">Transit Profile</span>
+            <span class="font-bold text-primary dark:text-white">Inter-Continental Bulk</span>
+          </div>
+        </div>
+
+        <!-- Carrier 2: FedEx Freight -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-purple-500/15 flex items-center justify-center text-purple-500 text-2xl">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-primary dark:text-white">FedEx Freight</h3>
+                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Expedited Inter-State</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Manages expedited LTL (Less-Than-Truckload) pallet deliveries for contractors. Essential for rapid transport of electrical, plumbing, and structural components.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] flex justify-between items-center text-xs">
+            <span class="text-gray-400">Transit Profile</span>
+            <span class="font-bold text-accent">1-3 Day Priority Pallet</span>
+          </div>
+        </div>
+
+        <!-- Carrier 3: BuildPro Fleet -->
+        <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-2xl p-6 transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center text-accent text-2xl">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-primary dark:text-white">BuildPro Express</h3>
+                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Last-Mile Shuttering</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Our private local flatbed truck network. Offers same-day or next-day scheduled crane unloading directly onto your construction plot.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 dark:border-[#1E293B] flex justify-between items-center text-xs">
+            <span class="text-gray-400">Transit Profile</span>
+            <span class="font-bold text-green-500">Same-Day Local Flatbed</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sourcing & Delivery FAQ (Accordions Section leveraging app.js initAccordions) -->
+    <section class="mt-24 max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="font-display font-extrabold text-2xl md:text-3xl text-primary dark:text-white">
+          Sourcing & Logistics FAQ
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          Find answers about delivery coordinates, freight unloading, and brand sourcing audits.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Accordion 1 -->
+        <div class="border border-gray-200 dark:border-[#1E293B] rounded-2xl overflow-hidden bg-white dark:bg-[#0B1220] transition-colors duration-300">
+          <button class="accordion-header w-full px-6 py-5 text-start font-display font-bold text-base text-primary dark:text-white hover:bg-gray-50 dark:hover:bg-[#141E33] flex justify-between items-center transition-colors">
+            <span>How does BuildPro verify product authenticity?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-gray-50/50 dark:bg-primary-light/10">
+            <p class="p-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Every shipment processed through BuildPro includes a Manufacturer Test Certificate (MTC) stating standard grade compliance (e.g. ASTM or IS standards). We audit factory batches directly to guarantee that no counterfeit steel or substandard cement enters the supply chain.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion 2 -->
+        <div class="border border-gray-200 dark:border-[#1E293B] rounded-2xl overflow-hidden bg-white dark:bg-[#0B1220] transition-colors duration-300">
+          <button class="accordion-header w-full px-6 py-5 text-start font-display font-bold text-base text-primary dark:text-white hover:bg-gray-50 dark:hover:bg-[#141E33] flex justify-between items-center transition-colors">
+            <span>What heavy unloading machinery is included with delivery?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-gray-50/50 dark:bg-primary-light/10">
+            <p class="p-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Standard local deliveries using the BuildPro Express Fleet include flatbed trucks with integrated unloading cranes (boom trucks). If you are ordering structural steel beams or tons of tiles, please request on-site unloading crane assistance in the special comments section during quote request checkout.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion 3 -->
+        <div class="border border-gray-200 dark:border-[#1E293B] rounded-2xl overflow-hidden bg-white dark:bg-[#0B1220] transition-colors duration-300">
+          <button class="accordion-header w-full px-6 py-5 text-start font-display font-bold text-base text-primary dark:text-white hover:bg-gray-50 dark:hover:bg-[#141E33] flex justify-between items-center transition-colors">
+            <span>Do you offer custom scheduled shipping plans?</span>
+            <i class="fa-solid fa-chevron-down accordion-icon text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-gray-50/50 dark:bg-primary-light/10">
+            <p class="p-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Yes, for Gold and Enterprise contractors, we offer staggered delivery scheduling. For example, we can deliver cement batches in groups of 500 bags every Monday morning to prevent concrete setting/cluttering on your construction site.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky Premium Footer -->
+  <footer class="bg-primary dark:bg-bg-dark text-gray-300 border-t border-gray-800 dark:border-border-dark transition-colors duration-300 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            <span class="font-display font-extrabold text-xl text-white tracking-tight">Build <span class="text-accent">Pro</span></span>
+          </a>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Premium B2B supplier of high-quality construction materials, raw supplies, and logistics solutions for modern contractors, builders, and developers.
+          </p>
+          <div class="flex items-center gap-3 mt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About BuildPro</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Our Services</a></li>
+            
+            <li><a href="contractor-pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="quantity-estimator.html" class="hover:text-accent transition-colors">Material Estimator</a></li>
+            <li><a href="brands.html" class="hover:text-accent transition-colors">Our Brands & Partners</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">Latest Industry Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Contact Details</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-accent mt-1"></i>
+              <span>100 Construction Blvd, Suite 400, Industrial Zone, NY 10001</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>support@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Newsletter</h4>
+          <p class="text-sm text-gray-400 mb-3">Subscribe to get wholesale updates, price trends, and special discounts.</p>
+          <form class="flex flex-col gap-2">
+            <input type="email" placeholder="Enter business email" class="px-3 py-2 text-sm bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-accent" required />
+            <button type="submit" class="bg-accent hover:bg-accent-hover text-primary font-bold py-2 rounded-lg text-sm transition-colors">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 BuildPro Supplies Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

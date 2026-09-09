@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Access premium contractor tier discounts at BuildPro. Use our interactive volume calculator to calculate bulk discounts on cement, steel, bricks, and tiles.">
+  <title>BuildPro - Contractor Pricing & Tiers | Construction & Building Materials</title>
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-[#F9FAFB] dark:bg-[#090D16] text-[#1F2937] dark:text-[#F9FAFB] min-h-screen flex flex-col transition-colors duration-300">
+
+
+
+  <!-- Announcement Bar -->
+  <div class="bg-primary text-gray-300 text-xs py-2 border-b border-gray-800 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-phone text-accent me-1.5"></i> +1 (800) 555-0199</span>
+        <span><i class="fa-solid fa-envelope text-accent me-1.5"></i> support@buildpro.com</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-truck text-accent me-1.5"></i> Free Delivery for Gold & Enterprise Tiers</span>
+        <span class="text-accent font-semibold">Contractor Pricing Active</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 1</a>
+              <a href="home-2.html" class="flex items-center px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+                                <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
+            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
+            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="contact.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0"><i class="fa-solid fa-calendar-check text-xs"></i> Book Now</a>
+
+          <!-- Signup -->
+          <a href="register.html" class="px-5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Quote List / Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
+            <i class="fa-solid fa-boxes-stacked text-xl"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[20px] h-5 px-1 text-[10px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-3">
+          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-sun sun-icon hidden"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
+            <i class="fa-solid fa-boxes-stacked text-lg"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-4.5 px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-primary dark:bg-bg-dark text-white py-16 md:py-24 transition-colors duration-300 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span class="text-accent font-extrabold text-xs uppercase tracking-widest bg-accent/15 px-3.5 py-1.5 rounded-full">Wholesale B2B Programs</span>
+      <h1 class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl mt-4 tracking-tight">
+        Contractor <span class="text-accent">Pricing Tiers</span>
+      </h1>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+        Scale your purchasing, unlock deep volume discounts, and benefit from expedited commercial logistics. Sign up for a free contractor account to save on every shipment.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#calculator" class="bg-accent hover:bg-accent-hover text-primary font-bold px-6 py-3 rounded-xl transition-all hover-lift text-sm">
+          Volume Calculator
+        </a>
+        <a href="contact.html#contractor-form" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all border border-white/20 text-sm">
+          Apply for Commercial Account
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contractor Pricing Tiers Grid -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+    
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="font-display font-extrabold text-2xl md:text-3xl text-primary dark:text-white">Discount Program Overview</h2>
+      <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-2">
+        We categorise accounts into four tiers based on monthly volume. Tier levels are recalculated on the 1st of every month.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      
+      <!-- Tier 1: Bronze -->
+      <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tier 01</span>
+            <i class="fa-solid fa-medal text-2xl text-amber-700"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-xl text-primary dark:text-white">Bronze Starter</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Standard commercial buyers</p>
+          
+          <div class="my-5 py-3 border-y border-gray-100 dark:border-[#1E293B]">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-gray-400">Min. Vol (Monthly)</span>
+              <span class="font-bold text-primary dark:text-white">1 Unit</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Standard Discount</span>
+              <span class="font-bold text-red-500">Base Price (0%)</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Delivery Speed</span>
+              <span class="font-bold text-primary dark:text-white">3-5 Business Days</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Portal access to quote manager</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Basic cargo tracking</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Credit card & cash payment</li>
+          </ul>
+        </div>
+        <div class="mt-8">
+          <a href="contact.html" class="w-full text-center block border border-gray-300 dark:border-[#1E293B] text-primary dark:text-white hover:border-accent dark:hover:border-accent text-xs font-bold py-2.5 rounded-xl transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 2: Silver -->
+      <div class="bg-white dark:bg-[#0B1220] border-2 border-slate-300 dark:border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Tier 02</span>
+            <i class="fa-solid fa-medal text-2xl text-slate-400"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-xl text-primary dark:text-white">Silver Contractor</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Growing construction firms</p>
+          
+          <div class="my-5 py-3 border-y border-gray-100 dark:border-[#1E293B]">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-gray-400">Min. Vol (Monthly)</span>
+              <span class="font-bold text-primary dark:text-white">50 Units</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Standard Discount</span>
+              <span class="font-bold text-green-500">10% Off Base</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+      <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-[#1E293B] rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tier 01</span>
+            <i class="fa-solid fa-medal text-2xl text-amber-700"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-xl text-primary dark:text-white">Bronze Starter</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Standard commercial buyers</p>
+          
+          <div class="my-5 py-3 border-y border-gray-100 dark:border-[#1E293B]">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-gray-400">Min. Vol (Monthly)</span>
+              <span class="font-bold text-primary dark:text-white">1 Unit</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Standard Discount</span>
+              <span class="font-bold text-red-500">Base Price (0%)</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Delivery Speed</span>
+              <span class="font-bold text-primary dark:text-white">3-5 Business Days</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Portal access to quote manager</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Basic cargo tracking</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Credit card & cash payment</li>
+          </ul>
+        </div>
+        <div class="mt-8">
+          <a href="contact.html" class="w-full text-center block border border-gray-300 dark:border-[#1E293B] text-primary dark:text-white hover:border-accent dark:hover:border-accent text-xs font-bold py-2.5 rounded-xl transition-all">
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 2: Silver -->
+      <div class="bg-white dark:bg-[#0B1220] border-2 border-slate-300 dark:border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover-lift relative overflow-hidden transition-colors duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Tier 02</span>
+            <i class="fa-solid fa-medal text-2xl text-slate-400"></i>
+          </div>
+          <h3 class="font-display font-extrabold text-xl text-primary dark:text-white">Silver Contractor</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Growing construction firms</p>
+          
+          <div class="my-5 py-3 border-y border-gray-100 dark:border-[#1E293B]">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-gray-400">Min. Vol (Monthly)</span>
+              <span class="font-bold text-primary dark:text-white">50 Units</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Standard Discount</span>
+              <span class="font-bold text-green-500">10% Off Base</span>
+            </div>
+            <div class="flex justify-between items-center text-xs mt-2">
+              <span class="text-gray-400">Delivery Speed</span>
+              <span class="font-bold text-primary dark:text-white">2-3 Business Days</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Priority freight loading</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> 30-day net terms eligibility</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-500"></i> Dedicated phone line support</li>
+          </ul>
+        </div>
+        <div class="mt-8">
+          <a href="contact.html" class="w-full text-center block border border-slate-300 dark:border-slate-800 text-primary dark:text-white hover:border-accent dark:hover:border-accent text-xs font-bold py-2.5 rounded-xl transition-all">
+            Apply Tier Status &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Premium Footer -->
+  <footer class="bg-primary dark:bg-bg-dark text-gray-300 border-t border-gray-800 dark:border-border-dark transition-colors duration-300 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <!-- Company summary -->
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            <span class="font-display font-extrabold text-xl text-white tracking-tight">Build <span class="text-accent">Pro</span></span>
+          </a>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Premium B2B supplier of high-quality construction materials, raw supplies, and logistics solutions for modern contractors, builders, and developers.
+          </p>
+          <div class="flex items-center gap-3 mt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-accent hover:text-primary flex items-center justify-center transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+          </div>
+        </div>
+        
+        <!-- Useful links -->
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About BuildPro</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Our Services</a></li>
+            <li><a href="contractor-pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="quantity-estimator.html" class="hover:text-accent transition-colors">Material Estimator</a></li>
+            <li><a href="brands.html" class="hover:text-accent transition-colors">Our Brands & Partners</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">Latest Industry Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact details -->
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Contact Details</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-accent mt-1"></i>
+              <span>100 Construction Blvd, Suite 400, Industrial Zone, NY 10001</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>support@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter sign-up -->
+        <div>
+          <h4 class="font-display font-bold text-white text-base mb-4 relative after:content-[''] after:absolute after:bottom-[-6px] after:start-0 after:w-8 after:height-[2px] after:bg-accent">Newsletter</h4>
+          <p class="text-sm text-gray-400 mb-3">Subscribe to get wholesale updates, price trends, and special discounts.</p>
+          <form class="flex flex-col gap-2">
+            <input type="email" placeholder="Enter business email" class="px-3 py-2 text-sm bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-accent" required />
+            <button type="submit" class="bg-accent hover:bg-accent-hover text-primary font-bold py-2 rounded-lg text-sm transition-colors">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright (Centered, Links Removed) -->
+      <div class="border-t border-gray-800 mt-12 pt-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 BuildPro Supplies Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calculator Addition Helper Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Trigger initial calculation check
+      setTimeout(() => {
+        const triggerBtn = document.getElementById('btn-calc-price');
+        if (triggerBtn) triggerBtn.click();
+      }, 300);
+    });
+
+    function addEstimateToQuote() {
+      const select = document.getElementById('calc-material');
+      const volumeInput = document.getElementById('calc-volume');
+      
+      const qty = parseInt(volumeInput.value) || 1;
+      const price = parseFloat(select.value) || 0;
+      
+      const selectText = select.options[select.selectedIndex].text;
+      const name = selectText.split(' - ')[0];
+      
+      // Generate standard category based on name contents
+      let category = "cement";
+      const lowerName = name.toLowerCase();
+      if (lowerName.includes("steel") || lowerName.includes("beam")) category = "steel";
+      else if (lowerName.includes("brick")) category = "bricks";
+      else if (lowerName.includes("tile")) category = "tiles";
+      else if (lowerName.includes("plywood")) category = "plywood";
+
+      const id = "calc-" + select.selectedIndex;
+
+      let cart = JSON.parse(localStorage.getItem('quoteCart')) || [];
+      const existing = cart.find(i => i.id === id);
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({ id, name, category, price, quantity: qty });
+      }
+      
+      localStorage.setItem('quoteCart', JSON.stringify(cart));
+      
+      // Update badge
+      const badges = document.querySelectorAll('.cart-badge');
+      const count = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+      badges.forEach(badge => {
+        badge.textContent = count;
+        if (count > 0) badge.classList.remove('hidden');
+      });
+
+      // Show toast
+      showToast(`${name} added to quote list!`);
+    }
+  </script>
+</body>
+</html>
+
+
+

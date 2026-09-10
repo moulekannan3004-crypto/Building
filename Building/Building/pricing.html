@@ -57,9 +57,26 @@
         <div class="flex-shrink-0 flex items-center">
           <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
             <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
-          
-          <a href="products.html" class="nav-link">Products</a>
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
 
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors">Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
           <a href="pricing.html" class="nav-link active">Pricing</a>
           <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link">Contact</a>
@@ -175,8 +192,8 @@
         <!-- Toggle button for monthly vs annual -->
         <div class="flex justify-center items-center gap-4 mb-16">
           <span class="text-sm font-semibold text-gray-600 dark:text-gray-400">Monthly Billing</span>
-          <button class="relative w-14 h-8 bg-accent rounded-full p-1 transition-colors focus:outline-none" aria-label="Toggle billing duration">
-            <span class="block w-6 h-6 bg-primary dark:bg-white rounded-full transition-transform translate-x-6"></span>
+          <button id="billing-toggle-btn" class="relative inline-flex items-center h-8 w-14 rounded-full bg-accent p-1 transition-colors focus:outline-none shrink-0 cursor-pointer" aria-label="Toggle billing duration">
+            <span id="billing-toggle-knob" class="block w-6 h-6 bg-primary dark:bg-white rounded-full shadow-md transition-transform duration-300 transform translate-x-0"></span>
           </button>
           <span class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-1.5">
             Annual Billing <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-500">Save 15%</span>
@@ -193,8 +210,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Best for residential remodeling and specialty trades.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹3,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-bronze">₹3,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">
@@ -236,8 +253,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Perfect for growing residential builders and commercial subs.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹11,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-silver">₹11,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">
@@ -276,8 +293,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Designed for regional developers and infrastructure giants.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹31,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-gold">₹31,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">
@@ -477,14 +494,10 @@
         
         <!-- Company Summary Column -->
         <div class="space-y-6 lg:col-span-2">
-          <div class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white">
-            <a href="index.html" class="flex items-center gap-2">
-              <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
-              Build <span class="text-accent">Pro</span>
-            </a>
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white hover:opacity-90 transition-opacity">
             <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
             Build <span class="text-accent">Pro</span>
-          </div>
+          </a>
           <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
             BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
           </p>

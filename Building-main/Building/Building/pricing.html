@@ -190,8 +190,8 @@
         <!-- Toggle button for monthly vs annual -->
         <div class="flex justify-center items-center gap-4 mb-16">
           <span class="text-sm font-semibold text-gray-600 dark:text-gray-400">Monthly Billing</span>
-          <button class="relative w-14 h-8 bg-accent rounded-full p-1 transition-colors focus:outline-none" aria-label="Toggle billing duration">
-            <span class="block w-6 h-6 bg-primary dark:bg-white rounded-full transition-transform translate-x-6"></span>
+          <button id="billing-toggle-btn" class="relative inline-flex items-center h-8 w-14 rounded-full bg-accent p-1 transition-colors focus:outline-none shrink-0 cursor-pointer" aria-label="Toggle billing duration">
+            <span id="billing-toggle-knob" class="block w-6 h-6 bg-primary dark:bg-white rounded-full shadow-md transition-transform duration-300 transform translate-x-0"></span>
           </button>
           <span class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-1.5">
             Annual Billing <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-500">Save 15%</span>
@@ -208,8 +208,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Best for residential remodeling and specialty trades.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹3,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-bronze">₹3,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">
@@ -251,8 +251,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Perfect for growing residential builders and commercial subs.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹11,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-silver">₹11,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">
@@ -291,8 +291,8 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Designed for regional developers and infrastructure giants.</p>
               
               <div class="my-6">
-                <span class="text-4xl font-display font-extrabold text-primary dark:text-white">₹31,999</span>
-                <span class="text-sm text-gray-400">/ month</span>
+                <span class="text-4xl font-display font-extrabold text-primary dark:text-white" id="price-gold">₹31,999</span>
+                <span class="text-sm text-gray-400 price-period">/ month</span>
               </div>
               
               <ul class="space-y-3.5 text-sm border-t border-gray-100 dark:border-border-dark pt-6">

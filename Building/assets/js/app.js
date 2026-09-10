@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuoteCart();
   initQuantityEstimator();
   initContractorCalculator();
+  initBillingToggle();
   initProductCatalog();
   initBlogSearchFilter();
   initCountdownTimer();
@@ -861,4 +862,47 @@ function initStickyHeader() {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+}
+
+// ==========================================
+// 10b. Billing Toggle (Monthly vs Annual)
+// ==========================================
+function initBillingToggle() {
+  const toggleBtn = document.getElementById('billing-toggle-btn');
+  const toggleKnob = document.getElementById('billing-toggle-knob');
+  if (!toggleBtn || !toggleKnob) return;
+
+  let isAnnual = false;
+
+  const priceBronze = document.getElementById('price-bronze');
+  const priceSilver = document.getElementById('price-silver');
+  const priceGold = document.getElementById('price-gold');
+  const periodEls = document.querySelectorAll('.price-period');
+
+  function updateToggleState() {
+    const isRTL = document.documentElement.dir === 'rtl';
+    if (isAnnual) {
+      toggleKnob.className = `block w-6 h-6 bg-primary dark:bg-white rounded-full shadow-md transition-transform duration-300 transform ${isRTL ? '-translate-x-6' : 'translate-x-6'}`;
+      if (priceBronze) priceBronze.textContent = '₹3,399';
+      if (priceSilver) priceSilver.textContent = '₹10,199';
+      if (priceGold) priceGold.textContent = '₹27,199';
+      periodEls.forEach(el => el.textContent = '/ month (annual)');
+    } else {
+      toggleKnob.className = 'block w-6 h-6 bg-primary dark:bg-white rounded-full shadow-md transition-transform duration-300 transform translate-x-0';
+      if (priceBronze) priceBronze.textContent = '₹3,999';
+      if (priceSilver) priceSilver.textContent = '₹11,999';
+      if (priceGold) priceGold.textContent = '₹31,999';
+      periodEls.forEach(el => el.textContent = '/ month');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    updateToggleState();
+  });
+
+  const observer = new MutationObserver(() => {
+    updateToggleState();
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
 }

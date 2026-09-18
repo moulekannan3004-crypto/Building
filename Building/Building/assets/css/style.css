@@ -169,21 +169,25 @@ i.hidden {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .nav-link, .dropdown-trigger {
-    height: 2rem !important;
-    padding: 0 0.45rem !important;
-    font-size: 0.72rem !important;
-    gap: 0.25rem !important;
+    height: 1.875rem !important;
+    padding: 0 0.32rem !important;
+    font-size: 0.68rem !important;
+    gap: 0.18rem !important;
+    letter-spacing: 0 !important;
   }
   .theme-toggle-btn, .nav-cart-btn, .nav-login-btn, .nav-signup-btn {
-    height: 2rem !important;
-    width: 2rem !important;
+    height: 1.875rem !important;
+    width: 1.875rem !important;
+    min-width: 1.875rem !important;
     padding: 0 !important;
+    border-radius: 0.5rem !important;
   }
   .rtl-toggle-btn {
-    height: 2rem !important;
-    padding-left: 0.45rem !important;
-    padding-right: 0.45rem !important;
-    font-size: 0.6875rem !important;
+    height: 1.875rem !important;
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+    font-size: 0.65rem !important;
+    border-radius: 0.5rem !important;
   }
 }
 

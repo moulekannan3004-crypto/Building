@@ -42,11 +42,44 @@
   background: #94A3B8;
 }
 
-/* Base resets & fonts */
+/* Base resets & fonts - stable navbar layout */
+html {
+  scrollbar-gutter: stable;
+}
+
 html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
+  max-width: 100%;
   width: 100%;
+}
+
+header.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.header-scrolled {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(245, 158, 11, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+.dark header.header-scrolled {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  border-bottom-color: rgba(245, 158, 11, 0.25) !important;
+  background-color: rgba(11, 18, 32, 0.96) !important;
+}
+
+/* Mobile drawer active link highlight */
+#mobile-menu nav a.active {
+  color: #F59E0B !important;
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border-inline-start: 3px solid #F59E0B;
+  font-weight: 700;
 }
 
 body {
@@ -94,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.45rem;
   padding: 0.5rem 0.95rem;
   border-radius: 0.625rem;
@@ -101,11 +135,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-size: 0.875rem;
   white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1;
+  vertical-align: middle;
   letter-spacing: 0.015em;
   color: #374151;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid transparent;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-link, .dropdown-trigger {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.75rem;
+    gap: 0.35rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .nav-link, .dropdown-trigger {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8125rem;
+    gap: 0.38rem;
+  }
+}
+
 
 
 .dark .nav-link, .dark .dropdown-trigger {
@@ -156,6 +210,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Navigation Dropdown Hover & Functionality Fix */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown .dropdown-menu:hover {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.dropdown-menu {
+  top: 100%;
+  margin-top: 0.25rem;
+  z-index: 999;
+}
+
 /* Utility to override RTL rotation icon */
 [dir="rtl"] .rtl-flip {
   transform: scaleX(-1);
@@ -180,4 +254,59 @@ h1, h2, h3, h4, h5, h6 {
 }
 .dark .glass {
   background: rgba(11, 18, 32, 0.7);
+}
+
+/* Infinite Marquee Animation for Unique Brand Showcase */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 32s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Dark Mode Form Input & Select Enhancements */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="tel"],
+.dark input[type="number"],
+.dark input[type="search"],
+.dark input[type="date"],
+.dark select,
+.dark textarea {
+  color-scheme: dark;
+}
+
+.dark ::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Mobile Responsiveness & Layout Overflows */
+@media (max-width: 767px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

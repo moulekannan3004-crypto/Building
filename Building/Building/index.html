@@ -52,6 +52,7 @@
   <script src="./assets/js/app.js" defer></script>
   <!-- Favicon Logo -->
   <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
 </head>
 <body class="bg-[#F9FAFB] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F9FAFB] transition-colors duration-300">
 
@@ -71,11 +72,11 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
           <!-- Home Dropdown -->
-          <div class="relative">
-            <button class="dropdown-trigger active flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger active flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
               <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
-            </button>
-            <div class="absolute top-full start-0 mt-3 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white/95 dark:bg-[#0B1220]/95 backdrop-blur-md shadow-2xl hidden transition-all duration-300 overflow-hidden z-50 p-1.5">
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
               <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
               <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
             </div>
@@ -83,60 +84,56 @@
 
           <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
           <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
-          
           <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
-
           <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
           <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
           <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
         </nav>
 
-                                <!-- Right Menu Actions -->
-        <div class="hidden md:flex items-center gap-4">
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
           <!-- Light/Dark Mode Switcher -->
-          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
-            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
-            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
           </button>
 
           <!-- RTL Toggle -->
-          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
             RTL
           </button>
 
           <!-- Login -->
-          <a href="login.html" class="px-4 py-2 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-slate-700 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center gap-1.5 shadow-sm">
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
             <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
           </a>
 
           <!-- Signup -->
-          <a href="register.html" class="px-4.5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5">
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
             <i class="fa-solid fa-user-plus text-xs"></i> Signup
           </a>
 
-          <!-- Quote List / Cart Icon with badge -->
-          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
-            <i class="fa-solid fa-file-invoice text-xl"></i>
-            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-accent rounded-full hidden">0</span>
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
           </a>
-
-
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <div class="md:hidden flex items-center gap-3">
-          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
-            <i class="fa-solid fa-sun sun-icon hidden"></i>
-            <i class="fa-solid fa-moon moon-icon"></i>
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
           </button>
           
-          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
-            <i class="fa-solid fa-file-invoice text-lg"></i>
-            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold text-white bg-accent rounded-full hidden">0</span>
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
           </a>
 
-          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
-            <i class="fa-solid fa-bars text-xl"></i>
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
           </button>
         </div>
 
@@ -144,8 +141,8 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-150 dark:border-slate-800 md:hidden">
-      <div class="flex items-center justify-between p-6 border-b border-gray-150 dark:border-slate-800">
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
         <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
         <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
           <i class="fa-solid fa-xmark text-xl"></i>
@@ -162,12 +159,12 @@
           <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
           <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
           <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
-          <div class="border-t border-gray-150 dark:border-slate-800 my-2"></div>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
           
           <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
           <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
         </nav>
-        <div class="pt-6 border-t border-gray-150 dark:border-slate-800 flex flex-col gap-4">
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
           <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
           <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
         </div>
@@ -185,14 +182,14 @@
     <div class="absolute top-1/4 start-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
         
         <!-- Left content -->
         <div class="lg:col-span-7 space-y-8 text-start">
           <span class="inline-flex items-center gap-2 bg-accent/15 border border-accent/20 text-accent px-4.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
             <i class="fa-solid fa-circle-check"></i> Standard-Certified Heavy Materials
           </span>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-tight tracking-tight">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-5xl 2xl:text-6xl font-extrabold font-display leading-tight tracking-tight">
             Seamless Materials Supply for <span class="text-accent">Industrial Builders</span>
           </h1>
           <p class="text-base sm:text-lg text-slate-350 max-w-2xl text-gray-300 dark:text-gray-400">
@@ -209,8 +206,8 @@
           </div>
 
           <!-- Rating -->
-          <div class="pt-4 flex items-center gap-6 border-t border-white/10">
-            <div class="flex items-center gap-1 text-accent text-lg">
+          <div class="pt-4 flex items-center gap-4 sm:gap-6 border-t border-white/10">
+            <div class="flex items-center gap-1 text-accent text-lg flex-shrink-0">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -228,28 +225,28 @@
           <div class="relative w-full max-w-md lg:max-w-none">
             <!-- Main Hero Image -->
             <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl animate-float">
-              <img src="./assets/images/seamless_industrial_supply.jpg" alt="Seamless Materials Supply for Industrial Builders" class="w-full h-[450px] object-cover">
+              <img src="./assets/images/seamless_industrial_supply.jpg" alt="Seamless Materials Supply for Industrial Builders" class="w-full h-[360px] sm:h-[420px] lg:h-[400px] xl:h-[460px] object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
             </div>
 
             <!-- Floating Stats Card 1 -->
-            <div class="absolute -top-6 -start-6 glass dark:bg-[#0B1220]/80 p-4.5 rounded-xl border border-white/10 shadow-lg flex items-center gap-3.5 max-w-[200px]">
-              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent">
+            <div class="absolute top-3 start-3 sm:-top-5 sm:-start-3 md:-start-5 lg:top-4 lg:start-4 xl:-top-6 xl:-start-6 glass dark:bg-[#0B1220]/85 p-3.5 sm:p-4 rounded-xl border border-white/15 shadow-xl flex items-center gap-3 max-w-[185px] sm:max-w-[200px] z-20 backdrop-blur-md">
+              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent flex-shrink-0">
                 <i class="fa-solid fa-truck-fast text-lg"></i>
               </div>
               <div class="text-start">
-                <span class="block text-2xl font-black text-primary dark:text-white">99.4%</span>
+                <span class="block text-2xl font-black text-primary dark:text-white leading-tight">99.4%</span>
                 <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider font-bold">On-Time Delivery</span>
               </div>
             </div>
 
             <!-- Floating Stats Card 2 -->
-            <div class="absolute -bottom-6 -end-6 glass dark:bg-[#0B1220]/80 p-4.5 rounded-xl border border-white/10 shadow-lg flex items-center gap-3.5 max-w-[200px]">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-500">
+            <div class="absolute bottom-3 end-3 sm:-bottom-5 sm:-end-3 md:-end-5 lg:bottom-4 lg:end-4 xl:-bottom-6 xl:-end-6 glass dark:bg-[#0B1220]/85 p-3.5 sm:p-4 rounded-xl border border-white/15 shadow-xl flex items-center gap-3 max-w-[185px] sm:max-w-[200px] z-20 backdrop-blur-md">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-500 flex-shrink-0">
                 <i class="fa-solid fa-circle-nodes text-lg"></i>
               </div>
               <div class="text-start">
-                <span class="block text-2xl font-black text-primary dark:text-white">100%</span>
+                <span class="block text-2xl font-black text-primary dark:text-white leading-tight">100%</span>
                 <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider font-bold">QA Tested & Certified</span>
               </div>
             </div>
@@ -261,19 +258,272 @@
     </div>
   </section>
 
-  <!-- Brand Showcase -->
-  <section class="py-12 bg-white dark:bg-[#0B1220] border-y border-gray-100 dark:border-slate-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-6">
-        <p class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">Supplying Authorized Materials From Global Leaders</p>
+  <!-- Brand Showcase (Unique Infinite Ticker & Glassmorphic Badges) -->
+  <section class="py-16 bg-gradient-to-b from-gray-50/80 via-white to-gray-50/80 dark:from-[#080D1A] dark:via-[#0B1220] dark:to-[#080D1A] border-y border-gray-200/60 dark:border-slate-800/80 transition-colors duration-300 relative overflow-hidden">
+    <!-- Subtle Ambient Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/5 dark:bg-amber-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 shadow-sm mb-3">
+        <i class="fa-solid fa-certificate text-accent animate-pulse"></i> AUTHORIZED DIRECT SUPPLY NETWORK
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70 dark:opacity-60">
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-cube"></i> CEMEX</span>
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-shield-halved"></i> LAFARGE</span>
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-sheet-plastic"></i> TATA STEEL</span>
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-hourglass-start"></i> ARCELOR</span>
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-gem"></i> CORNING</span>
-        <span class="text-lg font-bold text-gray-655 dark:text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-network-wired"></i> SAINT-GOBAIN</span>
+      <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white tracking-tight">
+        Supplying Certified Materials From Global Leaders
+      </h3>
+      <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-2">
+        Direct mill-certified sourcing for Cement, Structural Steel, Architectural Glass & Heavy Aggregates
+      </p>
+    </div>
+
+    <!-- Infinite Marquee Slider with Fade Overlay Edges -->
+    <div class="relative w-full overflow-hidden py-3">
+      <!-- Gradient Edge Fade Overlay (Left & Right) -->
+      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 z-20 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent dark:from-[#080D1A] dark:via-[#080D1A]/80 dark:to-transparent"></div>
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 z-20 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent dark:from-[#080D1A] dark:via-[#080D1A]/80 dark:to-transparent"></div>
+
+      <!-- Marquee Track 1 (Scrolling Left) -->
+      <div class="animate-marquee flex items-center gap-6">
+        
+        <!-- CEMEX -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">CEMEX</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Cement & Concrete</span>
+          </div>
+        </div>
+
+        <!-- LAFARGE -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">LAFARGE</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Aggregates & Mix</span>
+          </div>
+        </div>
+
+        <!-- TATA STEEL -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">TATA STEEL</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">TMT Rebars & Steel</span>
+          </div>
+        </div>
+
+        <!-- ARCELOR -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-hourglass-start"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">ARCELOR</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Structural Beams</span>
+          </div>
+        </div>
+
+        <!-- CORNING -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">CORNING</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Architectural Glass</span>
+          </div>
+        </div>
+
+        <!-- SAINT-GOBAIN -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">SAINT-GOBAIN</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Thermal Insulation</span>
+          </div>
+        </div>
+
+        <!-- ULTRATECH -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-building-shield"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">ULTRATECH</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Infra Concrete</span>
+          </div>
+        </div>
+
+        <!-- JSW STEEL -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-rose-500/10 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">JSW STEEL</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Coated Sheets</span>
+          </div>
+        </div>
+
+        <!-- REPEAT SET FOR CONTINUOUS SCROLL -->
+        <!-- CEMEX -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">CEMEX</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Cement & Concrete</span>
+          </div>
+        </div>
+
+        <!-- LAFARGE -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">LAFARGE</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Aggregates & Mix</span>
+          </div>
+        </div>
+
+        <!-- TATA STEEL -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">TATA STEEL</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">TMT Rebars & Steel</span>
+          </div>
+        </div>
+
+        <!-- ARCELOR -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-hourglass-start"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">ARCELOR</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Structural Beams</span>
+          </div>
+        </div>
+
+        <!-- CORNING -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">CORNING</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Architectural Glass</span>
+          </div>
+        </div>
+
+        <!-- SAINT-GOBAIN -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">SAINT-GOBAIN</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Thermal Insulation</span>
+          </div>
+        </div>
+
+        <!-- ULTRATECH -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-building-shield"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">ULTRATECH</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Infra Concrete</span>
+          </div>
+        </div>
+
+        <!-- JSW STEEL -->
+        <div class="flex items-center gap-3.5 px-6 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-gray-200/80 dark:border-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 group min-w-[230px]">
+          <div class="w-11 h-11 rounded-xl bg-rose-500/10 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm text-gray-900 dark:text-white tracking-wide">JSW STEEL</span>
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-500 dark:text-gray-400 block">Coated Sheets</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Trust Metric Highlights Bar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-200/50 dark:border-slate-800/60">
+      <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 text-xs sm:text-sm font-bold text-gray-600 dark:text-gray-400 whitespace-nowrap">
+        <span class="flex items-center gap-2 flex-shrink-0">
+          <i class="fa-solid fa-file-contract text-amber-500 text-sm"></i> 100% Mill Test Certificates (MTC)
+        </span>
+        <span class="flex items-center gap-2 flex-shrink-0">
+          <i class="fa-solid fa-truck-ramp-box text-amber-500 text-sm"></i> Direct Factory-to-Site Transit
+        </span>
+        <span class="flex items-center gap-2 flex-shrink-0">
+          <i class="fa-solid fa-tags text-amber-500 text-sm"></i> Wholesale Tier Volume Pricing
+        </span>
       </div>
     </div>
   </section>
@@ -309,7 +559,7 @@
 
         <!-- Category 2: Steel -->
         <a href="product-details.html?id=3" class="group relative rounded-xl overflow-hidden shadow-md hover-lift transition-all duration-300 aspect-square">
-          <img src="./assets/images/prod_tmt_steel.jpg" alt="TMT Steel Rebars Fe 500D" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <img src="./assets/images/prod_tmt_steel_v2.jpg" alt="TMT Steel Rebars Fe 500D" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent"></div>
           <div class="absolute bottom-6 start-6 text-start">
             <span class="bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider mb-2 inline-block">Structural Grade</span>
@@ -331,7 +581,7 @@
 
         <!-- Category 4: Tiles -->
         <a href="product-details.html?id=7" class="group relative rounded-xl overflow-hidden shadow-md hover-lift transition-all duration-300 aspect-square">
-          <img src="./assets/images/cat_tiles.jpg" alt="Vitrified Tiles" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <img src="./assets/images/prod_vitrified_tiles_v2.jpg" alt="Vitrified Tiles" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent"></div>
           <div class="absolute bottom-6 start-6 text-start">
             <span class="bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider mb-2 inline-block">Premium Finish</span>
@@ -487,7 +737,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Product 1 -->
-        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <div class="relative">
             <img src="./assets/images/prod_opc53_cement.jpg" alt="Premium OPC 53 Grade Cement" class="w-full h-48 object-cover">
             <span class="absolute top-4 start-4 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">In Stock</span>
@@ -513,16 +763,16 @@
                       data-name="Premium OPC 53 Grade Cement" 
                       data-category="Cement" 
                       data-price="380.00">
-                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-file-invoice"></i>
+                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </div>
           </div>
         </div>
 
         <!-- Product 2 -->
-        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <div class="relative">
-            <img src="./assets/images/prod_tmt_steel.jpg" alt="TMT Steel Rebars Fe 500D" class="w-full h-48 object-cover">
+            <img src="./assets/images/prod_tmt_steel_v2.jpg" alt="TMT Steel Rebars Fe 500D" class="w-full h-48 object-cover">
             <span class="absolute top-4 start-4 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">In Stock</span>
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between">
@@ -530,7 +780,7 @@
               <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Steel</span>
               <h3 class="text-base font-bold font-display text-primary dark:text-white">TMT Steel Rebars Fe 500D</h3>
               <p class="text-xs text-gray-500 dark:text-gray-400">Excellent tensile strength and superior bonding capability with concrete.</p>
-              <div class="pt-2 text-xs font-semibold text-gray-655 dark:text-gray-300">
+              <div class="pt-2 text-xs font-semibold text-gray-600 dark:text-gray-300">
                 <p><i class="fa-solid fa-bars-staggered text-gray-400 me-1"></i> Size Range: <span class="text-primary dark:text-white font-bold">8mm - 32mm</span></p>
                 <p><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> ASTM A615 Standard</p>
               </div>
@@ -546,14 +796,14 @@
                       data-name="TMT Steel Rebars Fe 500D" 
                       data-category="Steel" 
                       data-price="58000.00">
-                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-file-invoice"></i>
+                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </div>
           </div>
         </div>
 
         <!-- Product 3 -->
-        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <div class="relative">
             <img src="./assets/images/prod_aac_blocks.jpg" alt="Autoclaved Aerated Blocks (AAC)" class="w-full h-48 object-cover">
             <span class="absolute top-4 start-4 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">In Stock</span>
@@ -563,7 +813,7 @@
               <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Bricks</span>
               <h3 class="text-base font-bold font-display text-primary dark:text-white">Autoclaved Aerated Blocks (AAC)</h3>
               <p class="text-xs text-gray-500 dark:text-gray-400">Lightweight masonry blocks offering high thermal and sound insulation.</p>
-              <div class="pt-2 text-xs font-semibold text-gray-655 dark:text-gray-300">
+              <div class="pt-2 text-xs font-semibold text-gray-600 dark:text-gray-300">
                 <p><i class="fa-solid fa-table-cells-large text-gray-400 me-1"></i> Density: <span class="text-primary dark:text-white font-bold">600 kg/m3</span></p>
                 <p><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Green Building Certified</p>
               </div>
@@ -579,16 +829,16 @@
                       data-name="Autoclaved Aerated Blocks (AAC)" 
                       data-category="Bricks" 
                       data-price="65.00">
-                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-file-invoice"></i>
+                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </div>
           </div>
         </div>
 
         <!-- Product 4 -->
-        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <div class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <div class="relative">
-            <img src="./assets/images/cat_tiles.jpg" alt="Vitrified Tiles" class="w-full h-48 object-cover">
+            <img src="./assets/images/prod_vitrified_tiles_v2.jpg" alt="Vitrified Tiles" class="w-full h-48 object-cover">
             <span class="absolute top-4 start-4 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">High Demand</span>
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between">
@@ -596,7 +846,7 @@
               <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Tiles</span>
               <h3 class="text-base font-bold font-display text-primary dark:text-white">Glazed Vitrified Floor Tiles</h3>
               <p class="text-xs text-gray-500 dark:text-gray-400">Scratch-resistant polished double-charge tiles for heavy footfalls.</p>
-              <div class="pt-2 text-xs font-semibold text-gray-655 dark:text-gray-300">
+              <div class="pt-2 text-xs font-semibold text-gray-600 dark:text-gray-300">
                 <p><i class="fa-solid fa-border-all text-gray-400 me-1"></i> Dimension: <span class="text-primary dark:text-white font-bold">600x600 mm</span></p>
                 <p><i class="fa-solid fa-circle-check text-emerald-500 me-1"></i> Grade-V Heavy Traffic</p>
               </div>
@@ -612,7 +862,7 @@
                       data-name="Glazed Vitrified Floor Tiles" 
                       data-category="Tiles" 
                       data-price="950.00">
-                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-file-invoice"></i>
+                <i class="fa-solid fa-plus me-1"></i> <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </div>
           </div>
@@ -641,15 +891,15 @@
           </p>
           <ul class="space-y-3.5 text-sm text-gray-600 dark:text-gray-300">
             <li class="flex items-center gap-3">
-              <i class="fa-solid fa-circle-check text-accent text-lg"></i>
+              <i class="fa-solid fa-circle-check text-accent text-lg flex-shrink-0"></i>
               <span>Silver Tier (50+ units): <strong class="text-primary dark:text-white">10% Off</strong> + Standard logistics.</span>
             </li>
             <li class="flex items-center gap-3">
-              <i class="fa-solid fa-circle-check text-accent text-lg"></i>
+              <i class="fa-solid fa-circle-check text-accent text-lg flex-shrink-0"></i>
               <span>Gold Partner (200+ units): <strong class="text-primary dark:text-white">15% Off</strong> + Dedicated site manager.</span>
             </li>
             <li class="flex items-center gap-3">
-              <i class="fa-solid fa-circle-check text-accent text-lg"></i>
+              <i class="fa-solid fa-circle-check text-accent text-lg flex-shrink-0"></i>
               <span>Enterprise/Platinum (500+ units): <strong class="text-primary dark:text-white">20% Off</strong> + Priority custom production scheduling.</span>
             </li>
           </ul>
@@ -660,17 +910,28 @@
           </div>
         </div>
 
-        <!-- Right Side Interactive Calculator Card -->
+        <!-- Right Side Interactive Calculator Card (Unique High-Tech Glassmorphism) -->
         <div class="lg:col-span-6">
-          <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-gray-250 dark:border-slate-800 p-8 shadow-xl text-start">
-            <h3 class="text-xl font-bold font-display text-primary dark:text-white mb-6">Interactive Tier Calculator</h3>
+          <div class="bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-slate-800 p-8 shadow-2xl hover:shadow-amber-500/10 text-start relative overflow-hidden transition-all duration-300">
+            <!-- Top Gradient Highlight Line -->
+            <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600"></div>
+
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-extrabold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-md uppercase tracking-wider">Live B2B Rate Engine</span>
+                <h3 class="text-xl font-extrabold font-display text-primary dark:text-white mt-1">Interactive Tier Calculator</h3>
+              </div>
+              <div class="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+            </div>
             
             <form class="space-y-6">
               
               <!-- Select Material -->
               <div>
-                <label for="calc-material" class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Select Material Type</label>
-                <select id="calc-material" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-205 dark:border-slate-800 rounded-lg p-3.5 text-sm font-semibold text-primary dark:text-white focus:outline-none focus:border-accent">
+                <label for="calc-material" class="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Select Material Type</label>
+                <select id="calc-material" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl p-3.5 text-sm font-bold text-primary dark:text-white focus:outline-none focus:border-accent shadow-inner">
                   <option value="380.00">OPC 53 Cement (₹380.00 / Bag)</option>
                   <option value="58000.00">TMT Steel Rebars (₹58,000.00 / Ton)</option>
                   <option value="65.00">AAC Blocks (₹65.00 / Block)</option>
@@ -681,11 +942,11 @@
               <!-- Volume Slider -->
               <div>
                 <div class="flex justify-between items-center mb-2">
-                  <label for="calc-volume" class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Estimate Order Quantity</label>
-                  <span class="text-sm font-black text-accent bg-accent/10 px-2.5 py-0.5 rounded-md"><span id="volume-val">100</span> units</span>
+                  <label for="calc-volume" class="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Estimate Order Quantity</label>
+                  <span class="text-sm font-black text-amber-500 bg-amber-500/10 px-3 py-1 rounded-lg border border-amber-500/20"><span id="volume-val">100</span> units</span>
                 </div>
-                <input type="range" id="calc-volume" min="1" max="1000" value="100" class="w-full h-2 bg-gray-250 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-accent">
-                <div class="flex justify-between text-[10px] text-gray-450 font-bold uppercase mt-1">
+                <input type="range" id="calc-volume" min="1" max="1000" value="100" class="w-full h-2.5 bg-gray-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                <div class="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase mt-1.5">
                   <span>1 unit</span>
                   <span>50 (Silver)</span>
                   <span>200 (Gold)</span>
@@ -694,29 +955,29 @@
               </div>
 
               <!-- Calculator Output Screen -->
-              <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-5 border border-gray-150 dark:border-slate-850 space-y-3">
-                <div class="flex justify-between text-xs font-bold text-gray-450">
+              <div class="bg-gray-50/90 dark:bg-slate-900/80 rounded-2xl p-5 border border-gray-200/80 dark:border-slate-800 space-y-3 shadow-inner">
+                <div class="flex justify-between text-xs font-bold text-gray-500 dark:text-gray-400">
                   <span>Contractor Tier:</span>
-                  <span id="calc-tier" class="text-primary dark:text-white">Silver Contractor</span>
+                  <span id="calc-tier" class="text-primary dark:text-white font-extrabold flex items-center gap-1.5"><i class="fa-solid fa-award text-amber-500"></i> Silver Contractor</span>
                 </div>
-                <div class="flex justify-between text-xs font-bold text-gray-450">
+                <div class="flex justify-between text-xs font-bold text-gray-500 dark:text-gray-400">
                   <span>Base Cost Rate:</span>
-                  <span id="calc-base" class="text-primary dark:text-white">₹38,000.00</span>
+                  <span id="calc-base" class="text-primary dark:text-white font-bold">₹38,000.00</span>
                 </div>
-                <div class="flex justify-between text-xs font-bold text-gray-450">
+                <div class="flex justify-between text-xs font-bold text-gray-500 dark:text-gray-400">
                   <span>Volume Discount:</span>
                   <span id="calc-discount" class="text-emerald-500 font-extrabold">-₹3,800.00 (10%)</span>
                 </div>
                 <hr class="border-gray-200 dark:border-slate-800 my-2">
                 <div class="flex justify-between items-center">
                   <span class="text-sm font-extrabold text-primary dark:text-white">Estimated Quote Total:</span>
-                  <span id="calc-final" class="text-2xl font-black text-accent">₹34,200.00</span>
+                  <span id="calc-final" class="text-2xl font-black text-amber-500">₹34,200.00</span>
                 </div>
               </div>
 
               <!-- Quote trigger button -->
-              <button id="btn-calc-price" class="w-full bg-accent hover:bg-accent-hover text-primary font-bold py-4 rounded-lg text-sm shadow-md hover:shadow-lg transition-all duration-300">
-                Calculate & Lock Rate
+              <button id="btn-calc-price" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-4 rounded-xl text-sm shadow-lg hover:shadow-amber-500/25 transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-lock text-xs"></i> Calculate & Lock Wholesale Rate
               </button>
 
             </form>
@@ -747,17 +1008,17 @@
         
         <!-- Tabs Header -->
         <div class="flex border-b border-gray-200 dark:border-slate-800 overflow-x-auto">
-          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-accent border-b-2 border-accent active focus:outline-none" data-tab="cement">
-            <i class="fa-solid fa-cubes me-2"></i>Cement
+          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-accent border-b-2 border-accent active focus:outline-none flex items-center justify-center gap-2 whitespace-nowrap" data-tab="cement">
+            <i class="fa-solid fa-cubes"></i> Cement
           </button>
-          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none" data-tab="steel">
-            <i class="fa-solid fa-bars-staggered me-2"></i>Steel Rebars
+          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none flex items-center justify-center gap-2 whitespace-nowrap" data-tab="steel">
+            <i class="fa-solid fa-bars-staggered"></i> Steel Rebars
           </button>
-          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none" data-tab="bricks">
-            <i class="fa-solid fa-table-cells-large me-2"></i>Bricks
+          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none flex items-center justify-center gap-2 whitespace-nowrap" data-tab="bricks">
+            <i class="fa-solid fa-table-cells-large"></i> Bricks
           </button>
-          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none" data-tab="tiles">
-            <i class="fa-solid fa-border-all me-2"></i>Tiles
+          <button class="tab-btn flex-1 min-w-[120px] py-4 text-sm font-bold text-gray-500 dark:text-gray-400 border-b-2 border-transparent hover:text-accent focus:outline-none flex items-center justify-center gap-2 whitespace-nowrap" data-tab="tiles">
+            <i class="fa-solid fa-border-all"></i> Tiles
           </button>
         </div>
 
@@ -768,15 +1029,15 @@
             <div class="space-y-6">
               <h3 class="text-lg font-bold font-display text-primary dark:text-white">Concrete Slab Volume Estimation</h3>
               <div>
-                <label for="c-area" class="block text-xs font-bold text-gray-450 uppercase tracking-wider mb-2">Slab Area (Sq. Meters)</label>
+                <label for="c-area" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Slab Area (Sq. Meters)</label>
                 <input type="number" id="c-area" value="100" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="c-thickness" class="block text-xs font-bold text-gray-450 uppercase tracking-wider mb-2">Thickness (Meters)</label>
+                <label for="c-thickness" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Thickness (Meters)</label>
                 <input type="number" id="c-thickness" value="0.1" step="0.01" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="c-ratio" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Concrete Mix Ratio (Cement : Sand : Aggregates)</label>
+                <label for="c-ratio" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Concrete Mix Ratio (Cement : Sand : Aggregates)</label>
                 <select id="c-ratio" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
                   <option value="1:4">M15 (1:2:4) - General Slab</option>
                   <option value="1:3">M20 (1:1.5:3) - Structural Beams</option>
@@ -788,11 +1049,11 @@
               </button>
             </div>
             
-            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-150 dark:border-slate-855 flex flex-col justify-between">
+            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-200 dark:border-slate-800 flex flex-col justify-between">
               <div class="space-y-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Estimated Requirement</span>
                 <div>
-                  <span class="block text-xs text-gray-450">Required Cement Quantity:</span>
+                  <span class="block text-xs text-gray-500">Required Cement Quantity:</span>
                   <span id="cement-est-qty" class="text-3xl font-black text-primary dark:text-white">62 Bags <span class="text-sm font-normal text-gray-400">(50kg each)</span></span>
                 </div>
                 <hr class="border-gray-200 dark:border-slate-800">
@@ -819,11 +1080,11 @@
             <div class="space-y-6">
               <h3 class="text-lg font-bold font-display text-primary dark:text-white">Steel Rebar Weight Calculation</h3>
               <div>
-                <label for="s-volume" class="block text-xs font-bold text-gray-450 uppercase tracking-wider mb-2">Concrete Volume (Cubic Meters)</label>
-                <input type="number" id="s-volume" value="10" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-205 border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
+                <label for="s-volume" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Concrete Volume (Cubic Meters)</label>
+                <input type="number" id="s-volume" value="10" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="s-type" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Reinforcement Density</label>
+                <label for="s-type" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Reinforcement Density</label>
                 <select id="s-type" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
                   <option value="80">Beams & Slabs (~80 kg/m3)</option>
                   <option value="120">Columns & Heavily Loaded Beams (~120 kg/m3)</option>
@@ -835,11 +1096,11 @@
               </button>
             </div>
             
-            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-150 dark:border-slate-855 flex flex-col justify-between">
+            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-200 dark:border-slate-800 flex flex-col justify-between">
               <div class="space-y-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Estimated Requirement</span>
                 <div>
-                  <span class="block text-xs text-gray-450">Required Steel Quantity:</span>
+                  <span class="block text-xs text-gray-500">Required Steel Quantity:</span>
                   <span id="steel-est-qty" class="text-3xl font-black text-primary dark:text-white">800 kg</span>
                 </div>
                 <hr class="border-gray-200 dark:border-slate-800">
@@ -866,15 +1127,15 @@
             <div class="space-y-6">
               <h3 class="text-lg font-bold font-display text-primary dark:text-white">Brick Wall Block Calculation</h3>
               <div>
-                <label for="b-length" class="block text-xs font-bold text-gray-450 uppercase tracking-wider mb-2">Wall Length (Meters)</label>
+                <label for="b-length" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Wall Length (Meters)</label>
                 <input type="number" id="b-length" value="12" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="b-height" class="block text-xs font-bold text-gray-450 uppercase tracking-wider mb-2">Wall Height (Meters)</label>
-                <input type="number" id="b-height" value="3" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-205 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
+                <label for="b-height" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Wall Height (Meters)</label>
+                <input type="number" id="b-height" value="3" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="b-thickness" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Wall Thickness (Meters)</label>
+                <label for="b-thickness" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Wall Thickness (Meters)</label>
                 <select id="b-thickness" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
                   <option value="0.23">230mm (Double Brick Wall)</option>
                   <option value="0.11">115mm (Single Brick Partition)</option>
@@ -885,11 +1146,11 @@
               </button>
             </div>
             
-            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-150 dark:border-slate-855 flex flex-col justify-between">
+            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-200 dark:border-slate-800 flex flex-col justify-between">
               <div class="space-y-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Estimated Requirement</span>
                 <div>
-                  <span class="block text-xs text-gray-450">Required Brick Units:</span>
+                  <span class="block text-xs text-gray-500">Required Brick Units:</span>
                   <span id="bricks-est-qty" class="text-3xl font-black text-primary dark:text-white">4,140 Bricks</span>
                 </div>
                 <hr class="border-gray-200 dark:border-slate-800">
@@ -916,15 +1177,15 @@
             <div class="space-y-6">
               <h3 class="text-lg font-bold font-display text-primary dark:text-white">Floor Tiling Surface Calculation</h3>
               <div>
-                <label for="t-width" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Room Width (Meters)</label>
+                <label for="t-width" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Room Width (Meters)</label>
                 <input type="number" id="t-width" value="8" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="t-length" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Room Length (Meters)</label>
+                <label for="t-length" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Room Length (Meters)</label>
                 <input type="number" id="t-length" value="10" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
               </div>
               <div>
-                <label for="t-size" class="block text-xs font-bold text-gray-455 uppercase tracking-wider mb-2">Tile Unit Dimension</label>
+                <label for="t-size" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Tile Unit Dimension</label>
                 <select id="t-size" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-3 text-sm focus:outline-none focus:border-accent font-semibold">
                   <option value="0.36">600x600 mm Tile (Area: 0.36 sqm)</option>
                   <option value="0.64">800x800 mm Tile (Area: 0.64 sqm)</option>
@@ -936,11 +1197,11 @@
               </button>
             </div>
             
-            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-150 dark:border-slate-855 flex flex-col justify-between">
+            <div class="bg-gray-50 dark:bg-slate-900/60 rounded-xl p-8 border border-gray-200 dark:border-slate-800 flex flex-col justify-between">
               <div class="space-y-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Estimated Requirement</span>
                 <div>
-                  <span class="block text-xs text-gray-450">Required Tile Units (incl. 10% wastage):</span>
+                  <span class="block text-xs text-gray-500">Required Tile Units (incl. 10% wastage):</span>
                   <span id="tiles-est-qty" class="text-3xl font-black text-primary dark:text-white">245 Tiles</span>
                 </div>
                 <hr class="border-gray-200 dark:border-slate-800">
@@ -998,8 +1259,8 @@
               "BuildPro completely overhauled our purchasing flow. Getting Compressive Strength certificates (MTC) automatically inside the dashboard is a major relief. Delivery of 40 tons of rebar was exactly on time."
             </p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-850 mt-6">
-            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">MR</div>
+          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-800 mt-6">
+            <img src="./assets/images/avatar_marcus_vance.jpg" alt="Marcus Vance" class="w-12 h-12 rounded-full object-cover border-2 border-accent/30 shadow-sm">
             <div>
               <span class="block text-sm font-bold text-primary dark:text-white">Marcus Vance</span>
               <span class="block text-xs text-gray-400">Project Manager, Apex Infra Structure</span>
@@ -1021,8 +1282,8 @@
               "The interest-free credit terms they provide are amazing. It allows us to carry out multi-unit residential floor layouts without running into quick capital traps. Their PVC pipes and cables are top grade."
             </p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-850 mt-6">
-            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">SK</div>
+          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-800 mt-6">
+            <img src="./assets/images/avatar_sonia_patel.jpg" alt="Sonia K. Patel" class="w-12 h-12 rounded-full object-cover border-2 border-accent/30 shadow-sm">
             <div>
               <span class="block text-sm font-bold text-primary dark:text-white">Sonia K. Patel</span>
               <span class="block text-xs text-gray-400">Managing Director, Skyline Developers</span>
@@ -1044,8 +1305,8 @@
               "We ordering vitrified tiles and blocks in massive volumes. The Gold Partner tier saved us over $14,000 on our last procurement batch. Highly recommend signing up for their Contractor Program."
             </p>
           </div>
-          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-855 mt-6">
-            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">DH</div>
+          <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-slate-800 mt-6">
+            <img src="./assets/images/avatar_david_holtzman.jpg" alt="David Holtzman" class="w-12 h-12 rounded-full object-cover border-2 border-accent/30 shadow-sm">
             <div>
               <span class="block text-sm font-bold text-primary dark:text-white">David Holtzman</span>
               <span class="block text-xs text-gray-400">Chief Estimator, Holtz Construction Group</span>
@@ -1078,7 +1339,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Post 1 -->
-        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-155 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Steel Rebars Site" class="w-full h-48 object-cover">
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-3 text-xs text-gray-400 font-semibold">
@@ -1087,9 +1348,9 @@
               <span>August 14, 2026</span>
             </div>
             <h3 class="text-base font-bold font-display text-primary dark:text-white hover:text-accent transition-colors">
-              <a href="blog-details.html">Selecting Right Steel Grades for Coastal Structure Projects</a>
+              <a href="blog-details.html?id=steel-grades-coastal">Selecting Right Steel Grades for Coastal Structure Projects</a>
             </h3>
-            <p class="text-xs text-gray-500 dark:text-gray-450 leading-relaxed">
+            <p class="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
               Coastal atmospheric salinity corrodes reinforcement steel rapidly. Learn how Fe 500D Epoxy Coated Rebars mitigate structural decay risks.
             </p>
             <div class="pt-4 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center text-xs font-bold">
@@ -1100,7 +1361,7 @@
         </article>
 
         <!-- Post 2 -->
-        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-155 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <img src="./assets/images/green_cement_study_user.jpg" alt="Green Cement OPC vs PPC: Comparative Environmental Study" class="w-full h-48 object-cover">
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-3 text-xs text-gray-400 font-semibold">
@@ -1109,9 +1370,9 @@
               <span>August 10, 2026</span>
             </div>
             <h3 class="text-base font-bold font-display text-primary dark:text-white hover:text-accent transition-colors">
-              <a href="blog-details.html?id=steel-grades-coastal">Green Cement OPC vs PPC: Comparative Environmental Study</a>
+              <a href="blog-details.html?id=green-cement-study">Green Cement OPC vs PPC: Comparative Environmental Study</a>
             </h3>
-            <p class="text-xs text-gray-500 dark:text-gray-450 leading-relaxed">
+            <p class="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
               Analyze the carbon footprint reduction and heat of hydration advantages of Pozzolana Portland Cement compared to ordinary Portland cement.
             </p>
             <div class="pt-4 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center text-xs font-bold">
@@ -1122,7 +1383,7 @@
         </article>
 
         <!-- Post 3 -->
-        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-150 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
+        <article class="bg-white dark:bg-[#0B1220] rounded-xl border border-gray-155 dark:border-slate-800 shadow-sm overflow-hidden hover-lift flex flex-col justify-between text-start">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Logistics Truck Construction" class="w-full h-48 object-cover">
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-3 text-xs text-gray-400 font-semibold">
@@ -1131,14 +1392,14 @@
               <span>August 08, 2026</span>
             </div>
             <h3 class="text-base font-bold font-display text-primary dark:text-white hover:text-accent transition-colors">
-              <a href="blog-details.html?id=green-cement-study">Avoiding Construction Delays: Master Procurement Calendars</a>
+              <a href="blog-details.html?id=avoiding-delays">Avoiding Construction Delays: Master Procurement Calendars</a>
             </h3>
-            <p class="text-xs text-gray-500 dark:text-gray-450 leading-relaxed">
+            <p class="text-xs text-gray-500 dark:text-gray-500 leading-relaxed">
               Delays in core concrete supply chains stall downstream trades. Map out perfect lead times for block masonry, structural casting, and glazing.
             </p>
             <div class="pt-4 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center text-xs font-bold">
               <span class="text-gray-400">By Sarah Jenkins</span>
-              <a href="blog-details.html" class="text-accent hover:underline flex items-center gap-1">Read Post <i class="fa-solid fa-arrow-right text-[10px] rtl-flip"></i></a>
+              <a href="blog-details.html?id=avoiding-delays" class="text-accent hover:underline flex items-center gap-1">Read Post <i class="fa-solid fa-arrow-right text-[10px] rtl-flip"></i></a>
             </div>
           </div>
         </article>
@@ -1246,3 +1507,6 @@
 
 </body>
 </html>
+
+
+

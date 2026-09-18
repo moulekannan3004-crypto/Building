@@ -52,6 +52,7 @@
   <script src="./assets/js/app.js" defer></script>
   <!-- Favicon Logo -->
   <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
 </head>
 <body class="bg-[#F9FAFB] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F9FAFB] transition-colors duration-300">
 
@@ -71,11 +72,11 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
           <!-- Home Dropdown -->
-          <div class="relative">
-            <button class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
               <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
-            </button>
-            <div class="absolute top-full start-0 mt-3 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white/95 dark:bg-[#0B1220]/95 backdrop-blur-md shadow-2xl hidden transition-all duration-300 overflow-hidden z-50 p-1.5">
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
               <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
               <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
             </div>
@@ -83,60 +84,56 @@
 
           <a href="about.html" class="nav-link active"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
           <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
-          
           <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
-
           <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
           <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
           <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
         </nav>
 
-                                <!-- Right Menu Actions -->
-        <div class="hidden md:flex items-center gap-4">
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
           <!-- Light/Dark Mode Switcher -->
-          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent focus:outline-none transition-colors">
-            <i class="fa-solid fa-sun sun-icon hidden text-lg"></i>
-            <i class="fa-solid fa-moon moon-icon text-lg"></i>
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
           </button>
 
           <!-- RTL Toggle -->
-          <button class="rtl-toggle-btn px-2.5 py-1 rounded-md border border-gray-300 dark:border-slate-700 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
             RTL
           </button>
 
           <!-- Login -->
-          <a href="login.html" class="px-4 py-2 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-slate-700 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center gap-1.5 shadow-sm">
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
             <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
           </a>
 
           <!-- Signup -->
-          <a href="register.html" class="px-4.5 py-2 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5">
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
             <i class="fa-solid fa-user-plus text-xs"></i> Signup
           </a>
 
-          <!-- Quote List / Cart Icon with badge -->
-          <a href="products.html#quote-cart" class="relative p-2.5 rounded-lg text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
-            <i class="fa-solid fa-file-invoice text-xl"></i>
-            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-accent rounded-full hidden">0</span>
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
           </a>
-
-
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <div class="md:hidden flex items-center gap-3">
-          <button class="theme-toggle-btn p-2 rounded-lg text-gray-500 dark:text-gray-400">
-            <i class="fa-solid fa-sun sun-icon hidden"></i>
-            <i class="fa-solid fa-moon moon-icon"></i>
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
           </button>
           
-          <a href="products.html#quote-cart" class="relative p-2 rounded-lg text-gray-500 dark:text-gray-400">
-            <i class="fa-solid fa-file-invoice text-lg"></i>
-            <span class="cart-badge absolute -top-1 -right-1 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold text-white bg-accent rounded-full hidden">0</span>
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
           </a>
 
-          <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 focus:outline-none">
-            <i class="fa-solid fa-bars text-xl"></i>
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
           </button>
         </div>
 
@@ -144,8 +141,8 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-150 dark:border-slate-800 md:hidden">
-      <div class="flex items-center justify-between p-6 border-b border-gray-150 dark:border-slate-800">
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
         <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
         <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
           <i class="fa-solid fa-xmark text-xl"></i>
@@ -162,12 +159,12 @@
           <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
           <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
           <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
-          <div class="border-t border-gray-150 dark:border-slate-800 my-2"></div>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
           
           <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
           <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
         </nav>
-        <div class="pt-6 border-t border-gray-150 dark:border-slate-800 flex flex-col gap-4">
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
           <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
           <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
         </div>
@@ -178,7 +175,7 @@
   <!-- Breadcrumb and Page Title Hero -->
   <section class="bg-primary text-white py-16 lg:py-24 relative overflow-hidden text-start">
     <div class="absolute inset-0 opacity-15 mix-blend-multiply">
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80" alt="Construction Site Background" class="w-full h-full object-cover">
+      <img src="./assets/images/seamless_industrial_supply.jpg" alt="Construction Site Background" class="w-full h-full object-cover">
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
       <!-- Breadcrumbs -->
@@ -219,10 +216,10 @@
         <div class="lg:col-span-6 space-y-6 text-start">
           <span class="text-accent font-bold text-xs uppercase tracking-wider bg-accent/15 dark:bg-accent/10 px-3.5 py-1 rounded-full">Our Story</span>
           <h2 class="text-3xl font-extrabold font-display text-primary dark:text-white tracking-tight">Bridging Factories to Structural Foundations</h2>
-          <p class="text-sm text-gray-600 dark:text-gray-450 leading-relaxed">
+          <p class="text-sm text-gray-600 dark:text-gray-500 leading-relaxed">
             Founded in 2012, BuildPro emerged from a fundamental challenge in industrial construction: procurement friction. Core materials (steel rebars, Portland cement, vitrified blocks) were bottlenecked by layered distributors, lacking testing certificates, and experiencing chronic site transport delays.
           </p>
-          <p class="text-sm text-gray-655 dark:text-gray-400 leading-relaxed">
+          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             We resolved this by rebuilding the pipeline digitally. By negotiating direct supply agreements with Tier-1 manufacturers and integrating automated laboratory batch testing, we created an open portal where contractors can secure volume discounts with 100% QA transparency.
           </p>
           
@@ -287,7 +284,7 @@
         <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 flex flex-col justify-between">
           <!-- Top Half Image -->
           <div class="relative h-52 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Our Vision" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="./assets/images/proj_skyline_tower.jpg" alt="Our Vision" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-transparent to-transparent opacity-80"></div>
             <div class="absolute top-4 start-4 w-11 h-11 rounded-xl bg-blue-500 text-white flex items-center justify-center shadow-lg font-bold">
               <i class="fa-solid fa-eye text-lg"></i>
@@ -314,7 +311,7 @@
         <div class="group bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 flex flex-col justify-between">
           <!-- Top Half Image -->
           <div class="relative h-52 w-full overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Structural Integrity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="./assets/images/proj_elevated_corridor.jpg" alt="Structural Integrity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-transparent to-transparent opacity-80"></div>
             <div class="absolute top-4 start-4 w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-lg font-bold">
               <i class="fa-solid fa-shield-halved text-lg"></i>
@@ -572,3 +569,6 @@
 
 </body>
 </html>
+
+
+

@@ -41,6 +41,7 @@
   <script src="../assets/js/app.js" defer></script>
   <!-- Favicon Logo -->
   <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
 </head>
 <body class="bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F9FAFB]">
   <div class="min-h-screen flex">
@@ -347,15 +348,15 @@
             <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
               <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Platform Integrity</h3>
               <div class="space-y-3 text-xs">
-                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-850">
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
                   <span class="text-slate-450">Server Environment</span>
                   <span class="font-bold text-emerald-500">PRODUCTION</span>
                 </div>
-                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-850">
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
                   <span class="text-slate-450">B2B API Integration</span>
                   <span class="font-bold text-emerald-500">ONLINE (12ms)</span>
                 </div>
-                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-850">
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
                   <span class="text-slate-450">SSL Certificate Status</span>
                   <span class="font-semibold text-slate-800 dark:text-white">Active (312 days left)</span>
                 </div>
@@ -440,3 +441,6 @@
   </script>
 </body>
 </html>
+
+
+

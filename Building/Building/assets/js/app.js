@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initAdminDashboard();
   initFormAlerts();
   initSmoothScroll();
+  initScrollNavHighlight();
 });
 
 // ==========================================
 // 1. Theme Management (Dark / Light Mode)
 // ==========================================
 function initTheme() {
-  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
   const storedTheme = localStorage.getItem('theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
@@ -30,8 +30,14 @@ function initTheme() {
     document.documentElement.classList.remove('dark');
   }
 
-  themeToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+  updateThemeIcons();
+
+  // Delegate click events for all theme toggle buttons
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.theme-toggle-btn');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
       if (document.documentElement.classList.contains('dark')) {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
@@ -40,9 +46,8 @@ function initTheme() {
         localStorage.setItem('theme', 'dark');
       }
       updateThemeIcons();
-    });
+    }
   });
-  updateThemeIcons();
 }
 
 function updateThemeIcons() {
@@ -64,19 +69,21 @@ function updateThemeIcons() {
 // 2. RTL Support (LTR / RTL Toggle)
 // ==========================================
 function initRTL() {
-  const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
   const currentDir = localStorage.getItem('dir') || 'ltr';
-  
   document.documentElement.dir = currentDir;
   updateRTLButtons(currentDir);
 
-  rtlToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Delegate click events for all RTL toggle buttons
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.rtl-toggle-btn');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
       const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
       document.documentElement.dir = newDir;
       localStorage.setItem('dir', newDir);
       updateRTLButtons(newDir);
-    });
+    }
   });
 }
 
@@ -95,40 +102,95 @@ function initMobileMenu() {
   const closeBtn = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('translate-x-full');
-      mobileMenu.classList.add('translate-x-0');
+  if (!mobileMenu) return;
+
+  // Create backdrop element if it doesn't exist
+  let backdrop = document.getElementById('mobile-menu-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobile-menu-backdrop';
+    backdrop.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0';
+    document.body.appendChild(backdrop);
+  }
+
+  function openMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    backdrop.classList.remove('hidden');
+    setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    backdrop.classList.add('opacity-0');
+    setTimeout(() => backdrop.classList.add('hidden'), 300);
+    document.body.style.overflow = '';
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMenu();
     });
   }
 
-  if (closeBtn && mobileMenu) {
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('translate-x-0');
-      mobileMenu.classList.add('translate-x-full');
-    });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
   }
+
+  backdrop.addEventListener('click', closeMenu);
+
+  // Close mobile menu on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+      closeMenu();
+    }
+  });
+
+  // Close mobile menu when clicking any link inside it
+  const navLinks = mobileMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close on desktop resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && !mobileMenu.classList.contains('translate-x-full')) {
+      closeMenu();
+    }
+  });
 }
 
 // ==========================================
 // 4. Dropdowns
 // ==========================================
 function initDropdowns() {
-  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-  dropdownTriggers.forEach(trigger => {
-    const dropdownMenu = trigger.nextElementSibling;
-    if (dropdownMenu) {
+  const dropdownContainers = document.querySelectorAll('.nav-dropdown, .group, .relative');
+  dropdownContainers.forEach(container => {
+    const trigger = container.querySelector('.dropdown-trigger');
+    const menu = container.querySelector('.dropdown-menu') || (trigger ? trigger.nextElementSibling : null);
+    
+    if (trigger && menu) {
       trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdownMenu.classList.toggle('hidden');
-      });
-      // Close dropdown if clicking outside
-      document.addEventListener('click', (e) => {
-        if (!trigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
-          dropdownMenu.classList.add('hidden');
+        if (trigger.tagName.toLowerCase() === 'button' || trigger.getAttribute('href') === '#') {
+          e.preventDefault();
+          menu.classList.toggle('hidden');
         }
       });
     }
+  });
+
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      const parent = menu.parentElement;
+      if (parent && !parent.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
   });
 }
 
@@ -146,7 +208,6 @@ function initAccordions() {
         content.classList.remove('open');
         if (icon) icon.style.transform = 'rotate(0deg)';
       } else {
-        // Close all other accordions first
         const allContents = header.parentElement.parentElement.querySelectorAll('.accordion-content');
         const allIcons = header.parentElement.parentElement.querySelectorAll('.accordion-icon');
         allContents.forEach(c => c.classList.remove('open'));
@@ -187,12 +248,10 @@ function initQuoteCart() {
       localStorage.setItem('quoteCart', JSON.stringify(quoteCart));
       updateCartBadge();
       
-      // Temporary Modal Notification or alert
       showToast(`${name} added to quote list!`);
     });
   });
 
-  // If we are on the product details or list, setup quantity selectors
   const qtyInputs = document.querySelectorAll('.qty-input');
   qtyInputs.forEach(input => {
     const minus = input.previousElementSibling;
@@ -211,12 +270,15 @@ function initQuoteCart() {
 }
 
 function updateCartBadge() {
+  const currentCart = JSON.parse(localStorage.getItem('quoteCart')) || quoteCart || [];
+  const count = currentCart.reduce((acc, curr) => acc + (parseInt(curr.quantity) || 1), 0);
   const badges = document.querySelectorAll('.cart-badge');
-  const count = quoteCart.reduce((acc, curr) => acc + curr.quantity, 0);
   badges.forEach(badge => {
     badge.textContent = count;
     if (count > 0) {
       badge.classList.remove('hidden');
+      badge.classList.add('scale-110');
+      setTimeout(() => badge.classList.remove('scale-110'), 200);
     } else {
       badge.classList.add('hidden');
     }
@@ -239,15 +301,15 @@ function showToast(message) {
   `;
   container.appendChild(toast);
   
-  // Animate in
   setTimeout(() => {
     toast.classList.remove('translate-y-10', 'opacity-0');
   }, 10);
   
   const closeBtn = toast.querySelector('button');
-  closeBtn.addEventListener('click', () => toast.remove());
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => toast.remove());
+  }
   
-  // Auto remove
   setTimeout(() => {
     toast.classList.add('translate-y-10', 'opacity-0');
     setTimeout(() => toast.remove(), 300);
@@ -279,7 +341,6 @@ function initQuantityEstimator() {
     });
   });
 
-  // Estimator Calculations
   const btnEstimates = document.querySelectorAll('.btn-calculate');
   btnEstimates.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -291,13 +352,10 @@ function initQuantityEstimator() {
       
       if (type === 'cement') {
         const area = parseFloat(document.getElementById('c-area')?.value) || 0;
-        const thickness = parseFloat(document.getElementById('c-thickness')?.value) || 0.1; // in meters (default 10cm)
-        const ratio = document.getElementById('c-ratio')?.value || '1:4'; // standard mix
+        const thickness = parseFloat(document.getElementById('c-thickness')?.value) || 0.1;
+        const ratio = document.getElementById('c-ratio')?.value || '1:4';
         
-        // Calculate volume in m3
         const volume = area * thickness;
-        // Cement standard rule: ~1.54 multiplier for dry mix. 
-        // 1:4 mix is 1 part cement, 4 parts sand. Cement parts = 1 / 5 = 0.2.
         let partsTotal = 5;
         if (ratio === '1:3') partsTotal = 4;
         if (ratio === '1:5') partsTotal = 6;
@@ -305,54 +363,44 @@ function initQuantityEstimator() {
         
         const dryVolume = volume * 1.54;
         const cementVolume = (dryVolume * 1) / partsTotal;
-        // 1 cement bag is 50kg = ~0.035 m3
         const bags = Math.ceil(cementVolume / 0.035);
         outputQty = bags;
         unit = 'Bags (50kg)';
-        outputCost = bags * 450; // standard bag rate INR/USD equivalent
+        outputCost = bags * 450;
       } 
-      
       else if (type === 'steel') {
-        const volume = parseFloat(document.getElementById('s-volume')?.value) || 0; // concrete volume in m3
-        const density = parseFloat(document.getElementById('s-type')?.value) || 80; // kg/m3 based on structural elements
+        const volume = parseFloat(document.getElementById('s-volume')?.value) || 0;
+        const density = parseFloat(document.getElementById('s-type')?.value) || 80;
         
-        // Steel weight calculation
         const totalWeight = Math.ceil(volume * density);
         outputQty = totalWeight;
         unit = 'kg';
-        outputCost = totalWeight * 72; // average steel rate
+        outputCost = totalWeight * 72;
       } 
-      
       else if (type === 'bricks') {
         const length = parseFloat(document.getElementById('b-length')?.value) || 0;
         const height = parseFloat(document.getElementById('b-height')?.value) || 0;
-        const thickness = parseFloat(document.getElementById('b-thickness')?.value) || 0.23; // wall thickness (meters)
+        const thickness = parseFloat(document.getElementById('b-thickness')?.value) || 0.23;
         
-        // Volume of wall
         const wallVolume = length * height * thickness;
-        // Brick standard size: 0.19m x 0.09m x 0.09m = 0.001539 m3
-        // With mortar, brick is ~ 0.2m x 0.1m x 0.1m = 0.002 m3
         const bricksCount = Math.ceil(wallVolume / 0.002);
         outputQty = bricksCount;
         unit = 'Bricks';
-        outputCost = bricksCount * 8; // average cost per brick
+        outputCost = bricksCount * 8;
       } 
-      
       else if (type === 'tiles') {
         const width = parseFloat(document.getElementById('t-width')?.value) || 0;
         const length = parseFloat(document.getElementById('t-length')?.value) || 0;
-        const tileSize = parseFloat(document.getElementById('t-size')?.value) || 0.36; // tile area in sq m
+        const tileSize = parseFloat(document.getElementById('t-size')?.value) || 0.36;
         
         const area = width * length;
-        // Add 10% wastage
         const totalAreaWithWastage = area * 1.1;
         const tilesCount = Math.ceil(totalAreaWithWastage / tileSize);
         outputQty = tilesCount;
         unit = 'Tiles';
-        outputCost = tilesCount * 120; // average cost per tile
+        outputCost = tilesCount * 120;
       }
 
-      // Display Estimates
       const qtyContainer = document.getElementById(`${type}-est-qty`);
       const costContainer = document.getElementById(`${type}-est-cost`);
       const discountContainer = document.getElementById(`${type}-est-discount`);
@@ -362,7 +410,6 @@ function initQuantityEstimator() {
         qtyContainer.textContent = `${outputQty} ${unit}`;
         costContainer.textContent = `₹${outputCost.toLocaleString()}`;
         
-        // 10% bulk discount for estimates over ₹1000
         const discount = outputCost > 1000 ? outputCost * 0.1 : 0;
         const finalCost = outputCost - discount;
         
@@ -378,17 +425,19 @@ function initQuantityEstimator() {
 // ==========================================
 function initContractorCalculator() {
   const volumeSlider = document.getElementById('calc-volume');
+  const volumeVal = document.getElementById('volume-val');
   const materialSelect = document.getElementById('calc-material');
   const calculateBtn = document.getElementById('btn-calc-price');
 
-  if (!calculateBtn) return;
+  if (!volumeSlider && !materialSelect && !calculateBtn) return;
 
   const handleCalc = () => {
-    if (!volumeSlider || !materialSelect) return;
-    const volume = parseFloat(volumeSlider.value) || 1;
-    const materialPrice = parseFloat(materialSelect.value) || 0;
-    const selectedOpt = materialSelect.options ? materialSelect.options[materialSelect.selectedIndex] : null;
-    const materialName = selectedOpt ? selectedOpt.text.split(' - ')[0] : 'Material';
+    const volume = volumeSlider ? (parseFloat(volumeSlider.value) || 1) : 100;
+    const materialPrice = materialSelect ? (parseFloat(materialSelect.value) || 380) : 380;
+
+    if (volumeVal && volumeSlider) {
+      volumeVal.textContent = volume;
+    }
 
     const baseCost = volume * materialPrice;
     let discountPct = 0;
@@ -415,129 +464,72 @@ function initContractorCalculator() {
     const finalDisp = document.getElementById('calc-final');
 
     if (qtyDisp) qtyDisp.textContent = volume;
-    if (tierDisp) tierDisp.textContent = tier;
+    if (tierDisp) tierDisp.innerHTML = `<i class="fa-solid fa-award text-amber-500 me-1"></i> ${tier}`;
     if (baseDisp) baseDisp.textContent = `₹${baseCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
     if (discDisp) discDisp.textContent = `-₹${discountVal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} (${discountPct * 100}%)`;
     if (finalDisp) finalDisp.textContent = `₹${finalCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
   };
 
-  if (volumeSlider) {
-    volumeSlider.addEventListener('input', () => {
-      document.getElementById('volume-val').textContent = volumeSlider.value;
+  if (volumeSlider) volumeSlider.addEventListener('input', handleCalc);
+  if (materialSelect) materialSelect.addEventListener('change', handleCalc);
+  if (calculateBtn) {
+    calculateBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       handleCalc();
+      showToast('Wholesale rate calculated & locked!');
     });
   }
-
-  if (materialSelect) {
-    materialSelect.addEventListener('change', handleCalc);
-  }
-
-  calculateBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    handleCalc();
-  });
 }
 
 // ==========================================
-// 9. Interactive Product Catalog (Filters & Sort)
+// 9. Product Catalog Filtering
 // ==========================================
 function initProductCatalog() {
-  const cards = document.querySelectorAll('.product-card');
+  const catFilters = document.querySelectorAll('.cat-filter');
   const searchInput = document.getElementById('product-search');
-  const sortSelect = document.getElementById('product-sort');
-  const categoryFilters = document.querySelectorAll('.cat-filter');
-  const priceRange = document.getElementById('price-range');
-
+  const cards = document.querySelectorAll('.product-card');
   if (cards.length === 0) return;
 
-  let activeCategory = 'all';
-  let searchQuery = '';
-  let maxPrice = Infinity;
+  let activeCat = 'all';
+  let query = '';
 
-  if (priceRange) {
-    priceRange.addEventListener('input', () => {
-      const priceVal = document.getElementById('price-val');
-      if (priceVal) priceVal.textContent = `₹${priceRange.value}`;
-      maxPrice = parseFloat(priceRange.value);
-      filterProducts();
-    });
-  }
-
-  categoryFilters.forEach(filter => {
-    filter.addEventListener('change', () => {
-      if (filter.checked) {
-        activeCategory = filter.value;
-        filterProducts();
+  const applyProductFilters = () => {
+    cards.forEach(card => {
+      const title = (card.getAttribute('data-title') || '').toLowerCase();
+      const cat = card.getAttribute('data-category');
+      const matchSearch = title.includes(query);
+      const matchCat = activeCat === 'all' || cat === activeCat;
+      if (matchSearch && matchCat) {
+        if (card.parentElement) card.parentElement.style.display = '';
+      } else {
+        if (card.parentElement) card.parentElement.style.display = 'none';
       }
+    });
+  };
+
+  catFilters.forEach(filter => {
+    filter.addEventListener('change', (e) => {
+      activeCat = e.target.value;
+      applyProductFilters();
     });
   });
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.toLowerCase().trim();
-      filterProducts();
+      query = e.target.value.toLowerCase().trim();
+      applyProductFilters();
     });
-  }
-
-  if (sortSelect) {
-    sortSelect.addEventListener('change', () => {
-      const criteria = sortSelect.value;
-      sortProducts(criteria);
-    });
-  }
-
-  function filterProducts() {
-    cards.forEach(card => {
-      const name = card.getAttribute('data-name').toLowerCase();
-      const cat = card.getAttribute('data-category');
-      const price = parseFloat(card.getAttribute('data-price')) || 0;
-      
-      const matchSearch = name.includes(searchQuery);
-      const matchCat = activeCategory === 'all' || cat === activeCategory;
-      const matchPrice = price <= maxPrice;
-
-      if (matchSearch && matchCat && matchPrice) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
-  function sortProducts(criteria) {
-    const parent = cards[0].parentElement;
-    const cardsArray = Array.from(cards);
-
-    cardsArray.sort((a, b) => {
-      const priceA = parseFloat(a.getAttribute('data-price')) || 0;
-      const priceB = parseFloat(b.getAttribute('data-price')) || 0;
-      const nameA = a.getAttribute('data-name').toLowerCase();
-      const nameB = b.getAttribute('data-name').toLowerCase();
-
-      if (criteria === 'price-low') {
-        return priceA - priceB;
-      } else if (criteria === 'price-high') {
-        return priceB - priceA;
-      } else if (criteria === 'name-asc') {
-        return nameA.localeCompare(nameB);
-      } else {
-        // Default / Popularity (uses IDs)
-        return a.getAttribute('data-id').localeCompare(b.getAttribute('data-id'));
-      }
-    });
-
-    cardsArray.forEach(card => parent.appendChild(card));
   }
 }
 
 // ==========================================
-// 10. Interactive Blog Search & Filters
+// 10. Blog Search & Filter System
 // ==========================================
 function initBlogSearchFilter() {
-  const articles = document.querySelectorAll('.blog-article');
-  const searchInput = document.getElementById('blog-search');
   const catBtns = document.querySelectorAll('.blog-cat-btn');
-
+  const searchInput = document.getElementById('blog-search');
+  const articles = document.querySelectorAll('.blog-article');
+  
   if (articles.length === 0) return;
 
   let activeCat = 'all';
@@ -566,7 +558,7 @@ function initBlogSearchFilter() {
 
   function applyFilters() {
     articles.forEach(art => {
-      const title = art.getAttribute('data-title').toLowerCase();
+      const title = (art.getAttribute('data-title') || '').toLowerCase();
       const cat = art.getAttribute('data-category');
       
       const matchSearch = title.includes(query);
@@ -588,7 +580,6 @@ function initCountdownTimer() {
   const timer = document.getElementById('countdown-timer');
   if (!timer) return;
 
-  // Launch date set to 90 days from now
   const launchDate = new Date();
   launchDate.setDate(launchDate.getDate() + 90);
 
@@ -677,7 +668,6 @@ function initAdminDashboard() {
     });
   }
 
-  // Dashboard Modal Trigger Handler
   const openModalBtns = document.querySelectorAll('.open-modal');
   const closeModalBtns = document.querySelectorAll('.close-modal');
   const modals = document.querySelectorAll('.modal-overlay');
@@ -704,14 +694,13 @@ function initAdminDashboard() {
   });
 }
 
-
 // ==========================================
 // 13. General Form Submission Interceptor
 // ==========================================
 function initFormAlerts() {
   const forms = document.querySelectorAll('form');
   forms.forEach(form => {
-    if (form.id === 'quote-submission-form') return; // Handled separately
+    if (form.id === 'quote-submission-form') return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       showToast("Your request has been submitted successfully!");
@@ -744,7 +733,6 @@ function initSmoothScroll() {
         if (targetEl) {
           e.preventDefault();
           
-          // Close mobile menu if open
           const mobileMenu = document.getElementById('mobile-menu');
           if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
             mobileMenu.classList.add('translate-x-full');
@@ -759,4 +747,45 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+// ==========================================
+// 15. Active Navigation & Sticky Scroll Highlighting
+// ==========================================
+function initScrollNavHighlight() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link, .dropdown-trigger, #mobile-menu nav a');
+  const header = document.querySelector('header');
+
+  // Dynamically ensure the active page link is highlighted
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const linkPath = href.split('#')[0].split('?')[0].split('/').pop();
+
+    if (
+      (currentPath === 'products.html' || currentPath === 'product-details.html') && linkPath === 'products.html' ||
+      (currentPath === 'index.html' || currentPath === '' || currentPath === 'home-2.html') && (linkPath === 'index.html' || linkPath === 'home-2.html') ||
+      (currentPath === 'about.html') && linkPath === 'about.html' ||
+      (currentPath === 'services.html' || currentPath === 'service-details.html') && linkPath === 'services.html' ||
+      (currentPath === 'pricing.html' || currentPath === 'contractor-pricing.html') && linkPath === 'pricing.html' ||
+      (currentPath === 'blog.html' || currentPath === 'blog-details.html') && linkPath === 'blog.html' ||
+      (currentPath === 'contact.html') && linkPath === 'contact.html'
+    ) {
+      link.classList.add('active');
+    }
+  });
+
+  // Sticky navbar shadow and active highlight stabilization on scroll
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 }

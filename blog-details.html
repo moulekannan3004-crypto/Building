@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPro - Green Cement Technologies | Construction & Building Materials</title>
+  <meta name="description" content="Read our deep dive into Green Cement: how low-carbon cement options and fly-ash alternatives are helping construction firms achieve LEED certifications." />
+  <meta name="keywords" content="green cement, carbon reduction, LEED construction, sustainable concrete, fly ash" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildPro - Green Cement: The Future of Eco-Friendly Infrastructure" />
+  <meta property="og:description" content="An in-depth guide to low-carbon cement technologies and sustainable concrete mixes." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="./assets/images/green_cement_study_user.jpg?auto=format&fit=crop&q=80&w=800" />
+  
+  <!-- CDNs & Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#090D16] dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
+          <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
+          <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
+          <a href="blog.html" class="nav-link active"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
+          <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
+        </nav>
+
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
+          </a>
+
+          <!-- Signup -->
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-10 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Article Header / Breadcrumb -->
+      <nav class="flex text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-6">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="index.html" class="hover:text-accent">Home</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <i class="fa-solid fa-chevron-right rtl-flip mx-2 text-gray-300"></i>
+              <a href="blog.html" class="hover:text-accent">Blog</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <i class="fa-solid fa-chevron-right rtl-flip mx-2 text-gray-300"></i>
+              <span class="text-gray-400 dark:text-gray-500 truncate max-w-[200px] sm:max-w-none">Green Cement Technologies</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <!-- Left Side: Main Article Text (lg:col-span-8) -->
+        <article class="lg:col-span-8 bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 sm:p-10 shadow-sm transition-colors duration-300">
+          
+          <!-- Category Badge & Meta -->
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span id="blog-cat" class="bg-accent/10 dark:bg-accent/20 text-accent text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider">
+              Cement &amp; Materials
+            </span>
+            <div id="blog-meta" class="flex items-center text-xs text-gray-400 gap-4">
+              <span><i class="fa-solid fa-calendar-days me-1.5"></i>Aug 14, 2026</span>
+              <span><i class="fa-solid fa-clock me-1.5"></i>6 min read</span>
+              <span><i class="fa-solid fa-eye me-1.5"></i>1,420 Views</span>
+            </div>
+          </div>
+
+          <!-- Main H1 Title -->
+          <h1 id="blog-title" class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-primary dark:text-white leading-tight mb-6">
+            Green Cement: The Future of Eco-Friendly Infrastructure
+          </h1>
+
+          <!-- Author Info Card -->
+          <div class="flex items-center gap-4 py-4 border-y border-gray-100 dark:border-border-dark mb-8">
+            <img id="blog-author-initials" src="./assets/images/avatar_david_holtzman.jpg" alt="Dr. Roger Vance" class="w-12 h-12 rounded-full object-cover border-2 border-accent/40 shadow-sm">
+            <div>
+              <p id="blog-author-name" class="text-sm font-bold text-primary dark:text-white">Dr. Roger Vance</p>
+              <p id="blog-author-title" class="text-xs text-gray-400">Head of Materials Research at BuildPro Technology Lab</p>
+            </div>
+          </div>
+
+          <!-- Featured Image -->
+          <div class="relative h-64 sm:h-96 rounded-xl overflow-hidden mb-8 shadow-md">
+            <img id="blog-featured-image" src="./assets/images/green_cement_study_user.jpg?auto=format&fit=crop&q=80&w=1200" alt="Sustainable Construction Materials" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Rich Text Content -->
+          <div id="blog-content" class="space-y-6 text-base leading-relaxed text-gray-700 dark:text-gray-300 font-sans">
+            
+            <p class="text-lg font-medium text-primary dark:text-white">
+              The construction industry accounts for approximately 8% of global carbon emissions, with cement production representing the single largest contributor. As structural codes and corporate sustainability mandates become stricter, contractors are seeking viable, high-performance replacements.
+            </p>
+
+            <p>
+              Enter <strong>Green Cement</strong>. By modifying the chemical mixture of conventional Portland cement, substituting industrial byproducts, and optimizing kiln operations, green cement solutions dramatically reduce embodied carbon without compromising structural load-bearing limits. In this technical review, we evaluate the properties, benefits, and standard specs for eco-friendly concrete binders.
+            </p>
+
+            <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">
+              What Makes Cement "Green"?
+            </h2>
+            <p>
+              Traditional cement is made by heating limestone and clay in a kiln to 1,450Â°C, a process that releases carbon dioxide through fuel combustion and the chemical calcination of limestone. Green cement achieves its eco-friendly status via two primary methodologies:
+            </p>
+
+            <ul class="list-disc ps-5 space-y-2">
+              <li>
+                <strong>Supplementary Cementitious Materials (SCMs):</strong> Substituting a portion of Portland clinker with industrial byproducts like fly ash (from coal combustion), ground granulated blast-furnace slag (GGBS from steel mills), or silica fume.
+              </li>
+              <li>
+                <strong>Geopolymer Formulations:</strong> Bypassing limestone altogether and using aluminosilicate rich binders activated by chemical solutions, yielding carbon savings of up to 80%.
+              </li>
+              <li>
+                <strong>Alternative Fuels:</strong> Operating high-temp kilns with biomass, agricultural waste, or recycled waste instead of coal.
+              </li>
+            </ul>
+
+            <!-- Premium Pullquote -->
+            <blockquote class="border-s-4 border-accent bg-gray-50 dark:bg-primary-light/50 p-6 rounded-e-xl italic my-8 text-primary dark:text-gray-200">
+              "By integrating GGBS and fly ash, contractors can expect up to a 45% reduction in embodied carbon per cubic yard of concrete while achieving higher long-term compressive strength and enhanced resistance to sulfate attacks."
+            </blockquote>
+
+            <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">
+              Performance Indicators &amp; LEED Certification
+            </h2>
+            <p>
+              Many builders mistakenly assume that green cement implies lower strength or longer setting times. However, engineering testing demonstrates that while initial setting times may be slightly extended, the long-term (56-day and 90-day) compressive values often exceed conventional mix standards due to continuous hydration reactions.
+            </p>
+
+            <p>
+              For projects aiming for LEED v4.1 certification, utilizing green cement yields substantial credit points under the <em>Materials and Resources (MR)</em> category, specifically targeting Environmental Product Declarations (EPD) and Raw Material Sourcing.
+            </p>
+
+            <!-- Technical table -->
+            <div class="overflow-x-auto my-6 border border-gray-200 dark:border-border-dark rounded-lg">
+              <table class="w-full text-sm text-start text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-primary dark:text-white uppercase bg-gray-100 dark:bg-primary-light">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-start">Property</th>
+                    <th scope="col" class="px-6 py-3 text-start">Standard OP Cement</th>
+                    <th scope="col" class="px-6 py-3 text-start">Green Blended (GGBS/Fly Ash)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 dark:divide-border-dark">
+                  <tr class="bg-white dark:bg-primary">
+                    <td class="px-6 py-4 font-semibold text-primary dark:text-white">CO2 per Ton</td>
+                    <td class="px-6 py-4">~0.82 Tons</td>
+                    <td class="px-6 py-4 text-accent font-bold">~0.44 Tons (46% Save)</td>
+                  </tr>
+                  <tr class="bg-gray-50 dark:bg-primary-light/30">
+                    <td class="px-6 py-4 font-semibold text-primary dark:text-white">Compressive (28 Days)</td>
+                    <td class="px-6 py-4">42.5 MPa</td>
+                    <td class="px-6 py-4">40.0 MPa</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-primary">
+                    <td class="px-6 py-4 font-semibold text-primary dark:text-white">Compressive (90 Days)</td>
+                    <td class="px-6 py-4">48.5 MPa</td>
+                    <td class="px-6 py-4 text-accent font-bold">54.0 MPa (Higher)</td>
+                  </tr>
+                  <tr class="bg-gray-50 dark:bg-primary-light/30">
+                    <td class="px-6 py-4 font-semibold text-primary dark:text-white">Sulfate Resistance</td>
+                    <td class="px-6 py-4">Moderate</td>
+                    <td class="px-6 py-4 text-accent font-bold">High / Superior</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">
+              Contractor Takeaways
+            </h2>
+            <p>
+              When specifying green cement on your project, ensure that the mix submittals align with local building regulations. Coordinate with your local ready-mix concrete plant to adjust hydration admixtures for cooler weather conditions. With BuildPro's sustainable cement supply lines, you can confidently fulfill green mandates while keeping project delivery on track.
+            </p>
+
+          </div>
+
+          <!-- Article Footer: Tags and Social Share -->
+          <div class="mt-12 pt-6 border-t border-gray-100 dark:border-border-dark flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+            
+            <!-- Tags -->
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Tags:</span>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-gray-100 dark:bg-primary-light text-xs font-medium hover:text-accent text-gray-600 dark:text-gray-300">Cement</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-gray-100 dark:bg-primary-light text-xs font-medium hover:text-accent text-gray-600 dark:text-gray-300">LEED</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-gray-100 dark:bg-primary-light text-xs font-medium hover:text-accent text-gray-600 dark:text-gray-300">Sustainability</a>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="flex items-center gap-3.5">
+              <span class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Share:</span>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-primary-light hover:bg-accent dark:hover:bg-accent text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" title="Share on Facebook">
+                <i class="fa-brands fa-facebook-f text-xs"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-primary-light hover:bg-accent dark:hover:bg-accent text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" title="Share on Twitter">
+                <i class="fa-brands fa-x-twitter text-xs"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-primary-light hover:bg-accent dark:hover:bg-accent text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" title="Share on LinkedIn">
+                <i class="fa-brands fa-linkedin-in text-xs"></i>
+              </a>
+              <button onclick="navigator.clipboard.writeText(window.location.href); alert('Article URL copied to clipboard!');" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-primary-light hover:bg-accent dark:hover:bg-accent text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" title="Copy Link">
+                <i class="fa-solid fa-link text-xs"></i>
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- Right Side: Recent Posts Sidebar (lg:col-span-4) -->
+        <aside class="lg:col-span-4 space-y-8">
+          
+          <!-- Sidebar Search Widget -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 shadow-sm transition-colors duration-300">
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white mb-4">Search Articles</h3>
+            <form action="blog.html" method="GET" class="relative">
+              <input type="text" name="q" placeholder="Enter keywords..." class="w-full ps-4 pe-10 py-2.5 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              <button type="submit" class="absolute inset-y-0 end-0 flex items-center pe-3 text-gray-400 hover:text-accent">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Recent Posts Widget -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 shadow-sm transition-colors duration-300">
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white mb-5 border-b border-gray-100 dark:border-border-dark pb-3">
+              Recent Posts
+            </h3>
+            <div class="space-y-5">
+              
+              <!-- Recent Post 1 -->
+              <div class="flex gap-4">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Steel post" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+                <div class="space-y-1">
+                  <h4 class="font-display font-semibold text-sm text-primary dark:text-white leading-snug hover:text-accent">
+                    <a href="blog-details.html">Corrosion Resistance in Modern Structural Steel</a>
+                  </h4>
+                  <p class="text-xs text-gray-400">Aug 10, 2026</p>
+                </div>
+              </div>
+
+              <!-- Recent Post 2 -->
+              <div class="flex gap-4">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Clay bricks" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+                <div class="space-y-1">
+                  <h4 class="font-display font-semibold text-sm text-primary dark:text-white leading-snug hover:text-accent">
+                    <a href="blog-details.html">Innovations in Clay Bricks &amp; Masonry Blocks</a>
+                  </h4>
+                  <p class="text-xs text-gray-400">Aug 03, 2026</p>
+                </div>
+              </div>
+
+              <!-- Recent Post 3 -->
+              <div class="flex gap-4">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Industrial floor tiles" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+                <div class="space-y-1">
+                  <h4 class="font-display font-semibold text-sm text-primary dark:text-white leading-snug hover:text-accent">
+                    <a href="blog-details.html">Industrial Floor Tiles for Warehouses</a>
+                  </h4>
+                  <p class="text-xs text-gray-400">Jul 28, 2026</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 shadow-sm transition-colors duration-300">
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white mb-4 border-b border-gray-100 dark:border-border-dark pb-3">
+              Categories
+            </h3>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a href="blog.html" class="flex items-center justify-between text-gray-600 dark:text-gray-300 hover:text-accent">
+                  <span>Cement Supplies</span>
+                  <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-primary-light text-xs font-semibold text-gray-500">12</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="flex items-center justify-between text-gray-600 dark:text-gray-300 hover:text-accent">
+                  <span>Structural Steel</span>
+                  <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-primary-light text-xs font-semibold text-gray-500">8</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="flex items-center justify-between text-gray-600 dark:text-gray-300 hover:text-accent">
+                  <span>Masonry &amp; Bricks</span>
+                  <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-primary-light text-xs font-semibold text-gray-500">14</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="flex items-center justify-between text-gray-600 dark:text-gray-300 hover:text-accent">
+                  <span>Finishing Tiles</span>
+                  <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-primary-light text-xs font-semibold text-gray-500">9</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="flex items-center justify-between text-gray-600 dark:text-gray-300 hover:text-accent">
+                  <span>Green Sustainability</span>
+                  <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-primary-light text-xs font-semibold text-gray-500">15</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Popular Tags cloud -->
+          <div class="bg-white dark:bg-primary border border-gray-200 dark:border-border-dark rounded-2xl p-6 shadow-sm transition-colors duration-300">
+            <h3 class="font-display font-bold text-lg text-primary dark:text-white mb-4 border-b border-gray-100 dark:border-border-dark pb-3">
+              Popular Tags
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">Cement</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">LEED v4.1</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">Steel</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">Masonry</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">Concrete</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">ASTM Standard</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#090D16] text-xs hover:bg-accent hover:text-primary dark:hover:bg-accent text-gray-600 dark:text-gray-400">B2B Order</a>
+            </div>
+          </div>
+
+          <!-- Sidebar Call to Action Widget -->
+          <div class="bg-gradient-to-br from-primary to-[#0B1220] border border-accent/20 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-8xl text-accent"><i class="fa-solid fa-helmet-safety"></i></div>
+            <h4 class="font-display font-extrabold text-xl mb-3">Custom Material Specs?</h4>
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">
+              Get in touch directly with our engineering team for bulk order chemical testing, custom sizing, and logistics scheduling.
+            </p>
+            <a href="contact.html" class="inline-flex w-full items-center justify-center py-2.5 bg-accent hover:bg-accent-hover text-primary text-xs font-bold rounded-lg transition-colors">
+              Talk to an Expert <i class="fa-solid fa-arrow-right rtl-flip ms-1.5"></i>
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="bg-primary text-gray-400 dark:bg-bg-dark border-t border-gray-800 dark:border-border-dark transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <!-- Company Summary -->
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            <span class="font-display font-extrabold text-2xl tracking-tight text-white">
+              Build <span class="text-accent">Pro</span>
+            </span>
+          </a>
+          <p class="text-sm leading-relaxed text-gray-400">
+            BuildPro is the premier B2B marketplace for high-grade building materials and construction supplies. We serve commercial contractors, home builders, and enterprise infrastructure projects.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-light dark:bg-surface-dark border border-gray-800 dark:border-border-dark text-gray-400 hover:text-accent hover:border-accent transition-all duration-200" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-light dark:bg-surface-dark border border-gray-800 dark:border-border-dark text-gray-400 hover:text-accent hover:border-accent transition-all duration-200" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-light dark:bg-surface-dark border border-gray-800 dark:border-border-dark text-gray-400 hover:text-accent hover:border-accent transition-all duration-200" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h3 class="font-display font-semibold text-white text-base tracking-wider uppercase mb-6">Useful Links</h3>
+          <ul class="space-y-3.5 text-sm">
+            <li><a href="about.html" class="hover:text-accent hover:ps-1.5 transition-all duration-200">About BuildPro</a></li>
+            <li><a href="services.html" class="hover:text-accent hover:ps-1.5 transition-all duration-200">Our Services</a></li>
+            
+            <li><a href="pricing.html" class="hover:text-accent hover:ps-1.5 transition-all duration-200">Contractor Pricing</a></li>
+            <li><a href="about.html#brands" class="hover:text-accent hover:ps-1.5 transition-all duration-200">Our Partner Brands</a></li>
+            <li><a href="services.html#estimator" class="hover:text-accent hover:ps-1.5 transition-all duration-200">Quantity Estimator</a></li>
+            <li><a href="blog.html" class="hover:text-accent hover:ps-1.5 transition-all duration-200 text-accent">Industry Blog</a></li>
+            <li><a href="contact.html" class="hover:text-accent hover:ps-1.5 transition-all duration-200">Contact & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div>
+          <h3 class="font-display font-semibold text-white text-base tracking-wider uppercase mb-6">Contact Us</h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="text-accent mt-0.5"><i class="fa-solid fa-map-location-dot"></i></span>
+              <span>1044 Industrial Parkway, Suite A, Houston, TX 77002, United States</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent"><i class="fa-solid fa-phone-volume"></i></span>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent"><i class="fa-solid fa-envelope-open-text"></i></span>
+              <span>support@buildpro.com</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-accent"><i class="fa-solid fa-clock"></i></span>
+              <span>Mon - Sat: 7:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Sign-up -->
+        <div class="space-y-6">
+          <h3 class="font-display font-semibold text-white text-base tracking-wider uppercase">Newsletter</h3>
+          <p class="text-sm leading-relaxed text-gray-400">
+            Subscribe to receive bulk order discount alerts, industry news, and material price indices.
+          </p>
+          <form class="space-y-3">
+            <div class="relative">
+              <input type="email" required placeholder="Enter your business email" class="w-full px-4 py-3 rounded-lg bg-primary-light border border-gray-800 dark:border-border-dark text-white placeholder-gray-500 focus:outline-none focus:border-accent text-sm" />
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-primary bg-accent hover:bg-accent-hover transition-colors duration-200">
+              Subscribe Now
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright (Centered, Links Removed) -->
+      <div class="mt-12 pt-8 border-t border-gray-800 dark:border-border-dark text-center text-xs">
+        <p>&copy; 2026 BuildPro Corp. All rights reserved. Premium building supplies & materials B2B platform.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Blog Rendering Script -->
+  <script>
+    const blogDB = {
+      "green-cement": {
+        title: "Green Cement: The Future of Eco-Friendly Infrastructure",
+        cat: "Cement & Materials",
+        date: "Aug 14, 2026",
+        read: "6 min read",
+        views: "1,420 Views",
+        authorInitials: "DR",
+        authorImg: "./assets/images/avatar_david_holtzman.jpg",
+        authorName: "Dr. Roger Vance",
+        authorTitle: "Head of Materials Research at BuildPro Technology Lab",
+        img: "./assets/images/green_cement_study_user.jpg?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            The construction industry accounts for approximately 8% of global carbon emissions, with cement production representing the single largest contributor. As structural codes and corporate sustainability mandates become stricter, contractors are seeking viable, high-performance replacements.
+          </p>
+          <p>
+            Enter <strong>Green Cement</strong>. By modifying the chemical mixture of conventional Portland cement, substituting industrial byproducts, and optimizing kiln operations, green cement solutions dramatically reduce embodied carbon without compromising structural load-bearing limits. In this technical review, we evaluate the properties, benefits, and standard specs for eco-friendly concrete binders.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">What Makes Cement "Green"?</h2>
+          <p>
+            Traditional cement is made by heating limestone and clay in a kiln to 1,450Â°C, a process that releases carbon dioxide through fuel combustion and the chemical calcination of limestone. Green cement achieves its eco-friendly status via Supplementary Cementitious Materials (SCMs), substituting a portion of Portland clinker with industrial byproducts like fly ash, ground granulated blast-furnace slag (GGBS), or silica fume.
+          </p>
+          <blockquote class="border-s-4 border-accent bg-gray-50 dark:bg-primary-light/50 p-6 rounded-e-xl italic my-8 text-primary dark:text-gray-200">
+            "By integrating GGBS and fly ash, contractors can expect up to a 45% reduction in embodied carbon per cubic yard of concrete while achieving higher long-term compressive strength and enhanced resistance to sulfate attacks."
+          </blockquote>
+          <p>
+            Geopolymer formulations bypass limestone altogether, using aluminosilicate rich binders activated by chemical solutions, yielding carbon savings of up to 80%.
+          </p>
+        `
+      },
+      "corrosion-steel": {
+        title: "Corrosion Resistance in Modern Structural Steel",
+        cat: "Steel & Metallurgy",
+        date: "Aug 10, 2026",
+        read: "8 min read",
+        views: "980 Views",
+        authorInitials: "MK",
+        authorImg: "./assets/images/avatar_marcus_vance.jpg",
+        authorName: "Marcus Kross",
+        authorTitle: "Senior Structural Engineer at BuildPro Labs",
+        img: "./assets/images/prod_tmt_steel_v2.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Corrosion is the single largest threat to structural longevity, costing billions annually in maintenance and structural failures.
+          </p>
+          <p>
+            In coastal or high-humidity regions, marine salt aerosols accelerate the oxidation of mild steel rebars. By utilizing thermo-mechanically treated (TMT) steel rebars, weathering steel alloys, and epoxy or galvanized protective layers, structural builders can extend project lifespans by up to 50 years.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Galvanic vs. Barrier Protection</h2>
+          <p>
+            Hot-dip galvanizing provides a sacrificial zinc layer that corrodes preferentially, shielding the structural core. Epoxy coating acts as a physical barrier. For critical infrastructure, combining high-grade Fe 500D rebar with epoxy coating offers maximum safety.
+          </p>
+        `
+      },
+      "clay-bricks": {
+        title: "Innovations in Clay Bricks & Prefab Masonry Blocks",
+        cat: "Bricks & Masonry",
+        date: "Aug 03, 2026",
+        read: "5 min read",
+        views: "1,120 Views",
+        authorInitials: "SL",
+        authorImg: "./assets/images/avatar_sonia_patel.jpg",
+        authorName: "Sonia Lim",
+        authorTitle: "Prefab Construction Lead",
+        img: "./assets/images/cat_bricks.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Masonry remains the backbone of architectural partition walls. However, the labor-intensive nature of traditional red clay bricks is driving a shift toward high-efficiency materials.
+          </p>
+          <p>
+            Autoclaved Aerated Concrete (AAC) blocks and fly ash composite bricks represent the modern solution. Not only do they cut construction time in half due to their large prefab dimensions, but they also offer superior thermal and acoustic performance ratings.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Comparison of Thermal Properties</h2>
+          <p>
+            AAC blocks feature thousands of microscopic air pockets that block heat flow, cutting indoor cooling requirements by 25%. This translates to direct LEED credits and lower operational costs for property owners.
+          </p>
+        `
+      },
+      "industrial-tiles": {
+        title: "Selecting Industrial Floor Tiles for High-Traffic Warehouses",
+        cat: "Tiles & Ceramics",
+        date: "Jul 28, 2026",
+        read: "7 min read",
+        views: "890 Views",
+        authorInitials: "DR",
+        authorImg: "./assets/images/avatar_david_holtzman.jpg",
+        authorName: "Dr. Roger Vance",
+        authorTitle: "Head of Materials Research at BuildPro Technology Lab",
+        img: "./assets/images/prod_vitrified_tiles_v2.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Industrial facility floors undergo massive load stresses, rubber-wheel abrasion, chemical spills, and heavy impacts.
+          </p>
+          <p>
+            Conventional residential ceramic tiles fail quickly under forklift wheels. Double-charge glazed vitrified tiles, on the other hand, are engineered under severe hydraulic pressure and vitrified at extreme temperatures to achieve near-zero porosity and PEI Class V wear resistance.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Key Criteria: Friction and Compression</h2>
+          <p>
+            For safety, industrial tiles must boast a wet Dynamic Coefficient of Friction (DCOF) greater than 0.42 to prevent slippage while maintaining a compressive rating of over 40 N/mm2.
+          </p>
+        `
+      },
+      "smart-supply": {
+        title: "How Smart Supply Chains Are Eliminating Material Wastage",
+        cat: "Technology & Logistics",
+        date: "Jul 15, 2026",
+        read: "9 min read",
+        views: "2,150 Views",
+        authorInitials: "MK",
+        authorImg: "./assets/images/avatar_marcus_vance.jpg",
+        authorName: "Marcus Kross",
+        authorTitle: "Senior Structural Engineer at BuildPro Labs",
+        img: "./assets/images/proj_distribution_hub.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Traditional materials supply chains are plagued by visual inventory estimation errors, delayed deliveries, and spoilage of perishable items.
+          </p>
+          <p>
+            By shifting to smart supply chain platforms integrated with cloud estimators and GPS tracking, construction firms can achieve just-in-time material drops. Perishable items like cement are delivered in exact batches matching pouring schedules, eliminating moisture exposure and spoilage.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Efficiency Gains</h2>
+          <p>
+            Pilots demonstrate up to 15% reduction in aggregate wastage on-site, alongside a significant decrease in temporary staging area footprints.
+          </p>
+        `
+      },
+      "net-zero": {
+        title: "Net-Zero Building Projects: A Guide for Contractors",
+        cat: "Sustainability",
+        date: "Jul 02, 2026",
+        read: "11 min read",
+        views: "3,110 Views",
+        authorInitials: "SL",
+        authorImg: "./assets/images/avatar_sonia_patel.jpg",
+        authorName: "Sonia Lim",
+        authorTitle: "Prefab Construction Lead",
+        img: "./assets/images/green_cement_clean.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Net-zero construction represents the pinnacle of modern sustainable architecture, balancing energy consumption with active generation.
+          </p>
+          <p>
+            Contractors must focus on building envelopment. High-performance double-glazed facades, insulated wall paneling, low-embodied carbon concrete binders, and smart energy monitoring systems form the core of net-zero compliance.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Achieving Zero Carbon</h2>
+          <p>
+            By utilizing low-carbon geopolymers and fly ash concrete, builders can offset the initial embodied carbon debt, achieving carbon-neutral operational status years earlier.
+          </p>
+        `
+      },
+      "steel-grades-coastal": {
+        title: "Selecting Right Steel Grades for Coastal Structure Projects",
+        cat: "Steel Rebars",
+        date: "Aug 14, 2026",
+        read: "7 min read",
+        views: "1,200 Views",
+        authorInitials: "RV",
+        authorImg: "./assets/images/avatar_marcus_vance.jpg",
+        authorName: "Engr. Ronald Vance",
+        authorTitle: "Coastal Infrastructure Specialist",
+        img: "./assets/images/prod_tmt_steel_v2.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Coastal environments subject reinforced concrete structures to heavy chloride ion penetration, triggering internal rusting and structural cracking.
+          </p>
+          <p>
+            To prevent premature concrete spalling, structural engineers specify Fe 500D Epoxy Coated Rebars or Corrosion Resistant Steel. Sourcing certified corrosion-shielded materials directly from accredited manufacturers guarantees structural integrity.
+          </p>
+        `
+      },
+      "green-cement-study": {
+        title: "Green Cement OPC vs PPC: Comparative Environmental Study",
+        cat: "Cement Technology",
+        date: "Aug 10, 2026",
+        read: "6 min read",
+        views: "1,650 Views",
+        authorInitials: "AR",
+        authorImg: "./assets/images/avatar_david_holtzman.jpg",
+        authorName: "Dr. Alan Ross",
+        authorTitle: "Environmental Concrete Engineer",
+        img: "./assets/images/green_cement_study_user.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Ordinary Portland Cement (OPC) and Portland Pozzolana Cement (PPC) are the industry workhorses. But how do they compare environmentally?
+          </p>
+          <p>
+            This study evaluates clinker ratios, carbon footprints, long-term hydration heat, and chemical durability. PPC wins on durability and environmental impact, while OPC remains the choice for rapid structural load bearing.
+          </p>
+        `
+      },
+      "avoiding-delays": {
+        title: "Avoiding Construction Delays: Master Procurement Calendars",
+        cat: "Procurement Tips",
+        date: "Aug 08, 2026",
+        read: "8 min read",
+        views: "2,040 Views",
+        authorInitials: "SJ",
+        authorImg: "./assets/images/avatar_sonia_patel.jpg",
+        authorName: "Sarah Jenkins",
+        authorTitle: "B2B Logistics Operations Manager",
+        img: "./assets/images/proj_distribution_hub.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Supply chain bottlenecks are the leading cause of construction schedule slip, incurring substantial penalties for developers.
+          </p>
+          <p>
+            Integrating master calendars directly with material manufacturers allows logistics dispatch syncing. We show how scheduling steel delivery and cement casting cycles avoids layout conflicts.
+          </p>
+        `
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id') || "green-cement";
+      
+      const article = blogDB[articleId];
+      if (article) {
+        // Set category badge
+        const catBadge = document.getElementById('blog-cat');
+        if (catBadge) catBadge.innerHTML = article.cat;
+        
+        // Set meta values
+        const metaDiv = document.getElementById('blog-meta');
+        if (metaDiv) {
+          metaDiv.innerHTML = `
+            <span><i class="fa-solid fa-calendar-days me-1.5"></i>${article.date}</span>
+            <span><i class="fa-solid fa-clock me-1.5"></i>${article.read}</span>
+            <span><i class="fa-solid fa-eye me-1.5"></i>${article.views}</span>
+          `;
+        }
+        
+        // Set title
+        const titleH1 = document.getElementById('blog-title');
+        if (titleH1) titleH1.textContent = article.title;
+        
+        // Set author avatar/initials
+        const authorInit = document.getElementById('blog-author-initials');
+        if (authorInit) {
+          if (authorInit.tagName === 'IMG' && article.authorImg) {
+            authorInit.src = article.authorImg;
+            authorInit.alt = article.authorName;
+          } else if (article.authorInitials) {
+            authorInit.textContent = article.authorInitials;
+          }
+        }
+        
+        const authorName = document.getElementById('blog-author-name');
+        if (authorName) authorName.textContent = article.authorName;
+        
+        const authorTitle = document.getElementById('blog-author-title');
+        if (authorTitle) authorTitle.textContent = article.authorTitle;
+        
+        // Set image
+        const featImg = document.getElementById('blog-featured-image');
+        if (featImg) {
+          featImg.src = article.img;
+          featImg.alt = article.title;
+        }
+        
+        // Set content
+        const contentDiv = document.getElementById('blog-content');
+        if (contentDiv) contentDiv.innerHTML = article.content;
+        
+        // Update document title
+        document.title = `BuildPro - ${article.title}`;
+      }
+    });
+  </script>
+  <!-- Dynamic Blog Rendering Script -->
+  <script>
+    const blogDB = {
+      "green-cement": {
+        title: "Green Cement: The Future of Eco-Friendly Infrastructure",
+        cat: "Cement & Materials",
+        date: "Aug 14, 2026",
+        read: "6 min read",
+        views: "1,420 Views",
+        authorInitials: "DR",
+        authorName: "Dr. Roger Vance",
+        authorTitle: "Head of Materials Research at BuildPro Technology Lab",
+        img: "./assets/images/green_cement_study_user.jpg?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            The construction industry accounts for approximately 8% of global carbon emissions, with cement production representing the single largest contributor. As structural codes and corporate sustainability mandates become stricter, contractors are seeking viable, high-performance replacements.
+          </p>
+          <p>
+            Enter <strong>Green Cement</strong>. By modifying the chemical mixture of conventional Portland cement, substituting industrial byproducts, and optimizing kiln operations, green cement solutions dramatically reduce embodied carbon without compromising structural load-bearing limits. In this technical review, we evaluate the properties, benefits, and standard specs for eco-friendly concrete binders.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">What Makes Cement "Green"?</h2>
+          <p>
+            Traditional cement is made by heating limestone and clay in a kiln to 1,450Â°C, a process that releases carbon dioxide through fuel combustion and the chemical calcination of limestone. Green cement achieves its eco-friendly status via Supplementary Cementitious Materials (SCMs), substituting a portion of Portland clinker with industrial byproducts like fly ash, ground granulated blast-furnace slag (GGBS), or silica fume.
+          </p>
+          <blockquote class="border-s-4 border-accent bg-gray-50 dark:bg-primary-light/50 p-6 rounded-e-xl italic my-8 text-primary dark:text-gray-200">
+            "By integrating GGBS and fly ash, contractors can expect up to a 45% reduction in embodied carbon per cubic yard of concrete while achieving higher long-term compressive strength and enhanced resistance to sulfate attacks."
+          </blockquote>
+          <p>
+            Geopolymer formulations bypass limestone altogether, using aluminosilicate rich binders activated by chemical solutions, yielding carbon savings of up to 80%.
+          </p>
+        `
+      },
+      "corrosion-steel": {
+        title: "Corrosion Resistance in Modern Structural Steel",
+        cat: "Steel & Metallurgy",
+        date: "Aug 10, 2026",
+        read: "8 min read",
+        views: "980 Views",
+        authorInitials: "MK",
+        authorName: "Marcus Kross",
+        authorTitle: "Senior Structural Engineer at BuildPro Labs",
+        img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Corrosion is the single largest threat to structural longevity, costing billions annually in maintenance and structural failures.
+          </p>
+          <p>
+            In coastal or high-humidity regions, marine salt aerosols accelerate the oxidation of mild steel rebars. By utilizing thermo-mechanically treated (TMT) steel rebars, weathering steel alloys, and epoxy or galvanized protective layers, structural builders can extend project lifespans by up to 50 years.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Galvanic vs. Barrier Protection</h2>
+          <p>
+            Hot-dip galvanizing provides a sacrificial zinc layer that corrodes preferentially, shielding the structural core. Epoxy coating acts as a physical barrier. For critical infrastructure, combining high-grade Fe 500D rebar with epoxy coating offers maximum safety.
+          </p>
+        `
+      },
+      "clay-bricks": {
+        title: "Innovations in Clay Bricks & Prefab Masonry Blocks",
+        cat: "Bricks & Masonry",
+        date: "Aug 03, 2026",
+        read: "5 min read",
+        views: "1,120 Views",
+        authorInitials: "SL",
+        authorName: "Sonia Lim",
+        authorTitle: "Prefab Construction Lead",
+        img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Masonry remains the backbone of architectural partition walls. However, the labor-intensive nature of traditional red clay bricks is driving a shift toward high-efficiency materials.
+          </p>
+          <p>
+            Autoclaved Aerated Concrete (AAC) blocks and fly ash composite bricks represent the modern solution. Not only do they cut construction time in half due to their large prefab dimensions, but they also offer superior thermal and acoustic performance ratings.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Comparison of Thermal Properties</h2>
+          <p>
+            AAC blocks feature thousands of microscopic air pockets that block heat flow, cutting indoor cooling requirements by 25%. This translates to direct LEED credits and lower operational costs for property owners.
+          </p>
+        `
+      },
+      "industrial-tiles": {
+        title: "Selecting Industrial Floor Tiles for High-Traffic Warehouses",
+        cat: "Tiles & Ceramics",
+        date: "Jul 28, 2026",
+        read: "7 min read",
+        views: "890 Views",
+        authorInitials: "DR",
+        authorName: "Dr. Roger Vance",
+        authorTitle: "Head of Materials Research at BuildPro Technology Lab",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Industrial facility floors undergo massive load stresses, rubber-wheel abrasion, chemical spills, and heavy impacts.
+          </p>
+          <p>
+            Conventional residential ceramic tiles fail quickly under forklift wheels. Double-charge glazed vitrified tiles, on the other hand, are engineered under severe hydraulic pressure and vitrified at extreme temperatures to achieve near-zero porosity and PEI Class V wear resistance.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Key Criteria: Friction and Compression</h2>
+          <p>
+            For safety, industrial tiles must boast a wet Dynamic Coefficient of Friction (DCOF) greater than 0.42 to prevent slippage while maintaining a compressive rating of over 40 N/mm2.
+          </p>
+        `
+      },
+      "smart-supply": {
+        title: "How Smart Supply Chains Are Eliminating Material Wastage",
+        cat: "Technology & Logistics",
+        date: "Jul 15, 2026",
+        read: "9 min read",
+        views: "2,150 Views",
+        authorInitials: "MK",
+        authorName: "Marcus Kross",
+        authorTitle: "Senior Structural Engineer at BuildPro Labs",
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Traditional materials supply chains are plagued by visual inventory estimation errors, delayed deliveries, and spoilage of perishable items.
+          </p>
+          <p>
+            By shifting to smart supply chain platforms integrated with cloud estimators and GPS tracking, construction firms can achieve just-in-time material drops. Perishable items like cement are delivered in exact batches matching pouring schedules, eliminating moisture exposure and spoilage.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Efficiency Gains</h2>
+          <p>
+            Pilots demonstrate up to 15% reduction in aggregate wastage on-site, alongside a significant decrease in temporary staging area footprints.
+          </p>
+        `
+      },
+      "net-zero": {
+        title: "Net-Zero Building Projects: A Guide for Contractors",
+        cat: "Sustainability",
+        date: "Jul 02, 2026",
+        read: "11 min read",
+        views: "3,110 Views",
+        authorInitials: "SL",
+        authorName: "Sonia Lim",
+        authorTitle: "Prefab Construction Lead",
+        img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Net-zero construction represents the pinnacle of modern sustainable architecture, balancing energy consumption with active generation.
+          </p>
+          <p>
+            Contractors must focus on building envelopment. High-performance double-glazed facades, insulated wall paneling, low-embodied carbon concrete binders, and smart energy monitoring systems form the core of net-zero compliance.
+          </p>
+          <h2 class="font-display font-bold text-2xl text-primary dark:text-white mt-8 mb-4">Achieving Zero Carbon</h2>
+          <p>
+            By utilizing low-carbon geopolymers and fly ash concrete, builders can offset the initial embodied carbon debt, achieving carbon-neutral operational status years earlier.
+          </p>
+        `
+      },
+      "steel-grades-coastal": {
+        title: "Selecting Right Steel Grades for Coastal Structure Projects",
+        cat: "Steel Rebars",
+        date: "Aug 14, 2026",
+        read: "7 min read",
+        views: "1,200 Views",
+        authorInitials: "RV",
+        authorName: "Engr. Ronald Vance",
+        authorTitle: "Coastal Infrastructure Specialist",
+        img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Coastal environments subject reinforced concrete structures to heavy chloride ion penetration, triggering internal rusting and structural cracking.
+          </p>
+          <p>
+            To prevent premature concrete spalling, structural engineers specify Fe 500D Epoxy Coated Rebars or Corrosion Resistant Steel. Sourcing certified corrosion-shielded materials directly from accredited manufacturers guarantees structural integrity.
+          </p>
+        `
+      },
+      "green-cement-study": {
+        title: "Green Cement OPC vs PPC: Comparative Environmental Study",
+        cat: "Cement Technology",
+        date: "Aug 10, 2026",
+        read: "6 min read",
+        views: "1,650 Views",
+        authorInitials: "AR",
+        authorName: "Dr. Alan Ross",
+        authorTitle: "Environmental Concrete Engineer",
+        img: "./assets/images/green_cement_study_user.jpg",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Ordinary Portland Cement (OPC) and Portland Pozzolana Cement (PPC) are the industry workhorses. But how do they compare environmentally?
+          </p>
+          <p>
+            This study evaluates clinker ratios, carbon footprints, long-term hydration heat, and chemical durability. PPC wins on durability and environmental impact, while OPC remains the choice for rapid structural load bearing.
+          </p>
+        `
+      },
+      "avoiding-delays": {
+        title: "Avoiding Construction Delays: Master Procurement Calendars",
+        cat: "Procurement Tips",
+        date: "Aug 08, 2026",
+        read: "8 min read",
+        views: "2,040 Views",
+        authorInitials: "SJ",
+        authorName: "Sarah Jenkins",
+        authorTitle: "B2B Logistics Operations Manager",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+        content: `
+          <p class="text-lg font-medium text-primary dark:text-white">
+            Supply chain bottlenecks are the leading cause of construction schedule slip, incurring substantial penalties for developers.
+          </p>
+          <p>
+            Integrating master calendars directly with material manufacturers allows logistics dispatch syncing. We show how scheduling steel delivery and cement casting cycles avoids layout conflicts.
+          </p>
+        `
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id') || "green-cement";
+      
+      const article = blogDB[articleId];
+      if (article) {
+        // Set category badge
+        const catBadge = document.getElementById('blog-cat');
+        if (catBadge) catBadge.innerHTML = article.cat;
+        
+        // Set meta values
+        const metaDiv = document.getElementById('blog-meta');
+        if (metaDiv) {
+          metaDiv.innerHTML = `
+            <span><i class="fa-solid fa-calendar-days me-1.5"></i>${article.date}</span>
+            <span><i class="fa-solid fa-clock me-1.5"></i>${article.read}</span>
+            <span><i class="fa-solid fa-eye me-1.5"></i>${article.views}</span>
+          `;
+        }
+        
+        // Set title
+        const titleH1 = document.getElementById('blog-title');
+        if (titleH1) titleH1.textContent = article.title;
+        
+        // Set author
+        const authorInit = document.getElementById('blog-author-initials');
+        if (authorInit) authorInit.textContent = article.authorInitials;
+        
+        const authorName = document.getElementById('blog-author-name');
+        if (authorName) authorName.textContent = article.authorName;
+        
+        const authorTitle = document.getElementById('blog-author-title');
+        if (authorTitle) authorTitle.textContent = article.authorTitle;
+        
+        // Set image
+        const featImg = document.getElementById('blog-featured-image');
+        if (featImg) {
+          featImg.src = article.img;
+          featImg.alt = article.title;
+        }
+        
+        // Set content
+        const contentDiv = document.getElementById('blog-content');
+        if (contentDiv) contentDiv.innerHTML = article.content;
+        
+        // Update document title
+        document.title = `BuildPro - ${article.title}`;
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

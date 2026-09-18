@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPro - Coming Soon | Advanced B2B Procurement Portal</title>
+  <meta name="description" content="BuildPro is launching a new automated materials procurement and contractor bidding platform. Sign up to get notified when we launch." />
+  <meta name="keywords" content="coming soon, contractor portal launch, B2B procurement automation, BuildPro API" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildPro - Next Generation Procurement Launching Soon" />
+  <meta property="og:description" content="Sign up for our automated contractor supply platform launch." />
+  <meta property="og:type" content="website" />
+  
+  <!-- CDNs & Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#090D16] dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
+          <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
+          <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
+          <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
+          <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
+        </nav>
+
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
+          </a>
+
+          <!-- Signup -->
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center py-20 sm:py-28 px-4 bg-primary dark:bg-[#090D16] text-white relative overflow-hidden transition-colors duration-300">
+    <!-- Grid Overlay Background -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    
+    <div class="relative z-10 max-w-3xl text-center space-y-12">
+      
+      <!-- Heading -->
+      <div class="space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Under Construction &amp; Redesign
+        </span>
+        <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+          Our Advanced B2B Portal is <br /><span class="text-accent">Launching Soon</span>
+        </h1>
+        <p class="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
+          We are deploying a new unified B2B customer panel, featuring automated freight routing calculators, instant quotes, and direct supplier APIs.
+        </p>
+      </div>
+
+      <!-- Countdown Timer Dashboard (IDs MUST MATCH app.js) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto" id="countdown-timer">
+        
+        <!-- Days Card -->
+        <div class="bg-[#0B1220] dark:bg-primary-light border border-gray-800 dark:border-border-dark p-6 rounded-2xl flex flex-col justify-center items-center shadow-lg">
+          <span class="text-4xl sm:text-5xl font-display font-extrabold text-accent" id="days">90</span>
+          <span class="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">Days</span>
+        </div>
+
+        <!-- Hours Card -->
+        <div class="bg-[#0B1220] dark:bg-primary-light border border-gray-800 dark:border-border-dark p-6 rounded-2xl flex flex-col justify-center items-center shadow-lg">
+          <span class="text-4xl sm:text-5xl font-display font-extrabold text-white" id="hours">00</span>
+          <span class="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">Hours</span>
+        </div>
+
+        <!-- Minutes Card -->
+        <div class="bg-[#0B1220] dark:bg-primary-light border border-gray-800 dark:border-border-dark p-6 rounded-2xl flex flex-col justify-center items-center shadow-lg">
+          <span class="text-4xl sm:text-5xl font-display font-extrabold text-white" id="minutes">00</span>
+          <span class="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">Minutes</span>
+        </div>
+
+        <!-- Seconds Card -->
+        <div class="bg-[#0B1220] dark:bg-primary-light border border-gray-800 dark:border-border-dark p-6 rounded-2xl flex flex-col justify-center items-center shadow-lg">
+          <span class="text-4xl sm:text-5xl font-display font-extrabold text-white" id="seconds">00</span>
+          <span class="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">Seconds</span>
+        </div>
+
+      </div>
+
+      <!-- Subscription Notification Form -->
+      <div class="max-w-md mx-auto space-y-4">
+        <p class="text-xs text-gray-400 font-semibold uppercase tracking-widest">Get early access invitation</p>
+        <form class="flex flex-col sm:flex-row gap-2" action="#" method="POST">
+          <input type="email" required placeholder="Enter corporate email..." class="flex-grow px-4 py-3 rounded-lg bg-[#0B1220] border border-gray-800 dark:border-border-dark text-white placeholder-gray-500 focus:outline-none focus:border-accent text-sm" />
+          <button type="submit" class="px-6 py-3 bg-accent hover:bg-accent-hover text-primary font-bold text-sm rounded-lg transition-colors whitespace-nowrap">
+            Notify Me
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+    <!-- Multi-Column Footer -->
+  <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <div class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar (Centered, Links Removed) -->
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+

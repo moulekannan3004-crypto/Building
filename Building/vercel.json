@@ -1,6 +1,1 @@
-{
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/Building/Building/$1" }
-  ]
-}
+{\n  "cleanUrls": true,\n  "trailingSlash": false\n}

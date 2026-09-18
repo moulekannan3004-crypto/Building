@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - System Settings | Construction & Building Materials</title>
+  <!-- SEO & Metadata -->
+  <meta name="description" content="Configure BuildPro e-commerce settings, B2B contractor policies, default currencies, and staff roles.">
+  
+  <!-- CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Custom JS -->
+  <script src="../assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-[#F9FAFB]">
+  <div class="min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 start-0 z-30 w-64 bg-primary text-white border-e border-slate-800 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full lg:translate-x-0 lg:rtl:translate-x-0 transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Logo -->
+        <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+          <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg text-white">
+            <i class="fa-solid fa-hard-hat text-accent"></i>
+            <span>BuildPro <span class="text-accent text-sm font-semibold">Admin</span></span>
+          </a>
+          <button id="sidebar-close" class="lg:hidden text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        
+        <!-- Sidebar Links -->
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+          <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-line text-lg w-5 text-center"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="users.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-users text-lg w-5 text-center"></i>
+            <span>Contractors / Users</span>
+          </a>
+          <a href="orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-truck-ramp-box text-lg w-5 text-center"></i>
+            <span>Orders Tracker</span>
+          </a>
+          <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-envelope text-lg w-5 text-center"></i>
+            <span>Messages Inbox</span>
+          </a>
+          <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            <i class="fa-solid fa-chart-pie text-lg w-5 text-center"></i>
+            <span>Detailed Analytics</span>
+          </a>
+          <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-accent text-primary font-semibold transition-colors">
+            <i class="fa-solid fa-sliders text-lg w-5 text-center"></i>
+            <span>System Settings</span>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 px-2 py-1.5 rounded-lg bg-slate-900/50">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-slate-700">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white truncate">Alexander Pierce</p>
+            <p class="text-xs text-slate-400 truncate">Super Admin</p>
+          </div>
+          <a href="settings.html" class="text-slate-400 hover:text-white">
+            <i class="fa-solid fa-cog"></i>
+          </a>
+        </div>
+        
+        <!-- Toggle buttons -->
+        <div class="flex items-center justify-between gap-2">
+          <button class="theme-toggle-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
+            <span class="moon-icon flex items-center gap-2"><i class="fa-solid fa-moon"></i> Dark</span>
+            <span class="sun-icon hidden flex items-center gap-2"><i class="fa-solid fa-sun"></i> Light</span>
+          </button>
+          <button class="rtl-toggle-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+            RTL
+          </button>
+        </div>
+        
+        <a href="../products.html" class="flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-accent transition-colors py-1.5 w-full text-center">
+          <i class="fa-solid fa-arrow-left-long rtl-flip"></i>
+          <span>Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="lg:ps-64 flex flex-col flex-1 min-w-0 transition-all duration-300">
+      
+      <!-- Topbar -->
+      <header class="h-16 bg-white dark:bg-[#0B1220] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+          <button id="sidebar-open" class="lg:hidden text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+          <h1 class="text-xl font-display font-bold text-slate-800 dark:text-white">System Settings</h1>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="relative hidden md:block w-64">
+            <span class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" placeholder="Search settings..." class="w-full ps-9 pe-4 py-1.5 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+          </div>
+          
+          <div class="relative">
+            <button class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <i class="fa-solid fa-bell"></i>
+              <span class="absolute top-1.5 end-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&fit=crop&q=80" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+            <span class="hidden sm:inline text-sm font-semibold text-slate-700 dark:text-slate-300">Alex P.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 space-y-6">
+        
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          
+          <!-- Column 1 & 2: Main Configurations (2 Cols wide) -->
+          <div class="xl:col-span-2 space-y-6">
+            
+            <!-- Card 1: General configurations -->
+            <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">General Configurations</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Core parameters of the BuildPro B2B wholesale platform.</p>
+              </div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-600 dark:text-slate-450">Application Name</label>
+                  <input type="text" value="BuildPro B2B Wholesale" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-600 dark:text-slate-450">Support Email Address</label>
+                  <input type="email" value="support@buildpro.com" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-600 dark:text-slate-450">Company Hotline</label>
+                  <input type="text" value="+1 (800) 555-0199" class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-600 dark:text-slate-450">Default Currency</label>
+                  <select class="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-300 focus:outline-none focus:border-accent">
+                    <option value="inr" selected>INR (₹)</option>
+                    <option value="usd">USD ($)</option>
+                    <option value="eur">EUR (€)</option>
+                    <option value="gbp">GBP (£)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: B2B Toggles -->
+            <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">B2B Policies & Toggle Options</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Automate contract verifications and price modifiers.</p>
+              </div>
+              
+              <div class="divide-y divide-slate-100 dark:divide-slate-850">
+                <!-- Toggle 1 -->
+                <div class="py-4 flex items-center justify-between gap-4">
+                  <div class="space-y-0.5">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-white">B2B Bulk Discount Rates</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Allow automatic tiered discount deductions on estimates above ₹50,000.</p>
+                  </div>
+                  <button type="button" onclick="toggleBtn(this)" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-accent" role="switch">
+                    <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5 rtl:-translate-x-5"></span>
+                  </button>
+                </div>
+
+                <!-- Toggle 2 -->
+                <div class="py-4 flex items-center justify-between gap-4">
+                  <div class="space-y-0.5">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-white">Contractor Registration Auto-approval</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Automatically activate client accounts if tax ID registers cleanly on IRS APIs.</p>
+                  </div>
+                  <button type="button" onclick="toggleBtn(this)" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-slate-200 dark:bg-slate-800" role="switch">
+                    <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+                  </button>
+                </div>
+
+                <!-- Toggle 3 -->
+                <div class="py-4 flex items-center justify-between gap-4">
+                  <div class="space-y-0.5">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-white">Multi-factor Authentication (MFA)</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Enforce secondary SMS/Authenticator pins for all admin team members.</p>
+                  </div>
+                  <button type="button" onclick="toggleBtn(this)" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-accent" role="switch">
+                    <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5 rtl:-translate-x-5"></span>
+                  </button>
+                </div>
+
+                <!-- Toggle 4 -->
+                <div class="py-4 flex items-center justify-between gap-4">
+                  <div class="space-y-0.5">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-white">Maintenance Mode</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Lock the customer checkout portal and show a landing timer screen.</p>
+                  </div>
+                  <button type="button" onclick="toggleBtn(this)" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-slate-200 dark:bg-slate-800" role="switch">
+                    <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Team Management -->
+            <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Team Management & Access Controls</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Assign role access tiers to administrator personnel.</p>
+              </div>
+              
+              <div class="overflow-x-auto">
+                <table class="w-full text-start text-xs border-collapse">
+                  <thead>
+                    <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 bg-slate-50/55 dark:bg-slate-900/50">
+                      <th class="text-start py-2 px-4 font-semibold">User</th>
+                      <th class="text-start py-2 px-4 font-semibold">Assigned Role</th>
+                      <th class="text-start py-2 px-4 font-semibold">Status</th>
+                      <th class="text-end py-2 px-4 font-semibold">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-350">
+                    <tr>
+                      <td class="py-2.5 px-4 font-semibold">Alexander Pierce</td>
+                      <td class="py-2.5 px-4"><span class="bg-purple-100 text-purple-900 dark:bg-purple-950/40 dark:text-purple-400 px-2 py-0.5 rounded-full font-semibold">Super Admin</span></td>
+                      <td class="py-2.5 px-4 text-emerald-500 font-bold">ACTIVE</td>
+                      <td class="py-2.5 px-4 text-end space-x-1.5">
+                        <button class="text-slate-400 hover:text-accent"><i class="fa-solid fa-user-gear"></i></button>
+                        <button class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-4 font-semibold">Sarah Connor</td>
+                      <td class="py-2.5 px-4"><span class="bg-blue-100 text-blue-900 dark:bg-blue-950/40 dark:text-blue-400 px-2 py-0.5 rounded-full font-semibold">Sales Manager</span></td>
+                      <td class="py-2.5 px-4 text-emerald-500 font-bold">ACTIVE</td>
+                      <td class="py-2.5 px-4 text-end space-x-1.5">
+                        <button class="text-slate-400 hover:text-accent"><i class="fa-solid fa-user-gear"></i></button>
+                        <button class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-4 font-semibold">Michael Kyle</td>
+                      <td class="py-2.5 px-4"><span class="bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-450 px-2 py-0.5 rounded-full font-semibold">Editor</span></td>
+                      <td class="py-2.5 px-4 text-emerald-500 font-bold">ACTIVE</td>
+                      <td class="py-2.5 px-4 text-end space-x-1.5">
+                        <button class="text-slate-400 hover:text-accent"><i class="fa-solid fa-user-gear"></i></button>
+                        <button class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-4 font-semibold">Dwight Schrute</td>
+                      <td class="py-2.5 px-4"><span class="bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 px-2 py-0.5 rounded-full font-semibold">Viewer</span></td>
+                      <td class="py-2.5 px-4 text-slate-400 font-bold">SUSPENDED</td>
+                      <td class="py-2.5 px-4 text-end space-x-1.5">
+                        <button class="text-slate-400 hover:text-accent"><i class="fa-solid fa-user-gear"></i></button>
+                        <button class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 3: Quick Add Staff Form & Info (1 Col wide) -->
+          <div class="space-y-6">
+            
+            <!-- Quick Add Member -->
+            <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
+              <div>
+                <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Invite Admin Member</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Send credential links to onboarding staff.</p>
+              </div>
+              
+              <form class="space-y-3">
+                <div class="space-y-1">
+                  <label class="text-[10px] font-semibold text-slate-500 dark:text-slate-400">Staff Full Name</label>
+                  <input type="text" placeholder="E.g. Jim Halpert" class="w-full px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-[10px] font-semibold text-slate-500 dark:text-slate-400">Staff Corporate Email</label>
+                  <input type="email" placeholder="jim@buildpro.com" class="w-full px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-[10px] font-semibold text-slate-500 dark:text-slate-400">Select Access Role</label>
+                  <select class="w-full px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-700 dark:text-slate-350 focus:outline-none focus:border-accent">
+                    <option value="super">Super Admin</option>
+                    <option value="sales">Sales Manager</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                  </select>
+                </div>
+                
+                <button type="button" class="w-full bg-accent hover:bg-accent-hover text-primary font-bold py-2 rounded-lg text-xs transition-colors shadow-sm">
+                  Send Invitation
+                </button>
+              </form>
+            </div>
+
+            <!-- Platform Server status details -->
+            <div class="bg-white dark:bg-[#0B1220] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-4">
+              <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Platform Integrity</h3>
+              <div class="space-y-3 text-xs">
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
+                  <span class="text-slate-450">Server Environment</span>
+                  <span class="font-bold text-emerald-500">PRODUCTION</span>
+                </div>
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
+                  <span class="text-slate-450">B2B API Integration</span>
+                  <span class="font-bold text-emerald-500">ONLINE (12ms)</span>
+                </div>
+                <div class="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
+                  <span class="text-slate-450">SSL Certificate Status</span>
+                  <span class="font-semibold text-slate-800 dark:text-white">Active (312 days left)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-450">Software Version</span>
+                  <span class="font-mono text-[10px] text-slate-650 dark:text-slate-350">v4.8.1-B2B</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-[#0B1220] border-t border-slate-200 dark:border-slate-800 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>&copy; 2026 BuildPro Admin Panel. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="settings.html" class="hover:text-accent">Privacy Policy</a>
+            <a href="settings.html" class="hover:text-accent">Terms of Service</a>
+            <a href="../products.html" class="hover:text-accent">Support Desk</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- iOS Styled Toggle switch JS helper -->
+  <script>
+    function toggleBtn(button) {
+      const isChecked = button.getAttribute('aria-checked') === 'true';
+      const span = button.querySelector('span');
+      
+      if (isChecked) {
+        button.setAttribute('aria-checked', 'false');
+        button.classList.remove('bg-accent');
+        button.classList.add('bg-slate-200', 'dark:bg-slate-800');
+        span.classList.remove('translate-x-5', 'rtl:-translate-x-5');
+        span.classList.add('translate-x-0');
+      } else {
+        button.setAttribute('aria-checked', 'true');
+        button.classList.add('bg-accent');
+        button.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+        span.classList.add('translate-x-5', 'rtl:-translate-x-5');
+        span.classList.remove('translate-x-0');
+      }
+    }
+    
+    // Set initial switches state
+    document.querySelectorAll('[role="switch"]').forEach(btn => {
+      // Toggle to set properly
+      const hasAccent = btn.classList.contains('bg-accent');
+      btn.setAttribute('aria-checked', hasAccent ? 'true' : 'false');
+    });
+  </script>
+
+  <!-- Mobile Sidebar Overlay Click Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarOpen = document.getElementById('sidebar-open');
+      const sidebarClose = document.getElementById('sidebar-close');
+      
+      if (sidebarOpen && sidebar) {
+        sidebarOpen.addEventListener('click', () => {
+          sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+          sidebar.classList.add('translate-x-0');
+        });
+      }
+      
+      if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+          sidebar.classList.remove('translate-x-0');
+          sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

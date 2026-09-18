@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPro - Register B2B Contractor Account | Wholesale Materials</title>
+  <meta name="description" content="Register your construction company on BuildPro. Access volume discounts, Net billing options, and priority bulk shipping schedules." />
+  <meta name="keywords" content="contractor register, contractor account, B2B wholesale register, construction company signup" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuildPro - Register B2B Contractor Account" />
+  <meta property="og:description" content="Join BuildPro B2B contractor program for wholesale material rebate tiers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/auth-og.jpg" />
+  
+  <!-- CDNs & Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#090D16] dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
+          <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
+          <a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
+          <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
+          <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
+        </nav>
+
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
+          </a>
+
+          <!-- Signup -->
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (Full split-screen auth layout) -->
+  <main class="flex-grow flex items-stretch">
+    
+    <!-- Split Container -->
+    <div class="w-full flex items-stretch min-h-[700px]">
+      
+      <!-- Left Visual Side (Visible on lg) -->
+      <div class="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 bg-primary text-white relative overflow-hidden">
+        <!-- Background Img -->
+        <div class="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" alt="Architect and blueprint construction site" class="w-full h-full object-cover opacity-25" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10">
+          <a href="index.html" class="flex items-center gap-2">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            <span class="font-display font-extrabold text-2xl tracking-tight text-white">
+              Build <span class="text-accent">Pro</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="relative z-10 space-y-6">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent">
+            <i class="fa-solid fa-user-plus"></i> Join Commercial Program
+          </span>
+          <h2 class="text-4xl font-display font-extrabold leading-tight">
+            Unlock Corporate Rebate Pricing &amp; Net Billing
+          </h2>
+          
+          <div class="space-y-4 text-sm text-gray-300">
+            <div class="flex items-start gap-3">
+              <span class="text-accent mt-0.5"><i class="fa-solid fa-truck-fast"></i></span>
+              <p><strong>Priority Freight Routing:</strong> Guaranteed next-day dispatch on regional inventory items.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-accent mt-0.5"><i class="fa-solid fa-calculator"></i></span>
+              <p><strong>Digital Estimation:</strong> Access advanced volume calculator settings for customizable clinker/steel mixes.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-accent mt-0.5"><i class="fa-solid fa-envelope-open-text"></i></span>
+              <p><strong>CAD Blueprint Quoting:</strong> Upload site designs directly and get material counts within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative z-10 text-xs text-gray-500">
+          &copy; 2026 BuildPro Corporation. All rights reserved. Secure access portal.
+        </div>
+      </div>
+
+      <!-- Right Form Side -->
+      <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 bg-white dark:bg-[#090D16] transition-colors duration-300">
+        
+        <div class="w-full max-w-md space-y-6">
+          
+          <div class="text-center lg:text-start">
+            <h2 class="text-3xl font-display font-extrabold text-primary dark:text-white">Register Construction Company</h2>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              Already have an active corporate account? 
+              <a href="login.html" class="text-accent hover:underline font-semibold">Log in here</a>
+            </p>
+          </div>
+
+          <!-- Form Fields -->
+          <form id="register-form" class="space-y-4 text-start">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Full Name</label>
+                <input type="text" id="fullName" required placeholder="John Doe" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+              <div>
+                <label for="companyName" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Company Name</label>
+                <input type="text" id="companyName" required placeholder="Texan Builders Ltd" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="regEmail" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Business Email Address</label>
+                <input type="email" id="regEmail" required placeholder="j.doe@company.com" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+              <div>
+                <label for="regPhone" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Corporate Phone</label>
+                <input type="tel" id="regPhone" required placeholder="+1 (555) 012-3456" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="regPassword" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Password</label>
+                <input type="password" id="regPassword" required placeholder="••••••••" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+              <div>
+                <label for="confirmPassword" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">Confirm Password</label>
+                <input type="password" id="confirmPassword" required placeholder="••••••••" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-primary-light text-sm focus:outline-none focus:border-accent text-primary dark:text-white" />
+              </div>
+            </div>
+
+            <!-- Agreement T&C checkbox -->
+            <div class="flex items-start gap-2 pt-2">
+              <input type="checkbox" id="terms" required class="mt-0.5 rounded border-gray-300 dark:border-border-dark text-accent focus:ring-accent" />
+              <label for="terms" class="text-[11px] text-gray-500 dark:text-gray-400 leading-snug">
+                I agree to the <a href="#" class="text-accent hover:underline font-semibold">Terms of Service</a> and confirm that I represent a licensed construction or contractor business.
+              </label>
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-accent hover:bg-accent-hover text-primary font-bold text-sm rounded-lg transition-colors shadow-sm mt-4">
+              Create Contractor Account <i class="fa-solid fa-user-plus ms-1.5"></i>
+            </button>
+          </form>
+
+          <div class="relative flex py-2 items-center">
+            <div class="flex-grow border-t border-gray-300 dark:border-border-dark"></div>
+            <span class="flex-shrink mx-4 text-xs font-bold text-gray-400 uppercase">Or sign up with</span>
+            <div class="flex-grow border-t border-gray-300 dark:border-border-dark"></div>
+          </div>
+
+          <!-- OAuth Options -->
+          <div class="grid grid-cols-2 gap-4">
+            <button type="button" class="flex items-center justify-center gap-2 py-2.5 border border-gray-300 dark:border-border-dark rounded-lg text-sm font-semibold hover:bg-gray-50 dark:hover:bg-primary-light transition-all text-primary dark:text-white">
+              <i class="fa-brands fa-google text-red-500"></i> Google
+            </button>
+            <button type="button" class="flex items-center justify-center gap-2 py-2.5 border border-gray-300 dark:border-border-dark rounded-lg text-sm font-semibold hover:bg-gray-50 dark:hover:bg-primary-light transition-all text-primary dark:text-white">
+              <i class="fa-brands fa-apple text-primary dark:text-gray-300"></i> Apple ID
+            </button>
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const registerForm = document.getElementById('register-form');
+              if (registerForm) {
+                registerForm.addEventListener('submit', (e) => {
+                  e.preventDefault();
+                  window.location.href = 'index.html';
+                });
+              }
+            });
+          </script>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Multi-Column Footer -->
+  <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <div class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar (Centered, Links Removed) -->
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+

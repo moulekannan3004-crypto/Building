@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildPro - Materials Catalog & B2B Quotations</title>
+  <meta name="description" content="Browse our wholesale building materials catalog. Cement, structural steel, bricks, tiles, plywood, electrical and plumbing supplies. Sourced direct from manufacturers.">
+  
+  <!-- CDNs & Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0B1220',
+              hover: '#141E33',
+              light: '#1E293B',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  
+  <!-- Custom Javascript -->
+  <script src="./assets/js/app.js" defer></script>
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+  <script>if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
+</head>
+<body class="bg-[#F9FAFB] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F9FAFB] transition-colors duration-300">
+
+  <!-- Sticky Header / Navbar -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-800 bg-white/90 dark:bg-[#0B1220]/90 backdrop-blur-md transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-primary dark:text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center justify-center flex-1 gap-2 lg:gap-3.5 xl:gap-5 px-2">
+          <!-- Home Dropdown -->
+          <div class="relative nav-dropdown group">
+            <a href="index.html" class="dropdown-trigger flex items-center gap-1.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-accent focus:outline-none">
+              <i class="fa-solid fa-house text-xs text-accent"></i> Home <i class="fa-solid fa-chevron-down text-[10px] text-accent/80 transition-transform duration-200"></i>
+            </a>
+            <div class="dropdown-menu absolute top-full start-0 mt-1 w-52 rounded-xl border border-accent/20 dark:border-slate-800 bg-white dark:bg-[#0B1220] shadow-2xl hidden group-hover:block transition-all duration-300 overflow-hidden z-50 p-1.5">
+              <a href="index.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-house-chimney text-accent"></i>Home Page 1</a>
+              <a href="home-2.html" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-accent/10 hover:text-accent transition-colors"><i class="fa-solid fa-industry text-accent"></i>Home Page 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link"><i class="fa-solid fa-building text-xs text-accent"></i> About</a>
+          <a href="services.html" class="nav-link"><i class="fa-solid fa-gears text-xs text-accent"></i> Services</a>
+          <a href="products.html" class="nav-link active"><i class="fa-solid fa-boxes-stacked text-xs text-accent"></i> Products</a>
+          <a href="pricing.html" class="nav-link"><i class="fa-solid fa-tags text-xs text-accent"></i> Pricing</a>
+          <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper text-xs text-accent"></i> Blog</a>
+          <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope text-xs text-accent"></i> Contact</a>
+        </nav>
+
+        <!-- Right Menu Actions -->
+        <div class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 flex-shrink-0">
+          <!-- Light/Dark Mode Switcher -->
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle-btn h-9 px-2.5 rounded-xl border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center transition-colors flex-shrink-0" title="Toggle RTL" aria-label="Toggle RTL">
+            RTL
+          </button>
+
+          <!-- Login -->
+          <a href="login.html" class="h-9 px-3.5 text-xs font-bold text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-slate-800 rounded-xl hover:border-accent hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-right-to-bracket text-xs text-accent"></i> Login
+          </a>
+
+          <!-- Signup -->
+          <a href="register.html" class="h-9 px-4 text-xs font-extrabold text-primary bg-accent hover:bg-accent-hover rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i class="fa-solid fa-user-plus text-xs"></i> Signup
+          </a>
+
+          <!-- Material Catalog Cart Icon with badge -->
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent flex items-center justify-center transition-colors flex-shrink-0" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-2 sm:gap-2.5">
+          <button class="theme-toggle-btn h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Toggle Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun sun-icon hidden text-base"></i>
+            <i class="fa-solid fa-moon moon-icon text-base"></i>
+          </button>
+          
+          <a href="products.html#quote-cart" class="relative h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center" title="Material Catalog Cart" aria-label="Material Catalog Cart">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge absolute -top-1.5 -end-1.5 inline-flex items-center justify-center min-w-[18px] h-[18px] px-1 text-[9px] font-black leading-none text-slate-950 bg-amber-500 border-2 border-white dark:border-[#0B1220] rounded-full shadow-md transition-all duration-300 hidden">0</span>
+          </a>
+
+          <button id="mobile-menu-btn" class="h-9 w-9 rounded-xl border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 flex items-center justify-center focus:outline-none" title="Open Menu" aria-label="Open Menu">
+            <i class="fa-solid fa-bars text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white dark:bg-[#0B1220] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-gray-200 dark:border-slate-800 md:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-800">
+        <span class="text-xl font-bold font-display text-primary dark:text-white"><img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">Build Pro</span>
+        <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-accent dark:text-gray-400">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 flex flex-col justify-between h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col gap-4">
+          <div class="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Home Pages</div>
+          <a href="index.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 1</a>
+          <a href="home-2.html" class="px-6 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">&bull; Home Page 2</a>
+          <a href="about.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">About Us</a>
+          <a href="services.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Services</a>
+          <a href="products.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Products</a>
+          <a href="pricing.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Pricing</a>
+          <a href="blog.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Blog</a>
+          <a href="contact.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all">Contact</a>
+          <div class="border-t border-gray-200 dark:border-slate-800 my-2"></div>
+          
+          <a href="login.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user me-2 text-gray-400"></i>Login Portal</a>
+          <a href="register.html" class="px-4 py-2 text-base font-medium text-gray-750 dark:text-gray-300 hover:text-accent rounded-lg hover:bg-gray-50 dark:hover:bg-primary-light transition-all"><i class="fa-solid fa-user-plus me-2 text-gray-400"></i>Signup Portal</a>
+        </nav>
+        <div class="pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col gap-4">
+          <button class="rtl-toggle-btn w-full py-2.5 border border-gray-300 dark:border-slate-700 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-primary-light transition-colors">RTL</button>
+          <a href="contact.html" class="w-full py-3 text-center border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-accent hover:bg-accent-hover transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb and Page Title Hero -->
+    <section class="bg-primary text-white py-12 lg:py-16 relative overflow-hidden text-start">
+      <div class="absolute inset-0 opacity-15 mix-blend-multiply">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80" alt="Construction Materials Catalog" class="w-full h-full object-cover">
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-3">
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-gray-400 font-semibold flex items-center gap-2">
+          <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+          <i class="fa-solid fa-chevron-right text-[9px] rtl-flip text-gray-500"></i>
+          <span class="text-white">Products Catalog</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Wholesale Materials Catalog</h1>
+        <p class="text-sm text-gray-405 max-w-2xl text-gray-300">Procure high-performance building materials directly from certified manufacturers. Bulk contractor pricing, live logistics tracking, and verified MTC sheets.</p>
+      </div>
+    </section>
+
+    <!-- Catalog Layout -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- Left Sidebar: Filters -->
+        <div id="catalog-sidebar" class="lg:col-span-1 space-y-6 text-start">
+          <div class="bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-6 space-y-6 shadow-sm">
+            <h2 class="text-lg font-bold font-display border-b border-gray-100 dark:border-slate-800 pb-3 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-accent text-sm"></i>
+                Catalog Filters
+              </span>
+              <button id="reset-catalog-filters" title="Reset Filters" class="text-xs font-bold text-accent hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-rotate-left text-[10px]"></i> Reset
+              </button>
+            </h2>
+            
+            <!-- Search bar inside filters -->
+            <div class="space-y-2">
+              <label for="product-search" class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Search Materials</label>
+              <form id="product-search-form" onsubmit="return false;" class="relative flex items-center">
+                <input type="text" id="product-search" placeholder="Type name..." class="w-full ps-3.5 pe-10 py-2.5 rounded-lg border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 text-xs text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-accent">
+                <button type="submit" id="btn-product-search" class="absolute end-1 px-2.5 py-1.5 bg-accent hover:bg-accent-hover text-primary font-bold rounded-md transition-colors text-xs shadow-sm flex items-center justify-center gap-1" title="Search catalog">
+                  <i class="fa-solid fa-magnifying-glass text-[11px]"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Categories Radio Filters -->
+            <div class="space-y-3">
+              <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Categories</label>
+              <div class="space-y-2.5 text-sm font-semibold text-gray-600 dark:text-gray-300">
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="all" checked>
+                  <span>All Categories</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="cement">
+                  <span>Cement</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="steel">
+                  <span>Structural Steel</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="bricks">
+                  <span>Bricks & Blocks</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="tiles">
+                  <span>Tiles & Ceramics</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="glass">
+                  <span>Glazing & Glass</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="plywood">
+                  <span>Plywood & Timber</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="plumbing">
+                  <span>Plumbing Fixtures</span>
+                </label>
+                <label class="flex items-center gap-2.5 cursor-pointer hover:text-accent transition-colors">
+                  <input type="radio" name="cat-filter-radio" class="cat-filter accent-accent" value="electrical">
+                  <span>Electrical Supplies</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <label for="price-range" class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Max Unit Price</label>
+                <span id="price-val" class="text-xs font-black text-accent bg-accent/15 px-2 py-0.5 rounded-md">₹70,000</span>
+              </div>
+              <input type="range" id="price-range" min="0" max="70000" value="70000" class="w-full h-1.5 bg-gray-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-accent">
+              <div class="flex justify-between text-[10px] text-gray-400 font-bold uppercase mt-1">
+                <span>₹0</span>
+                <span>₹35,000</span>
+                <span>₹70,000</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Right Side: Product Catalog Grid & Sorting -->
+        <div class="lg:col-span-3 space-y-8">
+          
+          <!-- Catalog Header controls -->
+          <div class="flex flex-col sm:flex-row justify-between items-center bg-white dark:bg-[#0B1220] border border-gray-200 dark:border-slate-800 rounded-xl p-4 gap-4 shadow-sm">
+            <div class="text-sm font-semibold text-gray-500 dark:text-gray-500 text-start w-full sm:w-auto flex items-center gap-3">
+              <button id="mobile-filter-toggle" class="lg:hidden flex items-center gap-2 bg-accent/15 text-accent hover:bg-accent hover:text-primary px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
+                <i class="fa-solid fa-sliders"></i> Filters
+              </button>
+              <span id="catalog-count-text">Showing 12 active wholesale materials</span>
+            </div>
+            <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+              <label for="product-sort" class="text-xs font-bold text-gray-400 uppercase tracking-wider">Sort By</label>
+              <select id="product-sort" class="bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs font-semibold text-primary dark:text-white focus:outline-none focus:border-accent">
+                <option value="default">Default Catalog</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Alphabetical: A-Z</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalog-grid">
+            
+            <!-- Card 1 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="1" data-name="Premium OPC 53 Grade Cement" data-category="cement" data-price="380.00">
+              <a href="product-details.html?id=1" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/prod_opc53_cement.jpg" alt="Premium OPC 53 Grade Cement" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Cement</span>
+                  <a href="product-details.html?id=1" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Premium OPC 53 Grade Cement</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">High compressive strength for structural foundations and heavy RCC works.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹380 <span class="text-[10px] font-normal text-gray-500">/ Bag</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="1" data-name="Premium OPC 53 Grade Cement" data-category="cement" data-price="380.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="2" data-name="PPC Blended Portland Cement" data-category="cement" data-price="360.00">
+              <a href="product-details.html?id=2" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_cement.jpg" alt="PPC Blended Portland Cement" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Cement</span>
+                  <a href="product-details.html?id=2" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">PPC Blended Portland Cement</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Ideal for plastering, brick masonry, and general marine works.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹360 <span class="text-[10px] font-normal text-gray-500">/ Bag</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="2" data-name="PPC Blended Portland Cement" data-category="cement" data-price="360.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="3" data-name="TMT Steel Rebars Fe 500D" data-category="steel" data-price="58000.00">
+              <a href="product-details.html?id=3" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/prod_tmt_steel_v2.jpg" alt="TMT Steel Rebars Fe 500D" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Steel</span>
+                  <a href="product-details.html?id=3" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">TMT Steel Rebars Fe 500D</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">High ductility, premium bonding strength with concrete. 8mm-32mm diameters.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹58,000 <span class="text-[10px] font-normal text-gray-500">/ Ton</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="3" data-name="TMT Steel Rebars Fe 500D" data-category="steel" data-price="58000.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="4" data-name="Structural Mild Steel H-Beams" data-category="steel" data-price="62000.00">
+              <a href="product-details.html?id=4" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_steel.jpg" alt="Structural Mild Steel H-Beams" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Steel</span>
+                  <a href="product-details.html?id=4" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Structural Mild Steel H-Beams</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Ideal for multi-story load-bearing skeletons and factory column supports.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹62,000 <span class="text-[10px] font-normal text-gray-500">/ Ton</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="4" data-name="Structural Mild Steel H-Beams" data-category="steel" data-price="62000.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="5" data-name="Fly Ash Clay Bricks" data-category="bricks" data-price="12.00">
+              <a href="product-details.html?id=5" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_bricks.jpg" alt="Fly Ash Clay Bricks" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Bricks</span>
+                  <a href="product-details.html?id=5" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Fly Ash Clay Bricks</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Standard high-density clay bricks blended with thermal-efficient fly ash.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹12 <span class="text-[10px] font-normal text-gray-500">/ Brick</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="5" data-name="Fly Ash Clay Bricks" data-category="bricks" data-price="12.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="6" data-name="Autoclaved Aerated Blocks (AAC)" data-category="bricks" data-price="65.00">
+              <a href="product-details.html?id=6" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/prod_aac_blocks.jpg" alt="Autoclaved Aerated Blocks" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Bricks</span>
+                  <a href="product-details.html?id=6" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Autoclaved Aerated Blocks (AAC)</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Lightweight blocks offering high thermal and structural insulation ratings.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹65 <span class="text-[10px] font-normal text-gray-500">/ Block</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="6" data-name="Autoclaved Aerated Blocks (AAC)" data-category="bricks" data-price="65.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="7" data-name="Glazed Vitrified Floor Tiles" data-category="tiles" data-price="950.00">
+              <a href="product-details.html?id=7" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/prod_vitrified_tiles_v2.jpg" alt="Glazed Vitrified Floor Tiles" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-orange-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">High Demand</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Tiles</span>
+                  <a href="product-details.html?id=7" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Glazed Vitrified Floor Tiles</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Premium scratch-resistant double-charge polished floor tiling (600x600mm).</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹950 <span class="text-[10px] font-normal text-gray-500">/ Sqm</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="7" data-name="Glazed Vitrified Floor Tiles" data-category="tiles" data-price="950.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="8" data-name="Ceramic Glossy Wall Tiles" data-category="tiles" data-price="720.00">
+              <a href="product-details.html?id=8" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_tiles.jpg" alt="Ceramic Glossy Wall Tiles" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Tiles</span>
+                  <a href="product-details.html?id=8" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Ceramic Glossy Wall Tiles</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">High gloss, easy-to-clean wall-surface ceramics for kitchens and bathrooms.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹720 <span class="text-[10px] font-normal text-gray-500">/ Sqm</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="8" data-name="Ceramic Glossy Wall Tiles" data-category="tiles" data-price="720.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="9" data-name="Commercial Hardwood Plywood" data-category="plywood" data-price="1850.00">
+              <a href="product-details.html?id=9" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_plywood.jpg" alt="Commercial Hardwood Plywood" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Plywood</span>
+                  <a href="product-details.html?id=9" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Commercial Hardwood Plywood</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Termite-resistant MR grade core boards for panels and interior casing.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹1,850 <span class="text-[10px] font-normal text-gray-500">/ Sheet</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="9" data-name="Commercial Hardwood Plywood" data-category="plywood" data-price="1850.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="10" data-name="Heavy Duty Armored Cables" data-category="electrical" data-price="650.00">
+              <a href="product-details.html?id=10" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_electrical.jpg" alt="Heavy Duty Armored Cables" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Electrical</span>
+                  <a href="product-details.html?id=10" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Heavy Duty Armored Cables</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">XLPE insulated armored copper cables for industrial grid connections.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹650 <span class="text-[10px] font-normal text-gray-500">/ Meter</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="10" data-name="Heavy Duty Armored Cables" data-category="electrical" data-price="650.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="11" data-name="PVC SWR Drainage Pipes" data-category="plumbing" data-price="920.00">
+              <a href="product-details.html?id=11" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/cat_plumbing.jpg" alt="PVC SWR Drainage Pipes" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Plumbing</span>
+                  <a href="product-details.html?id=11" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">PVC SWR Drainage Pipes</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Soil, waste and rainwater drainage PVC conduits with leak-proof seals.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹920 <span class="text-[10px] font-normal text-gray-500">/ Piece</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="11" data-name="PVC SWR Drainage Pipes" data-category="plumbing" data-price="920.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="product-card bg-white dark:bg-[#0B1220] border border-gray-155 dark:border-slate-800 rounded-xl overflow-hidden hover-lift flex flex-col justify-between text-start" data-id="12" data-name="Toughened Structural Glass" data-category="glass" data-price="3400.00">
+              <a href="product-details.html?id=12" class="block relative h-44 overflow-hidden">
+                <div class="img-container w-full h-full"><img src="./assets/images/prod_toughened_glass.jpg" alt="Toughened Structural Glass" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"></div>
+                <span class="absolute top-3 start-3 bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded">In Stock</span>
+              </a>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <span class="text-[10px] font-bold uppercase text-accent">Glass</span>
+                  <a href="product-details.html?id=12" class="block"><h3 class="text-sm font-bold font-display text-primary dark:text-white hover:text-accent transition-colors leading-tight">Toughened Structural Glass</h3></a>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">High-durability tempered structural glass sheets for commercial facades, storefronts, and partitions.</p>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-slate-800/80 mt-4 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block font-semibold">Wholesale Rate</span>
+                    <span class="text-base font-black text-primary dark:text-white">₹3,400 <span class="text-[10px] font-normal text-gray-500">/ Sqm</span></span>
+                  </div>
+                  <button class="btn-add-quote bg-accent hover:bg-accent-hover text-primary p-2 rounded-lg transition-colors font-bold shadow" data-id="12" data-name="Toughened Structural Glass" data-category="glass" data-price="3400.00">
+                    <i class="fa-solid fa-plus me-1 text-xs"></i><i class="fa-solid fa-cart-shopping text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B2B Quote Cart Section -->
+    
+  </main>
+
+  <!-- Multi-Column Footer -->
+  <footer class="bg-primary text-white pt-20 pb-8 border-t border-slate-900 transition-colors duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-12 text-start">
+        
+        <!-- Company Summary Column -->
+        <div class="space-y-6 lg:col-span-2">
+          <div class="flex items-center gap-2 text-2xl font-extrabold font-display tracking-tight text-white">
+            <img src="./assets/images/logo.svg" alt="Build Pro Logo" class="w-9 h-9 inline-block rounded-lg shadow-sm">
+            Build <span class="text-accent">Pro</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            BuildPro is the benchmark industrial supply chain marketplace. Sourcing laboratory-tested materials directly from global manufacturers and offloading to logistics sites seamlessly.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/40 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Company Links</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="about.html" class="hover:text-accent transition-colors">About Story</a></li>
+            <li><a href="services.html" class="hover:text-accent transition-colors">Logistics Services</a></li>
+            <li><a href="pricing.html" class="hover:text-accent transition-colors">Contractor Pricing</a></li>
+            <li><a href="blog.html" class="hover:text-accent transition-colors">News Resources</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Estimator & Resource Quick links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Materials Tools</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Slab Cement Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Steel Rebar Calculator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Wall Bricks Estimator</a></li>
+            <li><a href="index.html#estimator" class="hover:text-accent transition-colors">Floor Tiles Estimator</a></li>
+            <li><a href="contact.html" class="hover:text-accent transition-colors">FAQ & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Contact Office</h4>
+          <ul class="space-y-3.5 text-xs text-gray-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot mt-0.5 text-accent"></i>
+              <span>100 Industrial Pkwy, Suite 400<br>Cleveland, OH 44135</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-accent"></i>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-accent"></i>
+              <span>procurement@buildpro.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar (Centered, Links Removed) -->
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-xs text-gray-400">
+        <p>&copy; 2026 BuildPro Supplies Inc. All Rights Reserved. Designed for premium contractor networks.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Catalog and B2B Cart Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartTable();
+      setupCategoryFromUrl();
+      
+      // Submit quote request
+      const quoteForm = document.getElementById('quote-submission-form');
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('q-name').value;
+          const company = document.getElementById('q-company').value;
+          
+          showToast(`Quotation submitted successfully for ${company}!`);
+          
+          // Clear cart
+          localStorage.removeItem('quoteCart');
+          if (typeof quoteCart !== 'undefined') {
+            quoteCart = [];
+          } else {
+            window.quoteCart = [];
+          }
+          
+          // Reset form and rerender
+          quoteForm.reset();
+          renderCartTable();
+          if (typeof updateCartBadge === 'function') {
+            updateCartBadge();
+          }
+        });
+      }
+    });
+
+    // Check if category query param is present in URL
+    function setupCategoryFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cat = urlParams.get('cat');
+      if (cat) {
+        const catRadio = document.querySelector(`.cat-filter[value="${cat}"]`);
+        if (catRadio) {
+          catRadio.checked = true;
+          // Trigger change event to filter products using app.js function
+          catRadio.dispatchEvent(new Event('change'));
+        }
+      }
+    }
+
+    // Dynamic quote cart renderer
+    function renderCartTable() {
+      const tableBody = document.getElementById('cart-table-body');
+      const emptyMsg = document.getElementById('empty-cart-msg');
+      const container = document.getElementById('cart-container');
+      
+      // Load cart from local storage
+      let localCart = JSON.parse(localStorage.getItem('quoteCart')) || [];
+      
+      if (localCart.length === 0) {
+        if (tableBody) tableBody.innerHTML = '';
+        if (emptyMsg) emptyMsg.classList.remove('hidden');
+        updateQuoteSummary(0);
+        return;
+      }
+      
+      if (emptyMsg) emptyMsg.classList.add('hidden');
+      if (!tableBody) return;
+      
+      tableBody.innerHTML = '';
+      
+      let grossTotal = 0;
+      localCart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        grossTotal += itemTotal;
+        
+        // Match product image source based on name or category
+        let img = './assets/images/logo.svg';
+        if (item.id == 1) img = './assets/images/prod_opc53_cement.jpg';
+        else if (item.id == 2) img = './assets/images/cat_cement.jpg';
+        else if (item.id == 3) img = './assets/images/prod_tmt_steel.jpg';
+        else if (item.id == 4) img = './assets/images/cat_steel.jpg';
+        else if (item.id == 5) img = './assets/images/cat_bricks.jpg';
+        else if (item.id == 6) img = './assets/images/prod_aac_blocks.jpg';
+        else if (item.id == 7 || item.id == 8) img = './assets/images/cat_tiles.jpg';
+        else if (item.id == 9) img = './assets/images/cat_plywood.jpg';
+        else if (item.id == 10) img = './assets/images/cat_electrical.jpg';
+        else if (item.id == 11) img = './assets/images/cat_plumbing.jpg';
+        
+        const tr = document.createElement('tr');
+        tr.className = 'border-b border-gray-200 dark:border-slate-800 bg-white dark:bg-[#0B1220]/20';
+        tr.innerHTML = `
+          <td class="px-6 py-4 flex items-center gap-3">
+            <img src="${img}" alt="${item.name}" class="w-10 h-10 object-cover rounded-md border border-gray-200 dark:border-slate-800">
+            <div>
+              <span class="block font-bold text-primary dark:text-white text-xs">${item.name}</span>
+              <span class="text-[9px] bg-slate-100 dark:bg-slate-800 text-slate-500 px-1.5 py-0.5 rounded uppercase font-semibold">${item.category}</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-xs font-semibold">₹${item.price.toFixed(2)}</td>
+          <td class="px-6 py-4">
+            <div class="flex items-center justify-center gap-1">
+              <button class="bg-gray-100 dark:bg-slate-800 hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary w-6 h-6 rounded flex items-center justify-center font-bold text-xs" onclick="changeQty(${item.id}, -1)">-</button>
+              <input type="text" class="w-8 text-center text-xs font-bold bg-transparent border-0 focus:outline-none focus:ring-0" value="${item.quantity}" readonly>
+              <button class="bg-gray-105 dark:bg-slate-800 hover:bg-accent hover:text-primary dark:hover:bg-accent dark:hover:text-primary w-6 h-6 rounded flex items-center justify-center font-bold text-xs" onclick="changeQty(${item.id}, 1)">+</button>
+            </div>
+          </td>
+          <td class="px-6 py-4 text-end text-xs font-black text-primary dark:text-white">₹${itemTotal.toFixed(2)}</td>
+          <td class="px-6 py-4 text-center">
+            <button class="text-gray-400 hover:text-rose-500 transition-colors" onclick="removeCartItem(${item.id})">
+              <i class="fa-solid fa-trash-can text-sm"></i>
+            </button>
+          </td>
+        `;
+        tableBody.appendChild(tr);
+      });
+      
+      updateQuoteSummary(grossTotal, localCart);
+    }
+
+    // Modify quantity
+    window.changeQty = function(id, delta) {
+      let localCart = JSON.parse(localStorage.getItem('quoteCart')) || [];
+      const item = localCart.find(i => i.id == id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity < 1) item.quantity = 1;
+        
+        localStorage.setItem('quoteCart', JSON.stringify(localCart));
+        if (typeof quoteCart !== 'undefined') {
+          quoteCart = localCart;
+        } else {
+          window.quoteCart = localCart;
+        }
+        
+        renderCartTable();
+        if (typeof updateCartBadge === 'function') {
+          updateCartBadge();
+        }
+      }
+    };
+
+    // Remove item
+    window.removeCartItem = function(id) {
+      let localCart = JSON.parse(localStorage.getItem('quoteCart')) || [];
+      localCart = localCart.filter(i => i.id != id);
+      
+      localStorage.setItem('quoteCart', JSON.stringify(localCart));
+      if (typeof quoteCart !== 'undefined') {
+        quoteCart = localCart;
+      } else {
+        window.quoteCart = localCart;
+      }
+      
+      renderCartTable();
+      if (typeof updateCartBadge === 'function') {
+        updateCartBadge();
+      }
+      showToast("Material removed from quote list!");
+    };
+
+    // Update Quote calculations
+    function updateQuoteSummary(gross, cart) {
+      const grossDisp = document.getElementById('cart-gross');
+      const tierDisp = document.getElementById('cart-tier');
+      const finalDisp = document.getElementById('cart-final');
+      
+      if (!grossDisp || !finalDisp) return;
+      
+      grossDisp.textContent = `₹${gross.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      
+      // Calculate bulk savings based on total items count (representing volume)
+      const volume = cart ? cart.reduce((acc, curr) => acc + curr.quantity, 0) : 0;
+      let discountPct = 0;
+      let tierName = 'No Discount';
+      
+      if (volume >= 500) {
+        discountPct = 0.20;
+        tierName = 'Enterprise Tier (20%)';
+      } else if (volume >= 200) {
+        discountPct = 0.15;
+        tierName = 'Gold Partner (15%)';
+      } else if (volume >= 50) {
+        discountPct = 0.10;
+        tierName = 'Silver Contractor (10%)';
+      }
+      
+      const discount = gross * discountPct;
+      const finalTotal = gross - discount;
+      
+      if (tierDisp) {
+        tierDisp.textContent = tierName;
+        if (discountPct > 0) {
+          tierDisp.className = 'text-emerald-500 font-extrabold';
+        } else {
+          tierDisp.className = 'text-gray-400 font-semibold';
+        }
+      }
+      
+      finalDisp.textContent = `₹${finalTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+  </script>
+
+</body>
+</html>
+
+
+

@@ -127,14 +127,20 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link i,
 .nav-login-btn i,
 .nav-signup-btn i,
-.theme-toggle-btn i,
-.nav-cart-btn i,
-.rtl-toggle-btn i {
+.theme-toggle-btn i:not(.hidden),
+.nav-cart-btn i:not(.hidden),
+.rtl-toggle-btn i:not(.hidden) {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   line-height: 1 !important;
   vertical-align: 0 !important;
+}
+
+.theme-toggle-btn i.hidden,
+.theme-toggle-btn .hidden,
+i.hidden {
+  display: none !important;
 }
 
 /* Premium Modern Unique Navbar Link Styling */

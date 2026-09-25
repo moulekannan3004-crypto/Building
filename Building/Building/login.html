@@ -130,6 +130,17 @@
 
           <!-- Form Fields -->
           <form id="login-form" class="space-y-6">
+            <!-- Login Success Alert Box -->
+            <div id="login-success-alert" class="hidden p-4 rounded-xl border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 flex items-center gap-3 transition-all duration-300 shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-circle-check text-base"></i>
+              </div>
+              <div class="text-start">
+                <p class="text-sm font-bold text-emerald-900 dark:text-emerald-200">Login successfully!</p>
+                <p class="text-xs text-emerald-700 dark:text-emerald-400/90">Welcome back to BuildPro Contractor Portal.</p>
+              </div>
+            </div>
+
             <div>
               <label id="email-label" for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Corporate Email Address</label>
               <div class="relative">
@@ -188,11 +199,26 @@
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const loginForm = document.getElementById('login-form');
+              const successAlert = document.getElementById('login-success-alert');
+              const submitBtn = document.getElementById('submit-btn');
 
               if (loginForm) {
                 loginForm.addEventListener('submit', (e) => {
                   e.preventDefault();
-                  window.location.href = 'login.html';
+
+                  if (successAlert) {
+                    successAlert.classList.remove('hidden');
+                  }
+
+                  if (submitBtn) {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check text-base me-1.5"></i> Login successfully!';
+                    submitBtn.classList.remove('bg-accent', 'hover:bg-accent-hover', 'text-primary');
+                    submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700', 'text-white');
+                  }
+
+                  if (typeof showToast === 'function') {
+                    showToast('Login successfully!');
+                  }
                 });
               }
             });

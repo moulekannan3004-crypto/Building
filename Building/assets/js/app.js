@@ -700,7 +700,7 @@ function initAdminDashboard() {
 function initFormAlerts() {
   const forms = document.querySelectorAll('form');
   forms.forEach(form => {
-    if (form.id === 'quote-submission-form') return;
+    if (form.id === 'quote-submission-form' || form.id === 'login-form') return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       showToast("Your request has been submitted successfully!");
